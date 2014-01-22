@@ -26,6 +26,10 @@
         .container {
             position:relative;
         }
+        .jumbotron {
+            position:relative;
+            overflow:hidden;
+        }
     </style>
 </head>
 <body>
