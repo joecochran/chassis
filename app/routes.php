@@ -25,4 +25,7 @@ Route::get('admin', function(){
 
 
 Route::resource('pages', 'PagesController');
+
+
+Route::resource('settings', 'SettingsController');
 Route::get('{any}', 'PagesController@show');
