@@ -5,6 +5,7 @@ class Page extends Eloquent {
 
 	public static $rules = array(
 		'title' => 'required',
+		'slug' => 'required',
 		'description' => 'required',
 		'content' => 'required'
 	);

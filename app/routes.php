@@ -10,9 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('/', array('as' => 'home', function(){
-      return "home page";
-}));
+Route::get('/', 'PagesController@show'); 
 
 Route::resource('sessions', 'SessionsController', array('only' => array('create', 'store', 'destroy')));
 Route::get('login', 'SessionsController@create');
@@ -27,3 +25,4 @@ Route::get('admin', function(){
 
 
 Route::resource('pages', 'PagesController');
+Route::get('{any}', 'PagesController@show');

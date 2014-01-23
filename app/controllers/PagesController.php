@@ -65,11 +65,12 @@ class PagesController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($id)
+	public function show($slug = 'home')
 	{
-		$page = $this->page->findOrFail($id);
+        $pages = Page::all();
+		$page = $this->page->whereSlug($slug)->first();
 
-		return View::make('pages.show', compact('page'));
+		return View::make('pages.show', compact('page', 'pages'));
 	}
 
 	/**

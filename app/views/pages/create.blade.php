@@ -20,6 +20,10 @@
             {{ Form::label('title', 'Title:') }}
             {{ Form::text('title', '', array('class'=>'form-control')) }}
         </div>
+        <div class="form-group">
+            {{ Form::label('slug', 'URL Slug:') }}
+            {{ Form::text('slug','',array('class'=>'form-control')) }}
+        </div>
 
         <div class="form-group">
             {{ Form::label('description', 'Description:') }}
