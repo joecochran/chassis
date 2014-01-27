@@ -21,13 +21,13 @@
 <body>
     <header class="ui menu">
         <nav>
-                <li class="item"><strong>Site Title</strong></li>
-                @foreach($pages as $pagex)
-                <li class="{{ set_active($pagex->slug) }} item">{{ link_to($pagex->slug, $pagex->title) }}</li>
-                @endforeach
-                @if(Auth::check())
-                <li class="item">{{ link_to('admin', 'Admin') }}</li>
-                @endif
+            <li class="item"><strong>Site Title</strong></li>
+            @foreach($pages as $pagex)
+            <li class="{{ set_active($pagex->slug) }} item">{{ link_to($pagex->slug, $pagex->title) }}</li>
+            @endforeach
+            @if(Auth::check())
+            <li class="item">{{ link_to('admin', 'Admin') }}</li>
+            @endif
         </nav>
     </header>
 

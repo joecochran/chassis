@@ -10,20 +10,19 @@ function set_active($path, $active = 'active')
 }
 
 /**
- * return '.min' if not development
- *
- */
-function set_min()
-{
-    if(App::environment('development')) return '';
-    return '.min';
-}
-
-/**
  * return true if production
  *
  */
 function is_production() 
 {
     return App::environment('production');
+}
+
+/**
+ * return '.min' if not development
+ *
+ */
+function set_min()
+{
+    if(is_production()) return '.min';
 }

@@ -15,8 +15,9 @@ var gulp = require('gulp'),
 
 gulp.task('scripts', function() {
     return gulp.src([
-        'app/assets/js/vendor/jquery-1.11.0.min.js',
+        'app/assets/js/vendor/jquery-1.11.0.js',
         'app/assets/js/vendor/semantic.js',
+        'app/assets/js/vendor/tablesort.js',
         'app/assets/js/scripts.js'])
         .pipe(concat('main.js'))
         .pipe(gulp.dest('public/js'))

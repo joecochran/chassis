@@ -12,36 +12,28 @@
 
 @section('main')
 <div class="container">
-  <div class="page-header"><h1>Create Page</h1></div>
-
-{{ Form::open(array('route' => 'pages.store', 'class' => 'panel panel-default')) }}
-<div class="panel-body">
-        <div class="form-group">
+    <h1>Create Page</h1>
+    {{ Form::open(array('route' => 'pages.store', 'class' => 'ui form blue segment')) }}
+        <div class="field">
             {{ Form::label('title', 'Title:') }}
             {{ Form::text('title', '', array('class'=>'form-control')) }}
         </div>
-        <div class="form-group">
+        <div class="field">
             {{ Form::label('slug', 'URL Slug:') }}
             {{ Form::text('slug','',array('class'=>'form-control')) }}
         </div>
 
-        <div class="form-group">
+        <div class="field">
             {{ Form::label('description', 'Description:') }}
             {{ Form::textarea('description', '', array('class'=>'form-control','rows'=>4)) }}
         </div>
 
-        <div class="form-group">
+        <div class="field">
             {{ Form::label('content', 'Content:') }}
             {{ Form::textarea('content', '', array('class'=>'ckeditor')) }}
         </div>
-
-  </div>
-  <div class="panel-footer">
-    {{ Form::submit('Submit', array('class' => 'btn btn-info')) }}
-  </div>
-{{ Form::close() }}
-
-
+        {{ Form::submit('Submit', array('class' => 'ui blue button')) }}
+    {{ Form::close() }}
 </div>
 @stop
 
