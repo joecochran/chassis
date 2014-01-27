@@ -1,4 +1,13 @@
-body {
-    color:red;
-}
 @import 'semantic-ui';
+body {
+    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #555555;
+    display:none;
+}
+h1, h2, h3, h4, h5 {
+    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+// *::selection {
+//     background-color: #F1C1C2;
+//     color: #222222;
+// }

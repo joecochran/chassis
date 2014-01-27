@@ -30,7 +30,7 @@ gulp.task('styles', function(){
     return gulp.src('app/assets/scss/main.scss')
         .pipe(sass({ style: 'expanded'}))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
-        .pipe(gulp.dest('dist/assets/css'))
+        .pipe(gulp.dest('public/css'))
         .pipe(rename({suffix: '.min'}))
         .pipe(minifycss())
         .pipe(gulp.dest('public/css/'))
@@ -38,7 +38,7 @@ gulp.task('styles', function(){
         .pipe(notify({ message: 'styles task complete'}));
 });
 gulp.task('images', function() {
-    return gulp.src('assets/img/**/*')
+    return gulp.src('app/assets/img/**/*')
         .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
         .pipe(livereload(server))
         .pipe(gulp.dest('public/img'))
