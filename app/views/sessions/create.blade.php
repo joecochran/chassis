@@ -1,25 +1,33 @@
 @extends('layouts.default')
 
 @section('main')
-<div class="container">
+<div class="login-container">
     <div class="row">
         <div class="col-md-offset-4 col-md-4">
-            {{ Form::open(array('route' => 'sessions.store', 'class' => "panel panel-default login-form")) }}
-                <div class="panel-heading">
-                    <h1 class="panel-title">Login</h1>
+            {{ Form::open(array('route' => 'sessions.store', 'class' => "ui form login-form")) }}
+                <div class="ui top attached segment">
+                    <h1 class="ui medium header ">Login</h1>
                 </div>
-                <div class="panel-body">
-                    <div class="form-group">
-                    {{ Form::label('email', 'Email') }}
-                    {{ Form::email('email','', array('class'=>'form-control')) }}
+                <div class="ui attached segment">
+                    <div class="field">
+                    {{ Form::label('username', 'Username') }}
+                    <div class="ui left labeled icon input">
+                        {{ Form::text('username', '', array('placeholder'=>'Username')) }}
+                        <i class="user icon"></i>
+                        <div class="ui corner label"><i class="icon asterisk"></i></div>
                     </div>
-                    <div class="form-group">
-                    {{ Form::label('password', 'Password') }}
-                    {{ Form::password('password', array('class'=>'form-control')) }}
+                    </div>
+                    <div class="field">
+                        {{ Form::label('password', 'Password') }}
+                        <div class="ui left labeled icon input">
+                            {{ Form::password('password', array('placeholder'=>'Password')) }}
+                            <i class="lock icon"></i>
+                            <div class="ui corner label"><i class="icon asterisk"></i></div>
+                        </div>
                     </div>
                 </div> 
-                <div class="panel-footer clearfix">
-                  <p>{{ link_to('password/remind', 'Forgot your password?') }} {{ Form::submit('Submit',array('class'=>'btn btn-primary pull-right')) }}</p> 
+                <div class="ui bottom attached segment">
+                  <p><button class='ui right labeled icon blue button'><i class="sign in icon"></i>Login</button> <small>{{ link_to('password/remind', 'Forgot your password?', array('class'=>'forgot-password-link')) }}</small></p> 
                 </div>
             {{ Form::close() }}
         </div>

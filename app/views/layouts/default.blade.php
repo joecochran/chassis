@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riku CMS</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="{{ asset('css/bootstrap-theme.min.css') }}" />
+    {{ HTML::style('//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700') }}
+    {{ HTML::style(asset('css/main'.set_min().'.css')) }}
+
+    {{-- Only modernizr at the top --}}
+    {{ HTML::script('js/modernizr-2.6.2.min.js') }}
     <style type="text/css">
         body {
         padding-top:50px; 
@@ -34,61 +37,16 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="/admin">Riku CMS</a>
-          </div>
-          @if(Auth::check())
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-              <li class="{{ set_active('pages') }}"><a href="/pages">Pages</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i> {{ Auth::user()->username }} <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="{{ URL::to('logout') }}">Logout</a></li>
-                </ul>
-              </li>
-            </ul>
-          </div><!-- /.navbar-collapse -->
-          @endif
-          </div>
-        </nav> 
+    @include('layouts.inc.cms-header')
     </header>
-    <div class="container">
-    @section('alerts')
-        @if(Session::get('flash_message'))
-        <div class="alert fade in alert-dismissable top-alert {{ Session::get('message_class') }}">
-            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-            <strong>{{ Session::get('message_strong') }}</strong> {{ Session::get('flash_message') }}
-        </div>
-        @endif
-    @show
-    </div>
-    <main ng-app>
+    <main>
         @yield('main')
     </main> 
     <footer>
     
     </footer>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    {{ HTML::script(asset('js/main'.set_min().'.js')) }}
+    {{-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script> --}}
     <script type="text/javascript" src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
-    <script type="text/javascript">
-    $(window).load(function(){
-        setTimeout(function(){ $('.top-alert').alert('close') }, 3000);
-    });
-    </script>
 </body>
 </html>

@@ -10,7 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-// Route::get('/', 'PagesController@show'); 
+Route::get('/', 'PagesController@show'); 
+Route::get('env', function(){
+    dd(App::environment());
+});
 
 Route::resource('sessions', 'SessionsController', array('only' => array('create', 'store', 'destroy')));
 Route::get('login', 'SessionsController@create');

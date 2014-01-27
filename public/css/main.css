@@ -16814,10 +16814,31 @@ ol.ui.horizontal.list li:before,
 
 body {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  color: #555555;
   display: none;
 }
 
 h1, h2, h3, h4, h5 {
   font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+}
+
+.login-container {
+  max-width: 400px;
+  margin: auto;
+}
+
+.forgot-password-link {
+  float: right;
+}
+
+a {
+  color: #009FDA;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: all 300ms ease;
+  transition: all 300ms ease;
+}
+
+a:hover {
+  color: #00BAFF;
+  border-bottom: 1px solid #00BAFF;
 }
