@@ -18,38 +18,33 @@
 @stop
 
 @section('main')
-<div class="container">
-    <div class="row">
-        <div class="col-md-offset-4 col-md-4">
-    {{ Form::open(['class'=>'panel panel-default login-form']) }}
-        <div class="panel-heading">
-            <h1 class="panel-title">Enter your new password.</h1>
+<div class="login-container">
+    {{ Form::open(['class'=>'ui form']) }}
+        <div class="ui attached top segment">
+            <h1 class="ui medium header">Enter your new password.</h1>
         </div>
         <input type="hidden" name="token" value="{{ $token }}" />
-        <div class="panel-body">
-            <div class="form-group">
+        <div class="ui attached segment">
+            <div class="field">
                 {{ Form::label('email', 'Email Address') }}<br>
                 {{ Form::email('email', '', ['class'=>'form-control', 'required'=>true]) }}
             </div>
             
-            <div class="form-group">
+            <div class="field">
                 {{ Form::label('password', 'Password') }}<br>
                 {{ Form::password('password', ['class'=>'form-control', 'required'=>true]) }}
             </div>
 
-            <div class="form-group">
+            <div class="field">
                 {{ Form::label('password_confirmation', 'Password Confirmation') }}<br>
                 {{ Form::password('password_confirmation', ['class'=>'form-control', 'required'=>true]) }}
             </div>
         </div>
 
-        <div class="panel-footer clearfix">
-            {{ Form::submit('Reset',['class'=>'btn btn-primary pull-right']) }}
+        <div class="ui attached segment bottom">
+            {{ Form::submit('Reset',['class'=>'ui blue button pull-right']) }}
         </div>
     {{ Form::close() }}
-
-</div>
-</div>
 </div>
 
 @stop

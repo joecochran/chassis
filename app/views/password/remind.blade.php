@@ -19,26 +19,22 @@
 
 @section('main')
 
-<div class="container">
+<div class="login-container">
 
-    <div class="row">
-        <div class="col-md-offset-4 col-md-4">
-    {{ Form::open(['class'=>'panel panel-default login-form']) }}
-        <div class="panel-heading">
-            <h1 class="panel-title">Need to reset your password?</h1>
+    {{ Form::open(['class'=>'ui form']) }}
+        <div class="ui top attached segment">
+            <h1 class="ui medium header">Need to reset your password?</h1>
         </div>
-        <div class="panel-body">
-            <div class="form-group">
+        <div class="ui attached segment">
+            <div class="field">
                 {{ Form::label('email', 'Email Address') }}<br>
                 {{ Form::email('email', '',['class'=>'form-control', 'required'=>true]) }}
             </div>
         </div>
-        <div class="panel-footer clearfix">
-            {{ Form::submit('Reset',['class'=>'btn btn-primary pull-right']) }}
+        <div class="ui bottom attached segment">
+            {{ Form::submit('Reset',['class'=>'ui button blue small pull-right']) }}
         </div>
     {{ Form::close() }}
 
-</div>
-</div>
 </div>
 @stop

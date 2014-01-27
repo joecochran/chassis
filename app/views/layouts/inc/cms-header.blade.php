@@ -1,3 +1,4 @@
+@if(Auth::check())
 <header class="ui fixed main menu">
     <div class="container">
         <div class="menu">
@@ -11,17 +12,13 @@
             </a>
             <div class="right menu">
                 <div class="ui dropdown item user-menu">
-                    <?php 
-                        $email = trim(Auth::user()->email);
-                        $hash = md5($email);
-                        $gravatar_url = 'http://www.gravatar.com/avatar/'.$hash.'?s=40';
-                    ?>
-                    <img class="ui avatar image" src="{{ $gravatar_url }}" alt="" />{{ Auth::user()->username }}<i class="dropdown icon"></i>
+                    <img class="ui avatar image" src="http://placekitten.com/40" alt="" />{{ Auth::user()->username }}<i class="dropdown icon"></i>
                     <div class="menu ui transition hidden">
-                        <a class="item" href="">Logout</a>
+                        <a class="item" href="{{ url('logout') }}">Logout</a>
                     </div>
                 </div> 
             </div>
         </div>
     </div>
 </header>
+@endif
