@@ -11,9 +11,6 @@
 |
 */
 // Route::get('/', 'PagesController@show'); 
-Route::get('/', function(){
-    return View::make('semantictest');
-}); 
 
 Route::resource('sessions', 'SessionsController', array('only' => array('create', 'store', 'destroy')));
 Route::get('login', 'SessionsController@create');
@@ -25,10 +22,9 @@ Route::get('admin', function(){
     return View::make('dashboard');
 })->before('auth');
 
-
-
 Route::resource('pages', 'PagesController');
 
 
 Route::resource('settings', 'SettingsController');
 Route::get('{any}', 'PagesController@show');
+
