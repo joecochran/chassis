@@ -10,3 +10,4 @@ Thumbs.db
 *.swo
 .sass-cache/
 node_modules/
+.vagrant/
