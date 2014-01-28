@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.network :private_network, {
         ip: "192.168.5.5",
     }
-    config.vm.provision :shell, :path => "install.sh"
+    config.vm.provision :shell, :path => "provision.sh"
 
     config.vm.synced_folder ".", "/vagrant", :mount_options => ["dmode=777", "fmode=666"]
 
