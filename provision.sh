@@ -22,7 +22,7 @@ echo "--- Updating packages list ---"
 sudo apt-get update
 
 echo "--- Installing PHP-specific packages ---"
-sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql git-core mysql-pdo php5-sqlite
+sudo apt-get install -y php5 apache2 libapache2-mod-php5 php5-curl php5-gd php5-mcrypt mysql-server-5.5 php5-mysql git-core php5-sqlite
 
 echo "--- Installing and configuring Xdebug ---"
 sudo apt-get install -y php5-xdebug
@@ -40,7 +40,6 @@ echo "--- Setting document root ---"
 sudo rm -rf /var/www
 sudo ln -fs /vagrant/public /var/www
 
-
 echo "--- What developer codes without errors turned on? Not you, master. ---"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
 sed -i "s/display_errors = .*/display_errors = On/" /etc/php5/apache2/php.ini
@@ -55,5 +54,6 @@ curl -sS https://getcomposer.org/installer | php
 sudo mv composer.phar /usr/local/bin/composer
 
 # Laravel stuff here, if you want
+chmod -R 777 /vagrant/app/storage
 
 echo "--- All set to go! Would you like to play a game? ---"
