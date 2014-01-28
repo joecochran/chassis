@@ -9,8 +9,9 @@
 1. If you have node.js installed already, skip to step 2. Otherwise, I recommend you install [Homebrew](http://brew.sh). Once homebrew is installed, run
    > brew install node
 
-2. npm install -g gulp to install gulp globally. Note: if it complains about
+2. Gulp needs to be installed gulp globally. Note: if it complains about
    permissions, run it with sudo.
+   > npm install -g gulp
 
 3. In the project root type npm install. This should install all the necessary
 components.
@@ -18,6 +19,13 @@ components.
 4. run composer install to get all the php side set up
 
 5. run "gulp" to start watching!
+
+6. A Vagrantfile has been provided with a provision script. After
+   [Vagrant](http://vagrantup.com) and [Virtualbox](http://virtualbox.org) have
+   been installed, run
+   > vagrant up
+   
+   This will serve the site up on http://localhost:8080
 
 
 ## Roadmap
@@ -28,3 +36,4 @@ components.
 - The ominous _blog_ area. Posts, authors, categories, tags, comments, and
   up/down votes on comments. Blog registration/oauth with facebook, twitter,
   g+, github, and a opt in blog digest email list - mailchimp api or something?
+- 
