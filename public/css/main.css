@@ -17252,3 +17252,7 @@ a:hover {
 .ui.dropdown.item.user-menu {
   padding: 0.37em .95em;
 }
+
+.banner-image {
+  max-width: 100%;
+}

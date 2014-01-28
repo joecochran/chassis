@@ -35,7 +35,7 @@
         <div class="ui small buttons">
             {{ Form::submit('Update', array('class' => 'ui blue button')) }}
             <div class="or"></div>
-            {{ link_to_route('pages.show', 'Cancel', $page->id, array('class' => 'ui red button')) }}
+            <a href="{{ url('pages') }}" class='ui red button'>Cancel</a>
         </div>
     {{ Form::close() }}
 </div>

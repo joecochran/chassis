@@ -22,3 +22,9 @@ components.
 
 ## Roadmap
 - All emails for resets, etc need to use [Ink](http://zurb.com/ink)
+- User management area. Add, remove, update users.
+    - Can also send a password reset email directly to a user from here.
+- Settings management area. Here we set sitewide variables (facebook url, etc)
+- The ominous _blog_ area. Posts, authors, categories, tags, comments, and
+  up/down votes on comments. Blog registration/oauth with facebook, twitter,
+  g+, github, and a opt in blog digest email list - mailchimp api or something?

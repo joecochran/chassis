@@ -11,7 +11,8 @@ class PagesController extends BaseController {
 
 	public function __construct(Page $page)
 	{
-		$this->page = $page;
+        $this->page = $page;
+        $this->beforeFilter('auth', array('except' => array('show', '')));
 	}
 
 	/**

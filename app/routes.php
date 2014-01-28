@@ -11,10 +11,6 @@
 |
 */
 Route::get('/', 'PagesController@show'); 
-Route::get('env', function(){
-    dd(App::environment());
-});
-
 Route::resource('sessions', 'SessionsController', array('only' => array('create', 'store', 'destroy')));
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
@@ -28,6 +24,6 @@ Route::get('admin', function(){
 Route::resource('pages', 'PagesController');
 
 
-Route::resource('settings', 'SettingsController');
+// Route::resource('settings', 'SettingsController')->before('auth');
 Route::get('{any}', 'PagesController@show');
 
