@@ -44,3 +44,6 @@ components.
 - All emails for resets, etc need to use [Ink](http://zurb.com/ink)
 - User management area. Add, remove, update users.
 - Settings management area. Here we set sitewide variables (facebook url, etc)
+- Need to namespace all the things.
+- Installation bash script?
+- Make this more SOLID.
