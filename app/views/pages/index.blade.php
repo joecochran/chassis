@@ -20,7 +20,7 @@
                     <td>{{{ $page->title }}}</td>
                     <td>{{{ $page->description }}}</td>
                     <td>
-                        <div class="ui tiny buttons pull-right">
+                        <div class="ui tiny buttons control-group pull-right">
                         {{ Form::open(array('method' => 'DELETE', 'route' => array('pages.destroy', $page->id))) }}
                             {{ link_to_route('pages.edit', 'Edit', array($page->id), array('class' => 'ui button')) }}
                             <div class="or"></div>

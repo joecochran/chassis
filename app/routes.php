@@ -24,6 +24,6 @@ Route::get('admin', function(){
 Route::resource('pages', 'PagesController');
 
 
-// Route::resource('settings', 'SettingsController')->before('auth');
+Route::resource('settings', 'SettingsController', array('only' => array('index','store','update', 'destroy', 'edit')));
 Route::get('{any}', 'PagesController@show');
 

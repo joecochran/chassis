@@ -12,6 +12,7 @@ class SettingsController extends BaseController {
 	public function __construct(Setting $setting)
 	{
 		$this->setting = $setting;
+        $this->beforeFilter('auth');
 	}
 	/**
 	 * Display a listing of the resource.
@@ -20,7 +21,8 @@ class SettingsController extends BaseController {
 	 */
 	public function index()
 	{
-        return $this->page->all();;
+        $settings = $this->setting->all();;
+        return View::make('settings.index', compact('settings'));
 	}
 
 	/**
@@ -30,7 +32,7 @@ class SettingsController extends BaseController {
 	 */
 	public function store()
 	{
-        $input = Inpu::all();
+        $input = Input::all();
         // validation
         return $this->setting->create($input);
 	}
@@ -47,6 +49,11 @@ class SettingsController extends BaseController {
         $setting = $this->setting->find($id);
         $setting->update($input);
 	}
+    public function edit($id)
+    {
+        $setting = $this->setting->find($id);
+        return View::make('settings.edit', compact('setting'));
+    }
 
 	/**
 	 * Remove the specified resource from storage.

@@ -10,6 +10,10 @@
                 <i class="text file outline icon"></i>
                 Pages
             </a>
+            <a class="{{ set_active('settings') }} item" href="{{ url('settings') }}">
+                <i class="settings icon"></i>
+                Settings
+            </a>
             <div class="right menu">
                 <div class="ui dropdown item user-menu">
                     <img class="ui avatar image" src="http://placekitten.com/40" alt="" />{{ Auth::user()->username }}<i class="dropdown icon"></i>

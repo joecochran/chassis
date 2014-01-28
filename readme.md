@@ -13,12 +13,12 @@
    permissions, run it with sudo.
    > npm install -g gulp
 
-3. In the project root type npm install. This should install all the necessary
+3. In the project root type `npm install`. This should install all the necessary
 components.
 
-4. run composer install to get all the php side set up
+4. run `composer install` to get all the php side set up
 
-5. run "gulp" to start watching!
+5. run `gulp` to start watching!
 
 6. you can use artisan to serve this up on localhost and get to work with
    > php artisan serve
@@ -33,7 +33,7 @@ components.
 
    For simplicity I am running this on a private network, that was, if I want
    to visit http://sitename.dev instead, all I have to do is add an entry to
-   /etc/hosts, like 192.168.5.5 sitename.dev Here's a one liner to accomplish
+   /etc/hosts, like `192.168.5.5 sitename.dev` Here's a one liner to accomplish
    that:
    > echo "192.138.5.5 sitename.dev" | sudo tee -a /etc/hosts
 
