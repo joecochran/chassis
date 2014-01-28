@@ -5,6 +5,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
+    protected $guarded = array('password');
 	/**
 	 * The database table used by the model.
 	 *

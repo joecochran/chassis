@@ -21,8 +21,18 @@ class SettingsController extends BaseController {
 	 */
 	public function index()
 	{
-        $settings = $this->setting->all();;
+        $settings = $this->setting->all();
         return View::make('settings.index', compact('settings'));
+	}
+
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function create()
+	{
+		return View::make('settings.create');
 	}
 
 	/**
@@ -48,7 +58,14 @@ class SettingsController extends BaseController {
 		$input = array_except(Input::all(), '_method');
         $setting = $this->setting->find($id);
         $setting->update($input);
+        return Redirect::route('settings.index');
 	}
+	/**
+	 * Return a form for editing resource;
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
     public function edit($id)
     {
         $setting = $this->setting->find($id);
@@ -63,7 +80,8 @@ class SettingsController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+        $setting = $this->setting->find($id)->delete();
+        return Redirect::route('settings.index');
 	}
 
 }

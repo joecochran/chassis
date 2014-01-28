@@ -2,8 +2,10 @@
 
 @section('main')
 <div class="container">
-    <h1 class="ui header">All Pages</h1>
-    <a href="{{ url('pages/create') }}" class="ui blue tiny labeled icon button"><i class="add icon"></i> Add Page</a> 
+    <div class="ui basic segment">
+        <h1 class="ui header">Pages</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
 
     @if ($pages->count())
     <table class="ui sortable padded table blue segment">

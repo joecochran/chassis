@@ -14,10 +14,15 @@
                 <i class="settings icon"></i>
                 Settings
             </a>
+            <a class="{{ set_active('users') }} item" href="{{ url('users') }}">
+                <i class="users icon"></i>
+                Users
+            </a>
             <div class="right menu">
                 <div class="ui dropdown item user-menu">
                     <img class="ui avatar image" src="http://placekitten.com/40" alt="" />{{ Auth::user()->username }}<i class="dropdown icon"></i>
                     <div class="menu ui transition hidden">
+                        <a class="item" href="{{ url('users/'.Auth::user()->id.'/edit') }}">Account</a>
                         <a class="item" href="{{ url('logout') }}">Logout</a>
                     </div>
                 </div> 

@@ -3,8 +3,8 @@
 
 @section('main')
 <div class="container">
+    <h1 class="ui header">Recent Updates</h1>
     <div class="ui feed blue segment">
-        <div class="ui header">Recent Updates</div>
         <div class="event">
             <div class="label">
                 <img src="http://placekitten.com/100/100">
@@ -17,7 +17,7 @@
                     <a>Joe Cochran</a> posted:
                 </div>
                 <div class="extra text">
-                    We added some fucking feature your dont care about. <a href="#">Read More</a>
+                    Welcome to Chassis!  <a href="#">Read More</a>
                 </div>
             </div>
         </div>

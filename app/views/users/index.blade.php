@@ -3,29 +3,29 @@
 @section('main')
 <div class="container">
     <div class="ui basic segment">
-        <h1 class="ui header">Settings</h1>
+        <h1 class="ui header">Users</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
-    @if ($settings->count())
+    @if ($users->count())
     <table class="ui table padded blue sortable segment" valign=top>
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Slug</th>
-                <th colspan=2>Value</th>
+                <th>Username</th>
+                <th colspan=2>Email</th>
             </tr>
         </thead>
         <tbody>
-            @foreach($settings as $setting)
+            @foreach($users as $user)
             <tr class="ui form">
-                <td>{{ $setting->name }}</td>
-                <td>{{ $setting->slug }}</td>
-                <td>{{ $setting->value }}</td>
-                <td class="clearfix">
+                <td>{{ $user->fullname }}</td>
+                <td>{{ $user->username }}</td>
+                <td>{{ $user->email }}</td>
+                <td>
                     
                     <div class="ui tiny buttons control-group pull-right">
-                    {{ Form::open(array('method' => 'DELETE', 'route' => array('settings.destroy', $setting->id))) }}
-                        {{ link_to_route('settings.edit', 'Edit', array($setting->id), array('class' => 'ui button')) }}
+                    {{ Form::open(array('method' => 'DELETE', 'route' => array('users.destroy', $user->id))) }}
+                        {{ link_to_route('users.edit', 'Edit', array($user->id), array('class' => 'ui button')) }}
                         <div class="or"></div>
                         {{ Form::submit('Delete', array('class' => 'ui button red')) }}
                     {{ Form::close() }}
@@ -37,13 +37,13 @@
         <tfoot>
             <tr>
                 <td colspan="4">
-                    <a href="{{ url('settings/create') }}" class="ui blue tiny labeled icon button"><i class="add icon"></i> New Setting</a> 
+                    <a href="{{ url('users/create') }}" class="ui blue tiny labeled icon button"><i class="add icon"></i> Add User</a> 
                 </td>
             </tr>
         </tfoot>
     </table>
     @else
-    No settings defined
+    No users defined
     @endif
 </div>
 @stop
