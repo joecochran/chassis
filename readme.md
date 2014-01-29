@@ -31,11 +31,11 @@ components.
 
 7. OPTIONAL - A Vagrantfile has been provided with a provision script. After
    [Vagrant](http://vagrantup.com) and [Virtualbox](http://virtualbox.org) have
-   been installed, run
+   been installed, run:
    ```
    vagrant up
    ```
-   
+   (if this throws errors, try updating [Virtualbox](http://virtualbox.org).)
    This will serve the site up on http://192.168.5.5
 
    For simplicity I am running this on a private network, that was, if I want
