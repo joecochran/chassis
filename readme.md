@@ -43,7 +43,7 @@ components.
    /etc/hosts, like `192.168.5.5 sitename.dev` Here's a one liner to accomplish
    that:
    ```
-   echo "192.138.5.5 sitename.dev" | sudo tee -a /etc/hosts
+   echo "192.168.5.5 sitename.dev" | sudo tee -a /etc/hosts
    ```
    Obviously change sitename.dev to whatever you want to use.
 
