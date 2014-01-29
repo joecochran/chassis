@@ -19,13 +19,12 @@
     
     </footer>
     {{ HTML::script(asset('js/main'.set_min().'.js')) }}
-    {{-- <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script> --}}
-    <script type="text/javascript" src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+    
+    {{-- Checking if a .ckeditor element exists and then loading in the ckeditor.js file because its huge and expensive --}}
     <script type="text/javascript">
-        $('.sortable.table').tablesort();
-        $('.ui.dropdown')
-          .dropdown()
-        ;
+        $('.ui.dropdown').dropdown();
+        if ($('.ckeditor')[0]) document.write('<script src="{{ asset('js/ckeditor/ckeditor.js') }}">\x3C/script>');
+        if ($('.table.sortable')[0]) $('.sortable.table').tablesort();
     </script>
 </body>
 </html>

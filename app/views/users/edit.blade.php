@@ -3,7 +3,7 @@
 @section('main')
 <div class="container">
     <div class="ui basic segment">
-        <h1 class="ui header">Edit User</h1>
+        <h1 class="ui header">Edit {{ $user->fullname }} <img class="ui avatar image pull-right" src="{{ get_gravatar($user->email) }}" alt="" /></h1>
     </div>
     {{ Form::model($user, array('method' => 'PATCH', 'route' => array('users.update', $user->id),'class'=>'ui form blue segment')) }}
         <div class="field">

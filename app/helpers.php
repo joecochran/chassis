@@ -26,3 +26,9 @@ function set_min()
 {
     if(is_production()) return '.min';
 }
+
+function get_gravatar($email)
+{
+    $hash = md5(strtolower(trim($email)));
+    return "//www.gravatar.com/avatar/$hash";
+}

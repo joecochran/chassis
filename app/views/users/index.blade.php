@@ -18,7 +18,7 @@
         <tbody>
             @foreach($users as $user)
             <tr class="ui form">
-                <td>{{ $user->fullname }}</td>
+                <td>{{ '<img class="ui avatar image" src="'.get_gravatar($user->email).'"> '.$user->fullname }}</td>
                 <td>{{ $user->username }}</td>
                 <td>{{ $user->email }}</td>
                 <td>

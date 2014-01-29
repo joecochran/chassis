@@ -13,6 +13,7 @@ class PagesController extends BaseController {
 	{
         $this->page = $page;
         $this->beforeFilter('auth', array('except' => array('show', '')));
+        $this->currentUser = Auth::user();
 	}
 
 	/**
@@ -23,7 +24,7 @@ class PagesController extends BaseController {
 	public function index()
 	{
 		$pages = $this->page->orderBy('title', 'asc')->get();
-		return View::make('pages.index', compact('pages'));
+		return View::make('pages.index', compact('pages', 'currentUser'));
 	}
 
 	/**
