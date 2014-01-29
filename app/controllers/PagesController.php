@@ -36,15 +36,24 @@ class PagesController extends BaseController {
 		return View::make('pages.create');
 	}
 
-    public function pageCreationSucceeds();
 
 	public function store()
 	{
         $creator = new Harlo\Page\Creator($this);
-        $creator->create(Input::all());
-
-        return Redirect::route('pages.index');
+        return $creator->create(Input::all());
 	}
+
+    public function pageCreationFails($errors)
+    {
+        return Redirect::route('pages.create')->withInput()->withErrors($validation);
+    }
+
+    public function pageCreationSucceeds()
+    {
+        // dd('hello');
+        echo "hello";
+        return Redirect::route('pages.index');
+    }
 
 	/**
 	 * Display the specified resource.

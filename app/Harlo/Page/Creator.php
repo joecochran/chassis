@@ -1,23 +1,25 @@
-<?php namespace Harlo\Project;
+<?php namespace Harlo\Page;
+
+use Validator;
+use Page;
 
 class Creator {
     protected $listener;
+
     public function __construct($listener)
     {
         $this->listener = $listener;
     }
-    public function create()
+
+    public function create($input)
     {
 		$validation = Validator::make($input, Page::$rules);
 
 		if ($validation->fails())
 		{
-            $this->listener->pageCreationFails($validation->messages());
-            return Redirect::route('pages.create')
-                ->withInput()
-                ->withErrors($validation)
-                ->with('message', 'There were validation errors.');
+            return $this->listener->pageCreationFails($validation->messages());
 		}
-        $this->page->create($input);
+        Page::create($input);
+        return $this->listener->pageCreationSucceeds();
     }
 }
