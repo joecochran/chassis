@@ -6,8 +6,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta type="description" content="@yield('meta_description', 'temp default')"/>
-    <title>{{{ $page->title }}} - Site Title</title>
+    <meta type="description" content="@yield('meta_description', $settings['meta_description'])"/>
+    <title>{{{ $page->title }}} - {{ $settings['sitename'] }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{-- OG and Card Data here --}}
 
@@ -19,24 +19,29 @@
     {{ HTML::script('js/modernizr-2.6.2.min.js') }}
 </head>
 <body>
-    <header class="ui menu">
-        <nav>
-            <li class="item"><strong>Site Title</strong></li>
+    <header>
+        <div class="container">
+            <div class="ui basic segment">
+                <div class="ui large header">{{{ $settings['sitename'] }}}</div>
+            </div>
+        </div>
+        <nav class="ui menu">
+            <ul class="container">
             @foreach($pages as $pagex)
             <li class="{{ set_active($pagex->slug) }} item">{{ link_to($pagex->slug, $pagex->title) }}</li>
             @endforeach
             @if(Auth::check())
             <li class="item">{{ link_to('admin', 'Admin') }}</li>
             @endif
+            </ul>
         </nav>
     </header>
 
     <main>
         @yield('main')
     </main>
-
     <footer class="ui secondary segment small">
-        <p><small>Copyright &copy; {{ date('Y') }} Sitename all rights reserved.</small></p>
+        <p><small>Copyright &copy; {{ date('Y') }} {{ $settings['sitename'] }} all rights reserved.</small></p>
     </footer>
     {{-- Scripts at the bottom --}}
     {{ HTML::script(asset('js/main'.set_min().'.js')) }}

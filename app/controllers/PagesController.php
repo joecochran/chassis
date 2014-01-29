@@ -67,10 +67,14 @@ class PagesController extends BaseController {
 	 */
 	public function show($slug = 'home')
 	{
+        $settings = array();
+        $settingsobj = Setting::all();
+        foreach ($settingsobj as $setting) {
+          $settings[$setting->slug] = "$setting->value";
+        }
         $pages = Page::all();
-		$page = $this->page->whereSlug($slug)->first();
-
-		return View::make('pages.show', compact('page', 'pages'));
+		$page = $this->page->whereSlug($slug)->firstOrFail();
+		return View::make('pages.show', compact('page', 'pages', 'settings'));
 	}
 
 	/**

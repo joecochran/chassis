@@ -1,4 +1,5 @@
-/*! normalize.css v2.1.3 | MIT License | git.io/normalize */
+@charset "UTF-8";
+/* normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
    ========================================================================== */
@@ -7219,7 +7220,7 @@ h5.ui.header {
  * http://opensource.org/licenses/MIT
  *
  */
-/*!
+/*
  *  Font Awesome 3.2.1
  *  the iconic font designed for Bootstrap
  *  ------------------------------------------------------------------------------
@@ -16884,7 +16885,7 @@ ol.ui.list li:before,
   position: absolute;
   left: -2em;
   counter-increment: ordered;
-  content: counters(ordered,".");
+  content: counters(ordered, ".");
   text-align: right;
   vertical-align: top;
   opacity: 0.75;
@@ -17226,6 +17227,7 @@ a:hover {
 .container {
   max-width: 960px;
   margin: auto;
+  padding: 0;
 }
 
 .pull-right {
