@@ -47,6 +47,17 @@ components.
    ```
    Obviously change sitename.dev to whatever you want to use.
 
+## Customizations
+
+### app/helpers.php
+This is a growing list of unsorted little functions that are useful. At some point if this grows beyond just a few helpful functions I will probably namespace this to Harlo\helpers and move it out to a Package. Right now its just a handful of functions like `get_gravatar($email)` which takes an email, md5s it, and returns a url for the gravatar image of that email.
+
+### app/composers.php
+View Composers are amazing. They allow us to package data and bind it to views when they are called. So if I want to have a list of pages, I can simply include an array called pages with the view itself, and keep my controller clean.
+
+Laravel does not provide a default place for these, and some people keep them in routes, but I felt it would keep things simple if I moved them all out to their own place. If these grow to be too much to handle, I might also move some of it out to a namespace and use this file as a router to the namespace, (something like `View::composer('layouts.inc.cms-header', 'Harlo\Composers\CMSHeaderComposer.php');`
+
+
 
 ## Roadmap
 - All emails for resets, etc need to use [Ink](http://zurb.com/ink)
@@ -54,4 +65,5 @@ components.
 - Settings management area. Here we set sitewide variables (facebook url, etc)
 - Need to namespace all the things.
 - Installation bash script?
+- Move helpers out to namespace
 - Make this more SOLID.
