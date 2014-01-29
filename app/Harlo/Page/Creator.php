@@ -20,6 +20,6 @@ class Creator {
             return $this->listener->pageCreationFails($validation->messages());
 		}
         Page::create($input);
-        return $this->listener->pageCreationSucceeds();
+        return $this->listener->pageCreateUpdateSucceeds();
     }
 }

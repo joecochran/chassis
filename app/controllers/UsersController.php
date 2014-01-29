@@ -57,13 +57,7 @@ class UsersController extends BaseController {
     public function store()
     {
 		$input = array_except(Input::all(), ['_method', '_token']);
-        $rules = array(
-            'fullname' => 'required',
-            'username' => 'required|alpha_num|min:3|max:32',
-            'email' => 'required|email',
-            'password' => 'required|confirmed',
-        );
-		$validation = Validator::make($input, $rules);
+		$validation = Validator::make($input, User::$rules);
 		if ($validation->passes())
 		{
             $user = new User;

@@ -36,24 +36,11 @@ class PagesController extends BaseController {
 		return View::make('pages.create');
 	}
 
-
 	public function store()
 	{
         $creator = new Harlo\Page\Creator($this);
         return $creator->create(Input::all());
 	}
-
-    public function pageCreationFails($errors)
-    {
-        return Redirect::route('pages.create')->withInput()->withErrors($validation);
-    }
-
-    public function pageCreationSucceeds()
-    {
-        // dd('hello');
-        echo "hello";
-        return Redirect::route('pages.index');
-    }
 
 	/**
 	 * Display the specified resource.
@@ -93,21 +80,8 @@ class PagesController extends BaseController {
 	 */
 	public function update($id)
 	{
-		$input = array_except(Input::all(), '_method');
-		$validation = Validator::make($input, Page::$rules);
-
-		if ($validation->passes())
-		{
-			$page = $this->page->find($id);
-			$page->update($input);
-
-			return Redirect::route('pages.index');
-		}
-
-		return Redirect::route('pages.edit', $id)
-			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+        $updater = new Harlo\Page\Updater($this);
+        return $updater->update($id, Input::all());
 	}
 
 	/**
@@ -123,4 +97,21 @@ class PagesController extends BaseController {
 		return Redirect::route('pages.index');
 	}
 
+
+    // Success Functions for listener
+
+    public function pageCreationFails($errors)
+    {
+        return Redirect::route('pages.create')->withInput()->withErrors($validation);
+    }
+
+    public function pageCreateUpdateSucceeds()
+    {
+        return Redirect::route('pages.index');
+    }
+
+    public function pageUpdateFails($errors)
+    {
+		return Redirect::route('pages.edit', $id)->withInput()->withErrors($validation);
+    }
 }
