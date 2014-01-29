@@ -36,27 +36,14 @@ class PagesController extends BaseController {
 		return View::make('pages.create');
 	}
 
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
+    public function pageCreationSucceeds();
+
 	public function store()
 	{
-		$input = Input::all();
-		$validation = Validator::make($input, Page::$rules);
+        $creator = new Harlo\Page\Creator($this);
+        $creator->create(Input::all());
 
-		if ($validation->passes())
-		{
-			$this->page->create($input);
-
-			return Redirect::route('pages.index');
-		}
-
-		return Redirect::route('pages.create')
-			->withInput()
-			->withErrors($validation)
-			->with('message', 'There were validation errors.');
+        return Redirect::route('pages.index');
 	}
 
 	/**

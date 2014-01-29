@@ -76,4 +76,9 @@ class UsersController extends BaseController {
 		}
 		return Redirect::route('users.create')->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
     }
+	public function destroy($id)
+	{
+        $user = $this->user->find($id)->delete();
+        return Redirect::route('users.index');
+	}
 }

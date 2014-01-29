@@ -43,7 +43,6 @@ class SettingsController extends BaseController {
 	public function store()
 	{
         $input = Input::all();
-        // validation
         return $this->setting->create($input);
 	}
 

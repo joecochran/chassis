@@ -17226,6 +17226,7 @@ a:hover {
 .container {
   max-width: 960px;
   margin: auto;
+  padding: 0px;
 }
 
 .pull-right {
