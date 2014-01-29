@@ -57,7 +57,8 @@ View Composers are amazing. They allow us to package data and bind it to views w
 
 Laravel does not provide a default place for these, and some people keep them in routes, but I felt it would keep things simple if I moved them all out to their own place. If these grow to be too much to handle, I might also move some of it out to a namespace and use this file as a router to the namespace, (something like `View::composer('layouts.inc.cms-header', 'Harlo\Composers\CMSHeaderComposer.php');`
 
-
+## Harlo namespace.
+in composer.json I am PSR-0 loading app/Harlo, which will contain all classes in the Harlo namespace. At the moment, I am just using this to abstract the user, page, and setting creation tasks from my controller. Eventually, the page creator will be a fairly cumbersome thing, so I would like to move it out to a package and create a simple interface for it.
 
 ## Roadmap
 - All emails for resets, etc need to use [Ink](http://zurb.com/ink)
