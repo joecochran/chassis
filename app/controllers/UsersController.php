@@ -54,4 +54,26 @@ class UsersController extends BaseController {
 		}
 		return Redirect::route('users.edit', $id)->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
 	}
+    public function store()
+    {
+		$input = array_except(Input::all(), ['_method', '_token']);
+        $rules = array(
+            'fullname' => 'required',
+            'username' => 'required|alpha_num|min:3|max:32',
+            'email' => 'required|email',
+            'password' => 'required|confirmed',
+        );
+		$validation = Validator::make($input, $rules);
+		if ($validation->passes())
+		{
+            $user = new User;
+            $user->fullname = $input['fullname'];
+            $user->username = $input['username'];
+            $user->email = $input['email'];
+            $user->password = Hash::make($input['password']);
+            $user->save();
+			return Redirect::route('users.index');
+		}
+		return Redirect::route('users.create')->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
+    }
 }
