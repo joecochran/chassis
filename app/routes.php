@@ -28,3 +28,7 @@ Route::resource('settings', 'SettingsController');
 Route::resource('users', 'UsersController');
 Route::get('{any}', 'PagesController@show');
 
+View::composer('layouts.inc.cms-header', function($view){
+    $currentUser = Auth::user();
+    $view->with('currentUser', $currentUser); 
+});

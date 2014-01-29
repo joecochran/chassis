@@ -13,7 +13,6 @@ class PagesController extends BaseController {
 	{
         $this->page = $page;
         $this->beforeFilter('auth', array('except' => array('show', '')));
-        $this->currentUser = Auth::user();
 	}
 
 	/**
@@ -24,7 +23,7 @@ class PagesController extends BaseController {
 	public function index()
 	{
 		$pages = $this->page->orderBy('title', 'asc')->get();
-		return View::make('pages.index', compact('pages', 'currentUser'));
+		return View::make('pages.index', compact('pages'));
 	}
 
 	/**
@@ -68,12 +67,6 @@ class PagesController extends BaseController {
 	 */
 	public function show($slug = 'home')
 	{
-        $settings = array();
-        $settingsobj = Setting::all();
-        foreach ($settingsobj as $setting) {
-          $settings[$setting->slug] = "$setting->value";
-        }
-        $pages = Page::all();
 		$page = $this->page->whereSlug($slug)->firstOrFail();
 		return View::make('pages.show', compact('page', 'pages', 'settings'));
 	}

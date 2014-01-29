@@ -20,9 +20,9 @@
             </a>
             <div class="right menu">
                 <div class="ui dropdown item user-menu">
-                    <img class="ui avatar image" src="{{ get_gravatar(Auth::user()->email) }}" alt="" />{{ Auth::user()->username }}<i class="dropdown icon"></i>
+                    <img class="ui avatar image" src="{{ get_gravatar($currentUser->email) }}" alt="" />{{ $currentUser->username }}<i class="dropdown icon"></i>
                     <div class="menu ui transition hidden">
-                        <a class="item" href="{{ url('users/'.Auth::user()->id.'/edit') }}">Account</a>
+                        <a class="item" href="{{ url('users/'.$currentUser->id.'/edit') }}">Account</a>
                         <a class="item" href="{{ url('logout') }}">Logout</a>
                     </div>
                 </div> 
