@@ -26,53 +26,33 @@ class UsersController extends BaseController {
     }
 	public function update($id)
 	{
-        // stolen from flirt, lets do it better:
-		$input = array_except(Input::all(), ['_method', '_token']);
-        if(strlen($input['password']) < 1) {
-            unset($input['password']);
-        }
-        $rolemin = Auth::user()->role;
-        //this should be moved out.
-        $rules = array(
-            'fullname' => 'required',
-            'username' => 'required|alpha_num|min:3|max:32',
-            'email' => 'required|email',
-            'password' => 'confirmed',
-        );
-		$validation = Validator::make($input, $rules);
-		if ($validation->passes())
-		{
-            $user = User::find($id);
-            $user->fullname = $input['fullname'];
-            $user->username = $input['username'];
-            $user->email = $input['email'];
-            if( isset($input['password'] )) {
-                $user->password = Hash::make($input['password']);
-            }
-            $user->save();
-			Redirect::route('users.edit', $id);
-		}
-		return Redirect::route('users.edit', $id)->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
+        $updater = new Harlo\User\Updater($this);
+        return $updater->update($id, Input::all());
 	}
     public function store()
     {
-		$input = array_except(Input::all(), ['_method', '_token']);
-		$validation = Validator::make($input, User::$rules);
-		if ($validation->passes())
-		{
-            $user = new User;
-            $user->fullname = $input['fullname'];
-            $user->username = $input['username'];
-            $user->email = $input['email'];
-            $user->password = Hash::make($input['password']);
-            $user->save();
-			return Redirect::route('users.index');
-		}
-		return Redirect::route('users.create')->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
+        $creator = new Harlo\User\Creator($this);
+        return $creator->create(Input::all());
     }
 	public function destroy($id)
 	{
         $user = $this->user->find($id)->delete();
         return Redirect::route('users.index');
 	}
+    public function createUserSuccess()
+    {
+	    return Redirect::route('users.index');
+    }
+    public function createUserFails()
+    {
+		return Redirect::route('users.create')->withInput()->withErrors($validation)->with('message', 'there were validation errors.');
+    }
+    public function updateUserSuccess()
+    {
+	    return Redirect::route('users.index');
+    }
+    public function updateUserFails($validation, $id)
+    {
+		return Redirect::route('users.edit', $id)->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
+    }
 }
