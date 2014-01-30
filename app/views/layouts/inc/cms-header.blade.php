@@ -1,3 +1,4 @@
+<a class="forkme" href="https://github.com/joecochran/chassis"><img src="{{ asset('img/github2.png') }}" alt="" /></a>
 @if(Auth::check())
 <header class="ui fixed main menu">
     <div class="container">

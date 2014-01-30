@@ -13,6 +13,7 @@ class PagesController extends BaseController {
 	{
         $this->page = $page;
         $this->beforeFilter('auth', array('except' => array('show', '')));
+
 	}
 
 	/**

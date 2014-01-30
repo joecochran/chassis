@@ -17260,3 +17260,17 @@ a:hover {
 .ui.buttons.control-group {
   min-width: 114px;
 }
+
+.forkme {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9999;
+}
+.forkme:hover {
+  text-decoration: none;
+  border-bottom: none;
+}
+.forkme img {
+  display: block;
+}
