@@ -11,7 +11,7 @@
     brew install node
     ```
 
-2. Gulp needs to be installed gulp globally. Note: if it complains about permissions, run it with sudo. 
+2. Gulp needs to be installed globally. Note: if it complains about permissions, run it with sudo. 
     ``` 
     npm install -g gulp
     ```
