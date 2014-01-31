@@ -39,6 +39,9 @@ class UsersController extends BaseController {
         $user = $this->user->find($id)->delete();
         return Redirect::route('users.index');
 	}
+
+    // Shitty success methods that I will look into replacing. Am thinking of 
+    // creating a generic create and edit success method that they all call.
     public function createUserSuccess()
     {
 	    return Redirect::route('users.index');

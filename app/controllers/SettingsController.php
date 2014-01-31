@@ -42,8 +42,8 @@ class SettingsController extends BaseController {
 	 */
 	public function store()
 	{
-        $input = Input::all();
-        return $this->setting->create($input);
+        $creator = new Harlo\Setting\Creator($this);
+        return $creator->create(Input::all());
 	}
 
 	/**
@@ -54,10 +54,8 @@ class SettingsController extends BaseController {
 	 */
 	public function update($id)
 	{
-		$input = array_except(Input::all(), '_method');
-        $setting = $this->setting->find($id);
-        $setting->update($input);
-        return Redirect::route('settings.index');
+        $updater = new Harlo\Setting\Updater($this);
+        return $updater->update($id, array_except(Input::all(), '_method'));
 	}
 	/**
 	 * Return a form for editing resource;
@@ -83,4 +81,22 @@ class SettingsController extends BaseController {
         return Redirect::route('settings.index');
 	}
 
+    // Shitty success methods that I will look into replacing. Am thinking of 
+    // creating a generic create and edit success method that they all call.
+    public function createSettingSuccess()
+    {
+	    return Redirect::route('settings.index');
+    }
+    public function createSettingFails()
+    {
+		return Redirect::route('settings.create')->withInput()->withErrors($validation)->with('message', 'there were validation errors.');
+    }
+    public function updateSettingSuccess()
+    {
+	    return Redirect::route('settings.index');
+    }
+    public function updateSettingFails($validation, $id)
+    {
+		return Redirect::route('settings.edit', $id)->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
+    }
 }

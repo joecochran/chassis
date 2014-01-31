@@ -1,5 +1,4 @@
-
-<?php namespace Harlo\User;
+<?php namespace Harlo\Setting;
 
 use Validator;
 use Setting;
@@ -14,30 +13,16 @@ class Updater {
 
     public function update($id, $input)
     {
-		$input = array_except($input, ['_method', '_token']);
-        if(strlen($input['password']) < 1) {
-            unset($input['password']);
-            unset($input['password_confirmation']);
+        $validation = Validator::make($input, Setting::$rules);
+        if ($validation->fails())
+        {
+            return $this->listener->createSettingFails();
         }
-        $rules = array(
-            'fullname' => 'required',
-            'username' => 'required|alpha_num|min:3|max:32',
-            'email' => 'required|email',
-            'password' => 'confirmed',
-        );
-		$validation = Validator::make($input, $rules);
-		if ($validation->fails())
-		{
-            return $this->listener->updateUserFails($validation->messages(), $id);
-		}
-        $user = User::find($id);
-        $user->fullname = $input['fullname'];
-        $user->username = $input['username'];
-        $user->email = $input['email'];
-        if( isset($input['password'] )) {
-            $user->password = Hash::make($input['password']);
-        }
-        $user->save();
-        return $this->listener->updateUserSuccess();
+        $setting = Setting::find($id);
+        $setting->name = $input['name'];
+        $setting->slug = $input['slug'];
+        $setting->value = $input['value'];
+        $setting->save();
+        return $this->listener->createSettingSuccess();
     }
 }
