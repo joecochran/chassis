@@ -6,11 +6,7 @@ View::composer('layouts.inc.cms-header', function($view){
 });
 
 View::composer('layouts.frontend', function($view) {
-    $settings = array();
-    $settingsobj = Setting::all();
-    foreach ($settingsobj as $setting) {
-      $settings[$setting->slug] = "$setting->value";
-    }
+    $settings = Setting::asObj();
     $pages = Page::all();
     $view->with('settings',$settings)->with('pages', $pages);
 });

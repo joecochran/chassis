@@ -13,7 +13,7 @@
 @section('main')
 <div class="container">
     <h1 class="ui header">Edit Page</h1>
-    {{ Form::model($page, array('method' => 'PATCH', 'route' => array('pages.update', $page->id),'class'=>'ui form blue segment')) }}
+    {{ Form::model($page, array('method' => 'PATCH', 'route' => array('pages.update', $page->id),'class'=>'ui form blue segment', 'files' => 'true')) }}
         <div class="field">
             {{ Form::label('title', 'Title:') }}
             {{ Form::text('title',$page->title,array('class'=>'form-control')) }}
@@ -28,6 +28,10 @@
             {{ Form::textarea('description',$page->description,array('class'=>'form-control', 'rows'=>4)) }}
         </div>
 
+        <div class="field">
+            {{ Form::label('banner', 'Banner:') }}
+            {{ Form::file('banner') }}
+        </div>
         <div class="field">
             {{ Form::label('content', 'Content:') }}
             {{ Form::textarea('content',$page->content,array('class'=>'ckeditor')) }}

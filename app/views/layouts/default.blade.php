@@ -15,8 +15,25 @@
     <main class="main-content">
         @yield('main')
     </main> 
-    <footer>
-    
+    <footer class="container">
+        <div class="ui grid">
+            <div class="eight wide column">
+                <p><small>copyright &copy; {{ date('Y') }}</small></p> 
+            </div>
+            <div class="eight wide column">
+                <div class="ui icon tiny buttons pull-right">
+                    <div class="ui facebook button">
+                        <i class="facebook icon"></i>
+                    </div>
+                    <div class="ui twitter button">
+                        <i class="twitter icon"></i>
+                    </div>
+                    <div class="ui google plus button">
+                        <i class="google plus icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
     {{ HTML::script(asset('js/main'.set_min().'.js')) }}
     

@@ -81,6 +81,7 @@ class PagesController extends BaseController {
 	 */
 	public function update($id)
 	{
+        // dd(Input::all());
         $updater = new Harlo\Page\Updater($this);
         return $updater->update($id, Input::all());
 	}

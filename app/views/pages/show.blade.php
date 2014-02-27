@@ -3,12 +3,15 @@
 @section('meta_description', strip_tags($page->description))
 
 @section('main')
+@if($page->banner)
 <div class="banner">
-    <img src="http://placehold.it/1680x500" class="banner-image" alt="" />
+    <img src="{{ URL::to('uploads').'/'.$page->banner }}" class="banner-image" alt="" />
 </div>
-
-<article class="ui segment">
-<h1>{{{ $page->title }}}</h1>
-{{ $page->content }}
-</article>
+@endif
+<div class="container">
+    <article class="ui basic segment">
+        <h1>{{{ $page->title }}}</h1>
+        {{ $page->content }}
+    </article>
+</div>
 @stop

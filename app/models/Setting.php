@@ -10,4 +10,14 @@ class Setting extends Eloquent {
     );
     
     public $timestamps = false;
+
+    public static function asObj()
+    {
+        $arr = array();
+        foreach (static::all() as $setting) {
+            $arr[$setting->slug] = "$setting->value";
+        }
+        $settings = (object) $arr;
+        return $settings;
+    }
 }

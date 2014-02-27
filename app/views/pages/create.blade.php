@@ -13,7 +13,7 @@
 @section('main')
 <div class="container">
     <h1>Create Page</h1>
-    {{ Form::open(array('route' => 'pages.store', 'class' => 'ui form blue segment')) }}
+    {{ Form::open(array('route' => 'pages.store', 'class' => 'ui form blue segment', 'files' => 'true')) }}
         <div class="field">
             {{ Form::label('title', 'Title:') }}
             {{ Form::text('title', '', array('class'=>'form-control')) }}
@@ -26,6 +26,11 @@
         <div class="field">
             {{ Form::label('description', 'Description:') }}
             {{ Form::textarea('description', '', array('class'=>'form-control','rows'=>4)) }}
+        </div>
+
+        <div class="field">
+            {{ Form::label('banner', 'Banner:') }}
+            {{ Form::text('banner', '', array('class'=>'form-control')) }}
         </div>
 
         <div class="field">
