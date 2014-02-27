@@ -2,7 +2,7 @@ var gulp = require('gulp'),
     minifycss = require('gulp-minify-css'),
     autoprefixer = require('gulp-autoprefixer'),
     notify = require('gulp-notify'),
-    sass = require('gulp-ruby-sass'),
+    compass = require('gulp-compass'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     imagemin = require('gulp-imagemin'),
@@ -29,7 +29,12 @@ gulp.task('scripts', function() {
 });
 gulp.task('styles', function(){
     return gulp.src('app/assets/scss/main.scss')
-        .pipe(sass({ style: 'expanded'}))
+        .pipe(compass({
+            css: 'public/css',
+            sass: 'app/assets/scss',
+            image: 'app/assets/img',
+            require: ['semantic-ui-sass']
+        }))
         .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
         .pipe(gulp.dest('public/css'))
         .pipe(rename({suffix: '.min'}))
