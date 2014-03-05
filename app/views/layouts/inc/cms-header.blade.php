@@ -1,5 +1,5 @@
 @if(Auth::check())
-<header class="ui fixed main menu">
+<header class="ui fixed orange inverted main menu">
     <div class="container">
         <div class="menu">
             <a class="item {{ set_active('admin') }}" href="{{ url('admin') }}">

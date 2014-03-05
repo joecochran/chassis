@@ -36,6 +36,9 @@
             </div>
         </div>
     </footer>
+    <div class="ui left help attached icon button">
+        <i class="icon question"></i>
+    </div>
     @endif
     {{ HTML::script(asset('js/main'.set_min().'.js')) }}
     

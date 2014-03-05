@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="ui bottom attached segment">
-            {{ Form::submit('Reset',['class'=>'ui button blue small pull-right']) }}
+            <button class="ui blue button pull-right right labeled icon"><i class="right arrow icon"></i> Send</button>
         </div>
     {{ Form::close() }}
 

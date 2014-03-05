@@ -1,5 +1,6 @@
 @import 'semantic-ui';
 @import '_normalize';
+@import '_theme';
 body {
     font-size:14px;
     font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -63,16 +64,8 @@ header {
 .ui.buttons.control-group {
     min-width: 114px;
 }
-.forkme {
-    position:absolute;
-    top:0;
+.ui.attached.left.button.help {
+    position:fixed;
     right:0;
-    z-index:9999;
-    &:hover {
-        text-decoration:none;
-        border-bottom:none;
-    }
-    img {
-        display:block;
-    }
+    top: 50%;
 }
