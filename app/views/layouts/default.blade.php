@@ -15,6 +15,7 @@
     <main class="main-content">
         @yield('main')
     </main> 
+    @if(Auth::check())
     <footer class="container">
         <div class="ui grid">
             <div class="eight wide column">
@@ -35,6 +36,7 @@
             </div>
         </div>
     </footer>
+    @endif
     {{ HTML::script(asset('js/main'.set_min().'.js')) }}
     
     {{-- Checking if a .ckeditor element exists and then loading in the ckeditor.js file because its huge and expensive --}}
