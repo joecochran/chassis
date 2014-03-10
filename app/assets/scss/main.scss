@@ -69,3 +69,22 @@ header {
     right:0;
     top: 50%;
 }
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+.main-content {
+    min-height:100%;
+    margin-bottom: -86px;
+}
+.main-content:after {
+    display:block;
+    content: "";
+}
+.site-footer,
+.main-content:after {
+    height:86px;
+}

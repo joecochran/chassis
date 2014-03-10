@@ -25,7 +25,6 @@
                         <div class="ui tiny buttons control-group pull-right">
                         {{ Form::open(array('method' => 'DELETE', 'route' => array('pages.destroy', $page->id))) }}
                             {{ link_to_route('pages.edit', 'Edit', array($page->id), array('class' => 'ui button')) }}
-                            <div class="or"></div>
                             {{ Form::submit('Delete', array('class' => 'ui button red')) }}
                         {{ Form::close() }}
                         </div>

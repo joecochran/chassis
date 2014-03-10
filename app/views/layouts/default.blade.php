@@ -9,6 +9,8 @@
 
     {{-- Only modernizr at the top --}}
     {{ HTML::script('js/modernizr-2.6.2.min.js') }}
+    <style type="text/css">
+    </style>
 </head>
 <body>
     @include('layouts.inc.cms-header')
@@ -16,29 +18,15 @@
         @yield('main')
     </main> 
     @if(Auth::check())
-    <footer class="container">
+    <footer class="site-footer container">
         <div class="ui grid">
             <div class="eight wide column">
-                <p><small>copyright &copy; {{ date('Y') }}</small></p> 
+                <p><small>Copyright &copy; {{ date('Y') }}</small></p> 
             </div>
             <div class="eight wide column">
-                <div class="ui icon tiny buttons pull-right">
-                    <div class="ui facebook button">
-                        <i class="facebook icon"></i>
-                    </div>
-                    <div class="ui twitter button">
-                        <i class="twitter icon"></i>
-                    </div>
-                    <div class="ui google plus button">
-                        <i class="google plus icon"></i>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>
-    <div class="ui left help attached icon button">
-        <i class="icon question"></i>
-    </div>
     @endif
     {{ HTML::script(asset('js/main'.set_min().'.js')) }}
     
