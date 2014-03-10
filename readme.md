@@ -55,17 +55,14 @@ This is a growing list of unsorted little functions that are useful. At some poi
 ### app/composers.php
 View Composers are amazing. They allow us to package data and bind it to views when they are called. So if I want to have a list of pages, I can simply include an array called pages with the view itself, and keep my controller clean.
 
-Laravel does not provide a default place for these, and some people keep them in routes, but I felt it would keep things simple if I moved them all out to their own place. If these grow to be too much to handle, I might also move some of it out to a namespace and use this file as a router to the namespace, (something like `View::composer('layouts.inc.cms-header', 'Harlo\Composers\CMSHeaderComposer.php');`
+Laravel does not provide a default place for these, and some people keep them in routes, but I felt it would keep things simple if I moved them all out to their own place. If these grow to be too much to handle, I might also move some of it out to a namespace and use this file as a router to the namespace, (something like `View::composer('layouts.inc.cms-header', 'Ramone\Composers\CMSHeaderComposer.php');`
 
-### Harlo namespace.
-in composer.json I am PSR-0 loading app/Harlo, which will contain all classes in the Harlo namespace. At the moment, I am just using this to abstract the user, page, and setting creation tasks from my controller. Eventually, the page creator will be a fairly cumbersome thing, so I would like to move it out to a package and create a simple interface for it.
-* app/Harlo/Page contains Creator.php and Updater.php, which handle the creation and updating of pages. This pattern is repeated in app/Harlo/Setting and app/Harlo/User. Eventually, I would like to create a generic creation and updating class, as well as a generic set of success and fail methods to call in order to reduce redundancy.
+### Ramone namespace.
+in composer.json I am PSR-0 loading app/Ramone, which will contain all classes in the Ramone namespace. At the moment, I am just using this to abstract the user, page, and setting creation tasks from my controller. Eventually, the page creator will be a fairly cumbersome thing, so I would like to move it out to a package and create a simple interface for it.
+* app/Ramone/Page contains Creator.php and Updater.php, which handle the creation and updating of pages. This pattern is repeated in app/Ramone/Setting and app/Ramone/User. Eventually, I would like to create a generic creation and updating class, as well as a generic set of success and fail methods to call in order to reduce redundancy.
 
 ## Roadmap
-- All emails for resets, etc need to use [Ink](http://zurb.com/ink)
-- User management area. Add, remove, update users.
-- Settings management area. Here we set sitewide variables (facebook url, etc)
-- Need to namespace all the things.
-- Installation bash script?
 - Move helpers out to namespace
+- All emails for resets, etc need to use [Ink](http://zurb.com/ink)
+- Need to namespace all the things.
 - Make this more SOLID.

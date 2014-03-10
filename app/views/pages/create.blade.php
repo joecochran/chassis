@@ -29,11 +29,6 @@
         </div>
 
         <div class="field">
-            {{ Form::label('banner', 'Banner:') }}
-            {{ Form::text('banner', '', array('class'=>'form-control')) }}
-        </div>
-
-        <div class="field">
             {{ Form::label('content', 'Content:') }}
             {{ Form::textarea('content', '', array('class'=>'ckeditor')) }}
         </div>

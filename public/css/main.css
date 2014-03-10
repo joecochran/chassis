@@ -17176,10 +17176,6 @@ body {
 h1, h2, h3, h4, h5 {
   font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
-/* line 9, ../../app/assets/scss/_theme.scss */
-.inverted.orange.main.menu {
-  background-color: #DD4814; }
-
 /* line 12, ../../app/assets/scss/_theme.scss */
 body {
   background: #efefef; }

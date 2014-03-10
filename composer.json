@@ -5,8 +5,7 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-        "way/generators": "dev-master",
-        "j7mbo/twitter-api-php": "dev-master"
+        "way/generators": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
@@ -18,7 +17,7 @@
 			"app/tests/TestCase.php"
 		],
         "psr-0": {
-            "Harlo": "app/"
+            "Ramone": "app/"
         },
         "files": ["app/helpers.php"]
 	},

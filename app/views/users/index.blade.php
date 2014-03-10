@@ -4,7 +4,6 @@
 <div class="container">
     <div class="ui basic segment">
         <h1 class="ui header">Users</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
     </div>
     @if ($users->count())
     <table class="ui table padded blue sortable segment" valign=top>

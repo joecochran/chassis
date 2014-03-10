@@ -9,7 +9,7 @@
     "gulp-uglify": "~0.2.0",
     "gulp-imagemin": "~0.1.4",
     "gulp-exec": "~1.0.4",
-    "gulp-cache": "~0.1.1",
+    "gulp-cache": "~0.1.3",
     "gulp-util": "~2.2.12",
     "gulp-rename": "~0.2.2",
     "gulp-clean": "~0.2.4",

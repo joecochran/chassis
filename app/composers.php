@@ -2,11 +2,12 @@
 
 View::composer('layouts.inc.cms-header', function($view){
     $currentUser = Auth::user();
-    $view->with('currentUser', $currentUser); 
+    $settings = Setting::asObj();
+    $view->with('currentUser', $currentUser)->with('settings', $settings); 
 });
 
 View::composer('layouts.frontend', function($view) {
     $settings = Setting::asObj();
     $pages = Page::all();
-    $view->with('settings',$settings)->with('pages', $pages);
+    $view->with('settings', $settings)->with('pages', $pages);
 });
