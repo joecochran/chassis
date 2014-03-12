@@ -3,12 +3,14 @@
 @import '_theme';
 body {
     font-size:14px;
-    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
 h1, h2, h3, h4, h5 {
-    font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
-
+pre {
+    font-family: 'Ubuntu Mono';
+}
 .login-container {
     max-width:400px;
     margin:auto;
@@ -76,7 +78,7 @@ html, body {
 }
 .main-content {
     min-height:100%;
-    margin-bottom: -86px;
+    margin-bottom: -54px;
 }
 .main-content:after {
     display:block;
@@ -84,5 +86,8 @@ html, body {
 }
 .site-footer,
 .main-content:after {
-    height:86px;
+    height:54px;
+}
+pre {
+    
 }
