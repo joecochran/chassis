@@ -17331,11 +17331,11 @@ a:hover {
   margin: auto;
   padding: 0px; }
 
-/* line 38, ../../app/assets/scss/main.scss */
+/* line 35, ../../app/assets/scss/main.scss */
 .pull-right {
   float: right; }
 
-/* line 41, ../../app/assets/scss/main.scss */
+/* line 39, ../../app/assets/scss/main.scss */
 .main.menu {
   top: 0;
   min-width: 320px;
@@ -17347,49 +17347,49 @@ a:hover {
   -webkit-transition: margin 0.3s ease;
   transition: margin 0.3s ease; }
 
-/* line 55, ../../app/assets/scss/main.scss */
+/* line 53, ../../app/assets/scss/main.scss */
 .main-content {
   padding-top: 50px; }
 
-/* line 58, ../../app/assets/scss/main.scss */
+/* line 56, ../../app/assets/scss/main.scss */
 .ui.dropdown.item.user-menu {
   padding: 0.37em .95em; }
 
-/* line 61, ../../app/assets/scss/main.scss */
+/* line 59, ../../app/assets/scss/main.scss */
 .banner-image {
   max-width: 100%; }
 
-/* line 64, ../../app/assets/scss/main.scss */
+/* line 62, ../../app/assets/scss/main.scss */
 .ui.buttons.control-group {
   min-width: 114px; }
 
-/* line 67, ../../app/assets/scss/main.scss */
+/* line 65, ../../app/assets/scss/main.scss */
 .ui.attached.left.button.help {
   position: fixed;
   right: 0;
   top: 50%; }
 
-/* line 73, ../../app/assets/scss/main.scss */
+/* line 71, ../../app/assets/scss/main.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 76, ../../app/assets/scss/main.scss */
+/* line 74, ../../app/assets/scss/main.scss */
 html, body {
   height: 100%; }
 
-/* line 79, ../../app/assets/scss/main.scss */
+/* line 77, ../../app/assets/scss/main.scss */
 .main-content {
   min-height: 100%;
   margin-bottom: -86px; }
 
-/* line 83, ../../app/assets/scss/main.scss */
+/* line 81, ../../app/assets/scss/main.scss */
 .main-content:after {
   display: block;
   content: ""; }
 
-/* line 88, ../../app/assets/scss/main.scss */
+/* line 86, ../../app/assets/scss/main.scss */
 .site-footer,
 .main-content:after {
   height: 86px; }
