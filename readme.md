@@ -68,7 +68,7 @@ in composer.json I am PSR-0 loading app/Ramone, which will contain all classes i
 - Make this more SOLID.
 
 
-## License
+### License
 Copyright (c) 2014, Joe Cochran
 All rights reserved.
 
