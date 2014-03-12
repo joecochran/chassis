@@ -26,12 +26,12 @@ class UsersController extends BaseController {
     }
 	public function update($id)
 	{
-        $updater = new Harlo\User\Updater($this);
+        $updater = new Chassis\User\Updater($this);
         return $updater->update($id, Input::all());
 	}
     public function store()
     {
-        $creator = new Harlo\User\Creator($this);
+        $creator = new Chassis\User\Creator($this);
         return $creator->create(Input::all());
     }
 	public function destroy($id)
@@ -39,23 +39,4 @@ class UsersController extends BaseController {
         $user = $this->user->find($id)->delete();
         return Redirect::route('users.index');
 	}
-
-    // Shitty success methods that I will look into replacing. Am thinking of 
-    // creating a generic create and edit success method that they all call.
-    public function createUserSuccess()
-    {
-	    return Redirect::route('users.index');
-    }
-    public function createUserFails()
-    {
-		return Redirect::route('users.create')->withInput()->withErrors($validation)->with('message', 'there were validation errors.');
-    }
-    public function updateUserSuccess()
-    {
-	    return Redirect::route('users.index');
-    }
-    public function updateUserFails($validation, $id)
-    {
-		return Redirect::route('users.edit', $id)->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
-    }
 }

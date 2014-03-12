@@ -1,8 +1,9 @@
-<?php namespace Harlo\User;
+<?php namespace Chassis\User;
 
 use Validator;
 use User;
 use Hash;
+use Redirect;
 
 class Updater {
     protected $listener;
@@ -29,7 +30,7 @@ class Updater {
 		$validation = Validator::make($input, $rules);
 		if ($validation->fails())
 		{
-            return $this->listener->updateUserFails($validation->messages(), $id);
+            return Redirect::route('users.edit', $id)->withInput()->withErrors($validation)->with('message', 'There were validation errors.');
 		}
         $user = User::find($id);
         $user->fullname = $input['fullname'];
@@ -39,6 +40,6 @@ class Updater {
             $user->password = Hash::make($input['password']);
         }
         $user->save();
-        return $this->listener->updateUserSuccess();
+	    return Redirect::route('users.index');
     }
 }

@@ -57,16 +57,15 @@ View Composers are amazing. They allow us to package data and bind it to views w
 
 Laravel does not provide a default place for these, and some people keep them in routes, but I felt it would keep things simple if I moved them all out to their own place. If these grow to be too much to handle, I might also move some of it out to a namespace and use this file as a router to the namespace, (something like `View::composer('layouts.inc.cms-header', 'Ramone\Composers\CMSHeaderComposer.php');`
 
-### Ramone namespace.
-in composer.json I am PSR-0 loading app/Ramone, which will contain all classes in the Ramone namespace. At the moment, I am just using this to abstract the user, page, and setting creation tasks from my controller. Eventually, the page creator will be a fairly cumbersome thing, so I would like to move it out to a package and create a simple interface for it.
-* app/Ramone/Page contains Creator.php and Updater.php, which handle the creation and updating of pages. This pattern is repeated in app/Ramone/Setting and app/Ramone/User. Eventually, I would like to create a generic creation and updating class, as well as a generic set of success and fail methods to call in order to reduce redundancy.
+### Chassis namespace.
+in composer.json I am PSR-0 loading app/Chassis, which will contain all classes in the Chassis namespace. At the moment, I am just using this to abstract the user, page, and setting creation tasks from my controller. Eventually, the page creator will be a fairly cumbersome thing, so I would like to move it out to a package and create a simple interface for it.
+* app/Chassis/Page contains Creator.php and Updater.php, which handle the creation and updating of pages. This pattern is repeated in app/Chassis/Setting and app/Chassis/User. Eventually, I would like to create a generic creation and updating class, as well as a generic set of success and fail methods to call in order to reduce redundancy.
 
 ## Roadmap
 - Move helpers out to namespace
 - All emails for resets, etc need to use [Ink](http://zurb.com/ink)
 - Need to namespace all the things.
 - Make this more SOLID.
-
 
 ### License
 Copyright (c) 2014, Joe Cochran

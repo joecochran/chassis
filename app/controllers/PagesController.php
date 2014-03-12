@@ -13,7 +13,6 @@ class PagesController extends BaseController {
 	{
         $this->page = $page;
         $this->beforeFilter('auth', array('except' => array('show', '')));
-
 	}
 
 	/**
@@ -39,7 +38,7 @@ class PagesController extends BaseController {
 
 	public function store()
 	{
-        $creator = new Harlo\Page\Creator($this);
+        $creator = new Chassis\Page\Creator($this);
         return $creator->create(Input::all());
 	}
 
@@ -81,8 +80,7 @@ class PagesController extends BaseController {
 	 */
 	public function update($id)
 	{
-        // dd(Input::all());
-        $updater = new Harlo\Page\Updater($this);
+        $updater = new Chassis\Page\Updater($this);
         return $updater->update($id, Input::all());
 	}
 
@@ -98,22 +96,4 @@ class PagesController extends BaseController {
 
 		return Redirect::route('pages.index');
 	}
-
-
-    // Success Functions for listener
-
-    public function pageCreationFails($errors)
-    {
-        return Redirect::route('pages.create')->withInput()->withErrors($validation);
-    }
-
-    public function pageCreateUpdateSucceeds()
-    {
-        return Redirect::route('pages.index');
-    }
-
-    public function pageUpdateFails($errors)
-    {
-		return Redirect::route('pages.edit', $id)->withInput()->withErrors($validation);
-    }
 }
