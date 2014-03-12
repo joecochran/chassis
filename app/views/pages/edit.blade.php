@@ -19,12 +19,12 @@
             {{ Form::text('title',$page->title,array('class'=>'form-control')) }}
         </div>
         <div class="field">
-            {{ Form::label('slug', 'URL Slug:') }}
+            <label for="slug">URL Slug: {{ info_icon("Page will be located at ".url('slug')) }}</label> 
             {{ Form::text('slug',$page->slug,array('class'=>'form-control')) }}
         </div>
 
         <div class="field">
-            {{ Form::label('description', 'Description:') }}
+            <label for="description">Description: {{ info_icon("No more than 160 characters.") }}</label>
             {{ Form::textarea('description',$page->description,array('class'=>'form-control', 'rows'=>4)) }}
         </div>
 
@@ -34,7 +34,6 @@
         </div>
         <div class="ui small buttons">
             {{ Form::submit('Update', array('class' => 'ui blue button')) }}
-            <div class="or"></div>
             <a href="{{ url('pages') }}" class='ui red button'>Cancel</a>
         </div>
     {{ Form::close() }}

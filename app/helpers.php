@@ -32,3 +32,11 @@ function get_gravatar($email)
     $hash = md5(strtolower(trim($email)));
     return "//www.gravatar.com/avatar/$hash";
 }
+function ui_popup($icon, $message, $variation = null, $position = null)
+{
+    return '<i class="popup '.$icon.'" data-content="'.$message.'" data-variation="'.$variation.'" data-position="'.$position.'"></i>';
+}
+function info_icon($message)
+{
+    return '<i class="popup info icon" data-content="'.$message.'" data-variation="small" data-position="right center"></i>';
+}

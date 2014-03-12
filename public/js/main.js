@@ -22490,4 +22490,4 @@ $.fn.video.settings = {
   };
 
 })(jQuery);
-console.log('hello, world');
+$('.popup').popup();
