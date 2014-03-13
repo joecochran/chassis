@@ -59,7 +59,7 @@ Laravel does not provide a default place for these, and some people keep them in
 
 ### Chassis namespace.
 in composer.json I am PSR-4 loading app/Chassis, which will contain all classes in the Chassis namespace. At the moment, I am just using this to abstract the user, page, and setting creation tasks from my controller. Eventually, the page creator will be a fairly cumbersome thing, so I would like to move it out to a package and create a simple interface for it.
-* app/Chassis/Page contains Creator.php and Updater.php, which handle the creation and updating of pages. This pattern is repeated in app/Chassis/Setting and app/Chassis/User. Eventually, I would like to create a generic creation and updating class, as well as a generic set of success and fail methods to call in order to reduce redundancy.
+app/Chassis/Page contains Creator.php and Updater.php, which handle the creation and updating of pages. This pattern is repeated in app/Chassis/Setting and app/Chassis/User. Eventually, I would like to create a generic creation and updating class, as well as a generic set of success and fail methods to call in order to reduce redundancy.
 
 ## Roadmap
 - Move helpers out to namespace
