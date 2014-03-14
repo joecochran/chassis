@@ -4,6 +4,7 @@
 body {
     font-size:14px;
     font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    color: #555555
 }
 h1, h2, h3, h4, h5 {
     font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -88,6 +89,41 @@ html, body {
 .main-content:after {
     height:54px;
 }
-pre {
-    
+.sticky.menu.stuck {
+    top:50px;
+    position:fixed;
+}
+.ui.override.toggle.checkbox {
+    font-size:.75em;
+    float:right;
+    user-select: none; 
+}
+.segment-collapse {
+    cursor: pointer;
+    position:absolute;
+    top:10px;
+    right: 10px;
+    .hidden {
+        display:none;
+    }
+}
+.muted {
+    color: #888888;
+    font-size: .85em;
+}
+.m-pagelist .meta {
+    position: absolute;
+    top: 9px;
+    right: 11px;
+}
+.m-pagelist .item {
+    text-align: center;
+}
+.m-pagelist .extra {
+    text-align: left;
+}
+.m-pagelist .item {
+    text-align: center;
+    min-height: 254px !important;
+    margin-bottom: 4.25em !important;
 }

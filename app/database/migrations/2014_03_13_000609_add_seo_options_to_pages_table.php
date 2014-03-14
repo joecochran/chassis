@@ -14,10 +14,9 @@ class AddSeoOptionsToPagesTable extends Migration {
 	{
 		Schema::table('pages', function(Blueprint $table) {
 			$table->string('canonical')->nullable();
-			$table->string('og-sitename')->nullable();
-			$table->text('og-description')->nullable();
-			$table->string('og-url')->nullable();
-			$table->string('og-title')->nullable();
+			$table->text('og_description')->nullable();
+			$table->string('og_url')->nullable();
+			$table->string('og_title')->nullable();
 		});
 	}
 
@@ -30,10 +29,9 @@ class AddSeoOptionsToPagesTable extends Migration {
 	{
 		Schema::table('pages', function(Blueprint $table) {
 			$table->dropColumn('canonical');
-			$table->dropColumn('og-sitename');
-			$table->dropColumn('og-description');
-			$table->dropColumn('og-url');
-			$table->dropColumn('og-title');
+			$table->dropColumn('og_description');
+			$table->dropColumn('og_url');
+			$table->dropColumn('og_title');
 		});
 	}
 
