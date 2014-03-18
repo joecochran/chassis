@@ -32,19 +32,7 @@
             </article>
             @endforeach
             <div class="blog-pager">
-                <div class="ui secondary pagination menu">
-                    <a class="item">
-                        <i class="left arrow icon"></i> Previous
-                    </a>
-                    <a class="item">1</a>
-                    <a class="item">2</a>
-                    <a class="item">3</a>
-                    <a class="item">4</a>
-                    <a class="item">5</a>
-                    <a class="item">
-                        Next <i class="icon right arrow"></i>
-                    </a>
-                </div>
+                {{ $posts->links() }}
             </div>
         </div>
     </div>
