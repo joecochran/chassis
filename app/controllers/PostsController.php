@@ -22,11 +22,7 @@ class PostsController extends BaseController {
 	 */
 	public function index()
 	{
-		// $pages = $this->post->orderBy('title', 'asc')->get();
-        $page = Page::whereSlug('blog')->first();
-        $posts = $this->post->with('category')->paginate(5);
-        $categories = Category::with('posts')->get();
-		return View::make('posts.index', compact('posts', 'page', 'categories'));
+		return View::make('posts.index');
 	}
 
 	/**
@@ -53,8 +49,9 @@ class PostsController extends BaseController {
 	 */
 	public function show($slug)
 	{
-		$page = $this->post->whereSlug($slug)->firstOrFail();
-		return View::make('posts.show', compact('post'));
+		$post = $this->post->whereSlug($slug)->firstOrFail();
+		// return View::make('posts.show', compact('post'));
+        return $post;
 	}
 
 	/**

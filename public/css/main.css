@@ -17469,3 +17469,7 @@ html, body {
   .blog-pager .ui.pagination.menu .item {
     min-width: 2em;
     font-size: .75rem; }
+
+/* line 148, ../../app/assets/scss/main.scss */
+.ui.small.segment {
+  font-size: .75em; }

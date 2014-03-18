@@ -5,6 +5,7 @@ class PostsTableSeeder extends Seeder {
 	public function run()
 	{
 		// Uncomment the below to wipe the table clean before populating
+        DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		DB::table('posts')->truncate();
 
 		$posts = array(
@@ -53,7 +54,8 @@ class PostsTableSeeder extends Seeder {
         ]);
 
 		// Uncomment the below to run the seeder
-		DB::table('posts')->insert($posts);
+        DB::table('posts')->insert($posts);
+        DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 }

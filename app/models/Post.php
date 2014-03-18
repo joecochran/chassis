@@ -10,6 +10,10 @@ class Post extends Eloquent {
     );
     public function category()
     {
-        return $this->belongsTo('Category', 'category_id');
+        return $this->belongsTo('Category');
+    }
+    public function tags()
+    {
+        return $this->belongsToMany('Tag');
     }
 }

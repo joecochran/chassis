@@ -4,7 +4,7 @@
  * return 'active' if on current page
  *
  */
-function set_active($path, $active = 'active')
+function set_active($path, $active = ' active')
 {
     return Request::is($path) ? $active : '';
 }
@@ -50,4 +50,10 @@ function override_checkbox($id, $override, $default) {
 }
 function segment_collapse() {
     return '<div class="segment-collapse"><i class="collapse icon large link"></i><i class="expand icon hidden large link"></i></div>';
+}
+function replace_space($string) {
+    return strtolower(str_replace(' ', '-', $string));
+}
+function replace_dash($string) {
+    return strtolower(str_replace('-', ' ', $string));
 }

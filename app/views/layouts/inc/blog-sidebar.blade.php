@@ -1,16 +1,18 @@
             <aside class="ui vertical menu">
                 <p>Welcome to Barton's Community Archive</p>
                     <h3 class="header item"><i class="folder icon"></i> Categories</h3>
-                    <a href="" class="item">All</a>
+                    <a href="{{ url('blog') }}" class="item{{ set_active('blog') }}">All <div class="ui label">{{ $totalPosts }}</div></a>
                     @foreach($categories as $category)
                     @if($category->posts()->count())
-                    <a href="{{ url('blog/category/'.strtolower($category->name)) }}" class="item">{{ $category->name }} <div class="ui label">{{ $category->posts()->count() }}</div></a>
+                    <a href="{{ url('blog/category/'.strtolower($category->name)) }}" class="item{{ set_active('blog/category/'.strtolower($category->name)) }}">{{ $category->name }} <div class="ui label">{{ $category->posts()->count() }}</div></a>
                     @endif
                     @endforeach
-                    <h3 class="header item"><i class="tag icon"></i> Subjects</h3>
-                    <a class="item" href="">Subject 1</a>
-                    <a class="item" href="">Subject 2</a>
-                    <a class="item" href="">Subject 3</a>
+                    <h3 class="header item"><i class="tag icon"></i> Tags</h3>
+                    @foreach ($tags as $tag)
+                    @if($tag->posts->count())
+                    <a class="item" href="{{ url('blog/tag/'.replace_space($tag->name)) }}">{{ $tag->name }} <div class="ui label">{{ $tag->posts->count() }}</div></a>
+                    @endif
+                    @endforeach
                     <h3 class="header item"><i class="archive icon"></i> Archive</h3>
                     <div class="item">
                         2012

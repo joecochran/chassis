@@ -16,12 +16,13 @@ Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
 
 Route::get('blog', 'PostsController@index');
-
+Route::get('blog/{slug}', 'PostsController@show');
 
 
 Route::get('blog/category/', 'CategoriesController@index');
 Route::get('blog/category/{name}', 'CategoriesController@index');
-
+Route::get('blog/tag/', 'TagssController@index');
+Route::get('blog/tag/{name}', 'TagsController@index');
 
 
 Route::controller('password', 'RemindersController');

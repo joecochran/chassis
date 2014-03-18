@@ -1,6 +1,6 @@
 <?php
 
-class CategoriesController extends BaseController {
+class TagsController extends BaseController {
 
 	/**
 	 * Page Repository
@@ -9,15 +9,15 @@ class CategoriesController extends BaseController {
 	 */
 	protected $post;
 
-	public function __construct(Category $category)
+	public function __construct(Tag $tag)
 	{
-        $this->category = $category;
+        $this->tag = $tag;
 	}
 
     public function index($name = null)
     {
         if (!$name) return Redirect::to('blog');
-        $category = Category::whereName($name)->with('posts')->first();
+        $tag = Tag::whereName($name)->with('posts')->first();
 		return View::make('posts.index');
     }
 }
