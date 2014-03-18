@@ -67,7 +67,12 @@ app/Chassis/Page contains Creator.php and Updater.php, which handle the creation
 - Need to namespace all the things.
 - Make this more SOLID.
 - Blog:
-  - Add authors, rss/atom feed, comments
+  - Authors
+  - rss/atom feed
+  - comments
+  - Tags within Categories and multiple tags
+  - Drafts
+  - Soft Deletes
 
 ### License
 Copyright (c) 2014, Joe Cochran

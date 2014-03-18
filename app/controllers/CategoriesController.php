@@ -18,6 +18,7 @@ class CategoriesController extends BaseController {
     {
         if (!$name) return Redirect::to('blog');
         $category = Category::whereName($name)->with('posts')->first();
-		return View::make('posts.index');
+        $posts = $category->posts()->paginate(5);
+		return View::make('posts.index', compact('posts', 'category'));
     }
 }

@@ -10,7 +10,7 @@
                     <h3 class="header item"><i class="tag icon"></i> Tags</h3>
                     @foreach ($tags as $tag)
                     @if($tag->posts->count())
-                    <a class="item" href="{{ url('blog/tag/'.replace_space($tag->name)) }}">{{ $tag->name }} <div class="ui label">{{ $tag->posts->count() }}</div></a>
+                    <a class="item {{ set_active('blog/tag/'.replace_space($tag->name)) }}" href="{{ url('blog/tag/'.replace_space($tag->name)) }}">{{ $tag->name }} <div class="ui label">{{ $tag->posts->count() }}</div></a>
                     @endif
                     @endforeach
                     <h3 class="header item"><i class="archive icon"></i> Archive</h3>

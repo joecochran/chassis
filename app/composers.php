@@ -17,5 +17,5 @@ View::composer('posts.index', function($view){
     $posts = Post::with('category')->with('tags')->paginate(5);
     $tags = Tag::with('posts')->get();
     $categories = Category::with('posts')->get();
-    $view->with(array('page'=>$page, 'totalPosts'=>$totalPosts, 'posts'=>$posts, 'categories'=>$categories, 'tags'=>$tags));
+    $view->with(array('page'=>$page, 'totalPosts'=>$totalPosts, 'categories'=>$categories, 'tags'=>$tags));
 });

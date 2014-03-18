@@ -2,11 +2,6 @@
 
 class PostsController extends BaseController {
 
-	/**
-	 * Page Repository
-	 *
-	 * @var Page
-	 */
 	protected $post;
 
 	public function __construct(Post $post)
@@ -14,15 +9,14 @@ class PostsController extends BaseController {
         $this->post = $post;
         $this->beforeFilter('auth', array('except' => array('show', 'index')));
 	}
-
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
 	public function index()
 	{
-		return View::make('posts.index');
+        $posts = $this->post->with('category')->paginate(5);
+		return View::make('posts.index', compact('posts'));
+	}
+	public function archive()
+	{
+        return 'this is an archive';
 	}
 
 	/**

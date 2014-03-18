@@ -17,7 +17,9 @@ class TagsController extends BaseController {
     public function index($name = null)
     {
         if (!$name) return Redirect::to('blog');
+        $name = replace_dash($name); 
         $tag = Tag::whereName($name)->with('posts')->first();
-		return View::make('posts.index');
+        $posts = $tag->posts()->paginate(5);
+		return View::make('posts.index', compact('posts'))->with('category',$tag);
     }
 }
