@@ -66,6 +66,8 @@ app/Chassis/Page contains Creator.php and Updater.php, which handle the creation
 - All emails for resets, etc need to use [Ink](http://zurb.com/ink)
 - Need to namespace all the things.
 - Make this more SOLID.
+- Blog:
+  - Add authors, rss/atom feed, comments
 
 ### License
 Copyright (c) 2014, Joe Cochran
