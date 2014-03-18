@@ -14,7 +14,16 @@ Route::get('/', 'PagesController@show');
 Route::resource('sessions', 'SessionsController', array('only' => array('create', 'store', 'destroy')));
 Route::get('login', 'SessionsController@create');
 Route::get('logout', 'SessionsController@destroy');
+
 Route::get('blog', 'PostsController@index');
+
+
+
+Route::get('blog/category/', 'CategoriesController@index');
+Route::get('blog/category/{name}', 'CategoriesController@index');
+
+
+
 Route::controller('password', 'RemindersController');
 
 Route::get('admin', function(){

@@ -13,7 +13,7 @@
                 <header class="ui basic segment">
                     <h2 class="ui header"><a href="{{ URL::to($post->slug) }}">{{ $post->title }}</a></h2>
                     <div>
-                        <span>{{ $post->category_id }}</span> | <time>{{ date('d.m.Y',strtotime($post->created_at)) }}</time>
+                        <span>{{ $post->category->name }}</span> | <time>{{ date('d.m.Y',strtotime($post->created_at)) }}</time>
                     </div>
                     @if(isset($post->banner))
                     <img class="ui image" src="{{ $post->banner }}" alt="" />

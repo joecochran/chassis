@@ -6,6 +6,10 @@ class Post extends Eloquent {
 	public static $rules = array(
 		'title' => 'required',
 		'slug' => 'required',
-		'content' => 'required'
-	);
+        'content' => 'required',
+    );
+    public function category()
+    {
+        return $this->belongsTo('Category', 'category_id');
+    }
 }

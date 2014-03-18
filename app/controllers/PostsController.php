@@ -24,8 +24,9 @@ class PostsController extends BaseController {
 	{
 		// $pages = $this->post->orderBy('title', 'asc')->get();
         $page = Page::whereSlug('blog')->first();
-        $posts = $this->post->paginate(5);
-		return View::make('posts.index', compact('posts', 'page'));
+        $posts = $this->post->with('category')->paginate(5);
+        $categories = Category::with('posts')->get();
+		return View::make('posts.index', compact('posts', 'page', 'categories'));
 	}
 
 	/**
