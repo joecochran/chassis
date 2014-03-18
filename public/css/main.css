@@ -17447,3 +17447,25 @@ html, body {
   text-align: center;
   min-height: 254px !important;
   margin-bottom: 4.25em !important; }
+
+/* line 130, ../../app/assets/scss/main.scss */
+.ui.dropdown.selection {
+  font-size: 12px; }
+  /* line 132, ../../app/assets/scss/main.scss */
+  .ui.dropdown.selection .item {
+    font-size: 12px; }
+
+/* line 136, ../../app/assets/scss/main.scss */
+.ui.basic.segment.pagehead {
+  padding: 0 0 1em;
+  margin: 0 1em;
+  -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1); }
+
+/* line 141, ../../app/assets/scss/main.scss */
+.blog-pager {
+  margin-top: 1em; }
+  /* line 143, ../../app/assets/scss/main.scss */
+  .blog-pager .ui.pagination.menu .item {
+    min-width: 2em;
+    font-size: .75rem; }

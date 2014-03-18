@@ -2,12 +2,13 @@
 
 @section('main')
 <div class="container">
-    <div class="ui basic segment">
+    <div class="ui basic segment pagehead">
         <h1 class="ui header">Pages</h1>
+        @if(Auth::user()->role == 0)
         <a href="{{ URL::to('pages/create') }}" class="ui right labeled blue small icon button"><i class="ui icon add"></i>New page</a>
+        @endif
     </div>
     <div class="ui basic segment">
-        <div class="ui divider"></div>
         @if ($pages->count())
         <div class="ui three items m-pagelist">
             @foreach ($pages as $page)
@@ -21,9 +22,9 @@
                 <div class="extra">
                     {{ Form::open(array('method' => 'DELETE', 'route' => array('pages.destroy', $page->id), 'class' => '')) }}
                     {{ link_to_route('pages.edit', 'Edit', array($page->id), array('class' => 'module leftbutton ui mini button')) }}
-                    {{-- @if(Auth::user()->role == 0) --}}
+                    @if(Auth::user()->role == 0)
                     {{ Form::submit('Delete', array('class' => 'ui negative mini button confirm-delete')) }}
-                    {{-- @endif --}}
+                    @endif
                     {{ Form::close() }}
                 </div>
             </div>

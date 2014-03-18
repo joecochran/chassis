@@ -8,9 +8,18 @@ class UsersTableSeeder extends Seeder {
 		DB::table('users')->truncate();
 
 		$users = array([
+            'fullname'=>'John Doe',
             'username'=>'admin',
             'password'=>Hash::make('Password1'),
-            'email'=>'email@domain.com'
+            'email'=>'admin@domain.com',
+            'role'=>0
+        ],
+        [
+            'fullname'=>'Jane Doe',
+            'username'=>'editor',
+            'password'=>Hash::make('Password1'),
+            'email'=>'editor@domain.com',
+            'role'=>1
         ]);
 
 		// Uncomment the below to run the seeder

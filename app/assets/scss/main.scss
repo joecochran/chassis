@@ -127,3 +127,21 @@ html, body {
     min-height: 254px !important;
     margin-bottom: 4.25em !important;
 }
+.ui.dropdown.selection {
+    font-size:12px;
+    .item {
+        font-size: 12px;
+    }
+}
+.ui.basic.segment.pagehead {
+    padding:0 0 1em;
+    margin: 0 1em;
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
+}
+.blog-pager {
+    margin-top:1em;
+    .ui.pagination.menu .item {
+        min-width:2em;
+        font-size:.75rem;
+    }
+}
