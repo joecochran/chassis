@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddBannerToPagesTable extends Migration {
+class AddSeoOptionsToPagesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -13,7 +13,10 @@ class AddBannerToPagesTable extends Migration {
 	public function up()
 	{
 		Schema::table('pages', function(Blueprint $table) {
-			$table->string('banner')->nullable();
+			$table->string('canonical')->nullable();
+			$table->text('og_description')->nullable();
+			$table->string('og_url')->nullable();
+			$table->string('og_title')->nullable();
 		});
 	}
 
@@ -25,7 +28,10 @@ class AddBannerToPagesTable extends Migration {
 	public function down()
 	{
 		Schema::table('pages', function(Blueprint $table) {
-			$table->dropColumn('banner');
+			$table->dropColumn('canonical');
+			$table->dropColumn('og_description');
+			$table->dropColumn('og_url');
+			$table->dropColumn('og_title');
 		});
 	}
 

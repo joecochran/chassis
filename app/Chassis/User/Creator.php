@@ -1,8 +1,9 @@
-<?php namespace Harlo\User;
+<?php namespace Chassis\User;
 
 use Validator;
 use User;
 use Hash;
+use Redirect;
 
 class Creator {
     protected $listener;
@@ -17,7 +18,7 @@ class Creator {
 		$validation = Validator::make($input, User::$rules);
 		if ($validation->fails())
 		{
-            return $this->listener->createUserFails();
+            return Redirect::route('users.create')->withInput()->withErrors($validation)->with('message', 'there were validation errors.');
 		}
         $user = new User;
         $user->fullname = $input['fullname'];
@@ -25,6 +26,6 @@ class Creator {
         $user->email = $input['email'];
         $user->password = Hash::make($input['password']);
         $user->save();
-        return $this->listener->createUserSuccess();
+	    return Redirect::route('users.index');
     }
 }

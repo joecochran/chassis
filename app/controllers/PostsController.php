@@ -1,18 +1,18 @@
 <?php
 
-class PagesController extends BaseController {
+class PostsController extends BaseController {
 
 	/**
 	 * Page Repository
 	 *
 	 * @var Page
 	 */
-	protected $page;
+	protected $post;
 
-	public function __construct(Page $page)
+	public function __construct(Post $post)
 	{
-        $this->page = $page;
-        $this->beforeFilter('auth', array('except' => array('show', '')));
+        $this->post = $post;
+        $this->beforeFilter('auth', array('except' => array('show', 'index')));
 	}
 
 	/**
@@ -22,8 +22,10 @@ class PagesController extends BaseController {
 	 */
 	public function index()
 	{
-		$pages = $this->page->orderBy('title', 'asc')->get();
-		return View::make('pages.index', compact('pages'));
+		// $pages = $this->post->orderBy('title', 'asc')->get();
+        $page = Page::whereSlug('blog')->first();
+        $posts = $this->post->all();
+		return View::make('posts.index', compact('posts', 'page'));
 	}
 
 	/**
@@ -48,10 +50,10 @@ class PagesController extends BaseController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show($slug = 'home')
+	public function show($slug)
 	{
-		$page = $this->page->whereSlug($slug)->firstOrFail();
-		return View::make('pages.show', compact('page', 'pages', 'settings'));
+		$page = $this->post->whereSlug($slug)->firstOrFail();
+		return View::make('posts.show', compact('post'));
 	}
 
 	/**

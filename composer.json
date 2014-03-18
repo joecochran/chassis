@@ -16,8 +16,8 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php"
 		],
-        "psr-0": {
-            "Ramone": "app/"
+        "psr-4": {
+            "Chassis\\": "App/Chassis"
         },
         "files": ["app/helpers.php"]
 	},

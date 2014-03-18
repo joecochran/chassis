@@ -9,17 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>{{{ $page->title }}} - {{{ $settings->sitename }}}</title>
-    <link rel="canonical" href="{{{ URL::to($page->slug) }}} ">
+    <link rel="canonical" href="{{ $page->canonical }}">
     <meta type="description" content="@yield('meta_description', $settings->meta_description)"/>
 
 {{-- OG and Card Data here --}}
     <meta property="og:site_name" content="{{{ $setting->og_sitename or $settings->sitename }}}">
     <meta property="og:title" content="{{{ $page->og_title or $page->title }}}">
-    <meta property="og:url" content="">
+    <meta property="og:url" content="{{ $page->og_url or $page->canonical }}">
     <meta property="og:image" content="https://d262ilb51hltx0.cloudfront.net/max/800/1*w-nO7nvEW-AB11WOLTdeUw.jpeg">
+    @if(isset($settings->fb_appid))
     <meta property="fb:app_id" content="542599432471018">
+    @endif
     <meta property="og:description" content="{{{ $page->og_description or $page->description }}}">
-
 
     {{ HTML::style('//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700') }}
     {{ HTML::style(asset('css/main'.set_min().'.css')) }}

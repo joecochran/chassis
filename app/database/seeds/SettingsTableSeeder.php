@@ -5,7 +5,7 @@ class SettingsTableSeeder extends Seeder {
 	public function run()
 	{
 		// Uncomment the below to wipe the table clean before populating
-		// DB::table('settings')->truncate();
+		DB::table('settings')->truncate();
 
 		$settings = array(
             ['name'=>'Sitename', 'slug' => 'sitename', 'value'=>'Website Name' ],

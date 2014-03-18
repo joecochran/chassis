@@ -32,3 +32,22 @@ function get_gravatar($email)
     $hash = md5(strtolower(trim($email)));
     return "//www.gravatar.com/avatar/$hash";
 }
+function ui_popup($icon, $message, $variation = null, $position = null)
+{
+    return '<i class="popup '.$icon.'" data-content="'.$message.'" data-variation="'.$variation.'" data-position="'.$position.'"></i>';
+}
+function info_icon($message)
+{
+    return '<i class="popup info icon" data-content="'.$message.'" data-variation="small" data-position="right center"></i>';
+}
+function override_checkbox($id, $override, $default) {
+    return '<div class="inline field">'."\n"
+        . '<div class="ui toggle override checkbox">'."\n"
+        . '<input type="checkbox" class="override_checkbox" id="'.$id.'" data-override="'.$override.'" data-default="'.$default.'">'."\n"
+        . '<label for="'.$id.'">Override?</label>'."\n"
+        . '</div>'."\n"
+        . '</div>'."\n";
+}
+function segment_collapse() {
+    return '<div class="segment-collapse"><i class="collapse icon large link"></i><i class="expand icon hidden large link"></i></div>';
+}

@@ -19,6 +19,18 @@
         <div class="field">
             {{ Form::label('email', 'Email') }}
             {{ Form::text('email',$user->email,array('class'=>'form-control', 'rows'=>4)) }}
+        </div>
+        <div class="field">
+            {{ Form::label('role', 'Role') }}
+            <div class="ui dropdown selection">
+                {{ Form::hidden('role', $user->role) }}
+                <div class="default text">Role</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class="item" data-value="0">Administrator</div>
+                    <div class="item" data-value="1">Editor</div>
+                </div>
+            </div>
             <div class="ui divider"></div>
         </div>
         <div class="field">
