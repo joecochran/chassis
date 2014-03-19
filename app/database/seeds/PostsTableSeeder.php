@@ -52,8 +52,8 @@ class PostsTableSeeder extends Seeder {
 <p>It has a complete lack of seeing and some basic stuff that part? The future, lying comes from the powerpoint. That\'s come to be used. It\'s also psychological and often truth than the appropriate thing as possible advantage. It\'s also acknowledge that, or stay at every multivariate spacetime point is in many of clutter is provided.</p>',
             'slug'=>'designer-ipsum',
             'category_id'=>'2',
-            'banner'=>'billmurray.jpeg',
-            'banner_alt'=>'Bill Murray',
+            'banner'=>NULL,
+            'banner_alt'=>NULL,
             'created_at'=>'2014-01-10 22:02:16',
             'published_at'=>'2014-01-10 22:02:16'
         ],[

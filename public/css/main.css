@@ -17359,3 +17359,11 @@ i.orange.icon {
 /* line 155, ../../app/assets/scss/main.scss */
 .ui.vertical.menu .item {
   font-size: .85rem; }
+
+/* line 158, ../../app/assets/scss/main.scss */
+.ui.image {
+  height: auto; }
+
+/* line 161, ../../app/assets/scss/main.scss */
+.articlebody {
+  text-align: justify; }

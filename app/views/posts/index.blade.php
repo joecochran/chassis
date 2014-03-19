@@ -39,10 +39,10 @@
                         </span>
                     </div>
                     @if(isset($post->banner))
-                    <img itemprop="image" class="ui image" src="{{ url('img/'.$post->banner) }}" alt="$post->banner_alt" />
+                    <img itemprop="image" height="320" width="680" class="ui image" src="{{ url('img/'.$post->banner) }}" alt="$post->banner_alt" />
                     @endif
                 </header>
-                <div class="ui basic segment" itemprop="articleBody">
+                <div class="ui basic segment articlebody" itemprop="articleBody">
                 {{ $post->content }}
                 </div>
                 <footer class="ui basic segment">

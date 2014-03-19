@@ -13,7 +13,7 @@ class AddBannerAltToPostsTable extends Migration {
 	public function up()
 	{
         Schema::table('posts', function(Blueprint $table) {
-            $table->text('banner_alt');
+            $table->text('banner_alt')->nullable();
         });
 	}
 
