@@ -68,10 +68,9 @@ app/Chassis/Page contains Creator.php and Updater.php, which handle the creation
 - Make this more SOLID.
 - Blog:
   - Authors
-  - rss/atom feed
   - comments
   - Tags within Categories and multiple tags
-  - Drafts
+  - Drafts/Published status
   - Soft Deletes
 
 ### License
