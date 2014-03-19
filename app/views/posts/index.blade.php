@@ -20,38 +20,40 @@
             @endif
             @foreach ($posts as $post)
             <article class="ui vertical segment" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
-                <header class="ui basic segment">
-                    <meta itemprop="inLanguage" content="{{ $settings->lang }}"/>
-                    <a href="{{ URL::to('blog/'.$post->slug) }}"><h2 class="ui header" itemprop="headline">{{ $post->title }}</h2></a>
-                    <div class="ui small segment">
-                        <span><i class="folder icon" title="Category"></i><a href="">{{ $post->category->name }}</a></span>
-                        @if($post->tags->count())
-                        <span style="margin-left:2em">
-                            <i class="icon tags" title="Tags"></i>
-                            @foreach($post->tags as $tag)
-                            <a href="" rel="tag"><span itemprop="keywords">{{ $tag->name }}</span></a>
-                            @endforeach
-                        </span>
+                <div class="ui basic segment">
+                    <header>
+                        <meta itemprop="inLanguage" content="{{ $settings->lang }}"/>
+                        <a href="{{ URL::to('blog/'.$post->slug) }}"><h2 class="ui header" itemprop="headline">{{ $post->title }}</h2></a>
+                        <div class="ui small segment">
+                            <span><i class="folder icon" title="Category"></i><a href="{{ url('blog/category/'.strtolower($post->category->name)) }}">{{ $post->category->name }}</a></span>
+                            @if($post->tags->count())
+                            <span style="margin-left:2em">
+                                <i class="icon tags" title="Tags"></i>
+                                @foreach($post->tags as $tag)
+                                <a href="{{ url('blog/tag/'.replace_space($tag->name)) }}" rel="tag"><span itemprop="keywords">{{ $tag->name }}</span></a>
+                                @endforeach
+                            </span>
+                            @endif
+                            <span style="margin-left:2em">
+                                <i class="icon calendar" title="Date"></i>
+                                <time datetime="{{ date('Y-m-d',strtotime($post->created_at)) }}" pubdate>{{ date('l, F jS, Y',strtotime($post->created_at)) }}</time>
+                            </span>
+                        </div>
+                        @if(isset($post->banner))
+                        <img itemprop="image" height="320" width="680" class="ui image" src="{{ url('img/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
                         @endif
-                        <span style="margin-left:2em">
-                            <i class="icon calendar" title="Date"></i>
-                            <time datetime="{{ date('Y-m-d',strtotime($post->created_at)) }}" pubdate>{{ date('l, F jS, Y',strtotime($post->created_at)) }}</time>
-                        </span>
+                    </header>
+                    <div class="articlebody" itemprop="articleBody">
+                        {{ $post->content }}
                     </div>
-                    @if(isset($post->banner))
-                    <img itemprop="image" height="320" width="680" class="ui image" src="{{ url('img/'.$post->banner) }}" alt="$post->banner_alt" />
-                    @endif
-                </header>
-                <div class="ui basic segment articlebody" itemprop="articleBody">
-                {{ $post->content }}
+                    <footer class="ui">
+                        <i class="icon black link linkedin"></i>
+                        <i class="icon black link twitter"></i>
+                        <i class="icon black link facebook"></i>
+                        <i class="icon black link google plus"></i>
+                        <i class="icon black link mail"></i>
+                    </footer>
                 </div>
-                <footer class="ui basic segment">
-                    <i class="icon black link linkedin"></i>
-                    <i class="icon black link twitter"></i>
-                    <i class="icon black link facebook"></i>
-                    <i class="icon black link google plus"></i>
-                    <i class="icon black link mail"></i>
-                </footer>
             </article>
             @endforeach
             <div class="blog-pager">

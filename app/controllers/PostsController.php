@@ -14,18 +14,10 @@ class PostsController extends BaseController {
         $posts = $this->post->with('category')->paginate(5);
 		return View::make('posts.index', compact('posts'));
 	}
-	public function archive($month, $year)
+	public function archive($year, $month)
 	{
-        // return 'this is an archive';
-        $posts = Post::raw_where('MONTH(created_at) = ? ', array($month))->raw_where('YEAR(created_at) = ?', array($year))->get();
-        // $most_recent = News::order_by('id', 'desc')->first();
-        $blog = Post::order_by('created_at', 'desc')->get();
-        $months = array();
-        foreach ($blog as $post){
-            $months[date('F Y', strtotime($post->created_at))] = date('m/Y', strtotime($post->created_at));
-        }        
-        // return View::make('posts.index', compact('posts','months'));
-        return $posts;
+        $posts = Post::whereRaw('MONTH(created_at) = ? ', array($month))->whereRaw('YEAR(created_at) = ?', array($year))->paginate(5);
+        return View::make('posts.index', compact('posts','months'));
 	}
     
     public function create()
