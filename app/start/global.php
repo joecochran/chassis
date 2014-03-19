@@ -91,3 +91,11 @@ require app_path().'/filters.php';
 |
 */
 require app_path().'/composers.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Macros File
+|--------------------------------------------------------------------------
+*/
+require app_path().'/macros.php';
+

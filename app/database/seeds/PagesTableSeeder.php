@@ -9,10 +9,17 @@ class PagesTableSeeder extends Seeder {
 
 		$pages = array(
             [
-            'title'=>'home',
+            'title'=>'Home',
             'description'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             'content'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             'slug'=>'home',
+            'canonical'=>'http://google.com', 
+            ],
+            [
+            'title'=>'Contact',
+            'description'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            'content'=>'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            'slug'=>'contact',
             'canonical'=>'http://google.com', 
             ],
             [
