@@ -7,38 +7,39 @@
         <div class="four wide column">
             @include('layouts.inc.blog-sidebar')
         </div>
-        <div class="twelve wide column">
+        <div class="twelve wide column" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
             @if(isset($category))
             <div class="ui basic segment pagehead">
                 <h1 class="ui header">{{ $category->name }}</h1>
             </div>
             @endif
             @foreach ($posts as $post)
-            <article class="ui vertical segment">
+            <article class="ui vertical segment" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
                 <header class="ui basic segment">
-                    <h2 class="ui header"><a href="{{ URL::to('blog/'.$post->slug) }}">{{ $post->title }}</a></h2>
+                    <meta itemprop="inLanguage" content="{{ $settings->lang }}"/>
+                    <a href="{{ URL::to('blog/'.$post->slug) }}"><h2 class="ui header" itemprop="headline">{{ $post->title }}</h2></a>
                     <div class="ui small segment">
-                        <span><i class="folder icon"></i><a href="">{{ $post->category->name }}</a></span>
+                        <span><i class="folder icon" title="Category"></i><a href="">{{ $post->category->name }}</a></span>
                         @if($post->tags->count())
                         <span style="margin-left:2em">
-                            <i class="icon tags"></i>
+                            <i class="icon tags" title="Tags"></i>
                             @foreach($post->tags as $tag)
-                            <span><a href="">{{ $tag->name }}</a></span>
+                            <a href="" rel="tag"><span itemprop="keywords">{{ $tag->name }}</span></a>
                             @endforeach
                         </span>
                         @endif
                         <span style="margin-left:2em">
-                            <i class="icon calendar"></i>
-                            <time>{{ date('d.m.Y',strtotime($post->created_at)) }}</time>
+                            <i class="icon calendar" title="Date"></i>
+                            <time datetime="{{ date('Y-m-d',strtotime($post->created_at)) }}" pubdate>{{ date('l, F jS, Y',strtotime($post->created_at)) }}</time>
                         </span>
                     </div>
                     @if(isset($post->banner))
-                    <img class="ui image" src="{{ $post->banner }}" alt="" />
+                    <img itemprop="image" class="ui image" src="{{ url('img/'.$post->banner) }}" alt="$post->banner_alt" />
                     @endif
                 </header>
-                <main class="ui basic segment">
+                <div class="ui basic segment" itemprop="articleBody">
                 {{ $post->content }}
-                </main>
+                </div>
                 <footer class="ui basic segment">
                     <i class="icon black link linkedin"></i>
                     <i class="icon black link twitter"></i>
