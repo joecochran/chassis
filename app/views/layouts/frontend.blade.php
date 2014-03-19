@@ -37,14 +37,17 @@
             </div>
         </div>
         <nav class="ui menu">
-            <ul class="container">
+            <div class="container">
             @foreach($pages as $pagex)
-            <li class="{{ set_active($pagex->slug) }} item">{{ link_to($pagex->slug, $pagex->title) }}</li>
+            <div class="{{ set_active($pagex->slug) }} item">{{ link_to($pagex->slug, $pagex->title) }}</div>
             @endforeach
-            @if(Auth::check())
-            <li class="item">{{ link_to('admin', 'Admin') }}</li>
-            @endif
-            </ul>
+            <div class="right menu">
+                @yield('rightmenu')
+                @if(Auth::check())
+                <div class="item">{{ link_to('admin', 'Admin') }}</div>
+                @endif
+            </div>
+            </div>
         </nav>
     </header>
 

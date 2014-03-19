@@ -3,6 +3,9 @@
 @section('alternate')
 <link rel="alternate" type="application/atom+xml" title="{{ $settings->sitename }}" href="/blog/feed">
 @stop
+@section('rightmenu')
+<div class="item"><a href="{{ url('blog/feed') }}" target="_blank"><i class="icon orange link rss sign"></i></div>
+@stop
 @section('main')
 <div class="container">
     <div class="ui stackable grid">

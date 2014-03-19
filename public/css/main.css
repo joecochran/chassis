@@ -17173,9 +17173,9 @@ body {
 
 /* line 4, ../../app/assets/scss/main.scss */
 body {
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  line-height: 1.4;
+  line-height: 1.5;
   color: #555555; }
 
 /* line 10, ../../app/assets/scss/main.scss */
@@ -17351,3 +17351,11 @@ html, body {
 /* line 149, ../../app/assets/scss/main.scss */
 .ui.small.segment {
   font-size: .75em; }
+
+/* line 152, ../../app/assets/scss/main.scss */
+i.orange.icon {
+  color: #DD4814; }
+
+/* line 155, ../../app/assets/scss/main.scss */
+.ui.vertical.menu .item {
+  font-size: .85rem; }
