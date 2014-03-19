@@ -28,7 +28,8 @@ Route::get('blog/category/', 'CategoriesController@index');
 Route::get('blog/category/{name}', 'CategoriesController@index');
 Route::get('blog/tag/', 'TagsController@index');
 Route::get('blog/tag/{name}', 'TagsController@index');
-Route::get('blog/{year}/{month}', 'PostsController@archive');
+Route::get('blog/archive/{year}/{month}', 'PostsController@archive');
+Route::get('blog/archive/{year}', 'PostsController@archive');
 Route::get('blog/{slug}', 'PostsController@show');
 
 Route::controller('password', 'RemindersController');

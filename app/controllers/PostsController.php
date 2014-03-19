@@ -14,10 +14,14 @@ class PostsController extends BaseController {
         $posts = $this->post->with('category')->paginate(5);
 		return View::make('posts.index', compact('posts'));
 	}
-	public function archive($year, $month)
+	public function archive($year, $month = null)
 	{
-        $posts = Post::whereRaw('MONTH(created_at) = ? ', array($month))->whereRaw('YEAR(created_at) = ?', array($year))->paginate(5);
-        return View::make('posts.index', compact('posts','months'));
+        if ($month) {
+            $posts = Post::whereRaw('MONTH(created_at) = ? ', array($month))->whereRaw('YEAR(created_at) = ?', array($year))->paginate(5);
+        } else {
+            $posts = Post::whereRaw('YEAR(created_at) = ?', array($year))->paginate(5);
+        }
+        return View::make('posts.index', compact('posts'));
 	}
     
     public function create()
@@ -40,7 +44,7 @@ class PostsController extends BaseController {
 	public function show($slug)
 	{
 		$post = $this->post->whereSlug($slug)->firstOrFail();
-		// return View::make('posts.show', compact('post'));
+		return View::make('posts.show', compact('post'));
         return $post;
 	}
 

@@ -29,7 +29,7 @@
 {{-- Only modernizr at the top --}}
     {{ HTML::script('js/modernizr-2.6.2.min.js') }}
 </head>
-<body>
+<body class="frontend">
     <header>
         <div class="container">
             <div class="ui basic segment">

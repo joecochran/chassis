@@ -14,7 +14,15 @@
                 @endif
                 @endforeach
                 <h3 class="header item"><i class="archive icon"></i> Archive</h3>
-                @foreach(array_unique($months) as $title => $month)
-                <a class="item" href="{{ url('blog/'.$month) }}"><?=$title?></a>
+                @foreach($archive as $year => $months)
+                <div class="item">
+                    <a href="{{ url('blog/archive/'.$year) }}">{{ $year }}</a>
+                    <div class="menu">
+                        @foreach($months as $month) 
+                        <a class="item" href="{{ url('blog/archive/'.$year.'/'.$month) }}">{{ date("F", mktime(0, 0, 0, $month, 10)) }}</a>
+                        @endforeach
+                    </div>
+                </div>
+                {{-- <a class="item" href="{{ url('blog/archive/'.$month) }}"><?=$title?></a>--}}
                 @endforeach
             </aside>

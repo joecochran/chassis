@@ -17285,6 +17285,10 @@ table {
 body {
   background: #efefef; }
 
+/* line 8, ../../app/assets/scss/_theme.scss */
+body.frontend {
+  background: #f6f6f6; }
+
 /* line 4, ../../app/assets/scss/main.scss */
 body {
   font-size: 16px;
