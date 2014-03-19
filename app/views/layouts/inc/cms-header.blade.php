@@ -10,6 +10,10 @@
                 <i class="text file outline icon"></i>
                 Pages
             </a>
+            <a class="{{ set_active('posts') }} item" href="{{ url('posts') }}">
+                <i class="rss icon"></i>
+                Posts
+            </a>
             <a class="{{ set_active('settings') }} item" href="{{ url('settings') }}">
                 <i class="settings icon"></i>
                 Settings

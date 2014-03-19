@@ -31,13 +31,12 @@ Route::get('blog/tag/{name}', 'TagsController@index');
 Route::get('blog/archive/{year}/{month}', 'PostsController@archive');
 Route::get('blog/archive/{year}', 'PostsController@archive');
 Route::get('blog/{slug}', 'PostsController@show');
-
+Route::resource('posts', 'PostsController');
 Route::controller('password', 'RemindersController');
-
 Route::get('admin', function(){
     return View::make('dashboard');
 })->before('auth');
-
+Route::get('posts', 'PostsController@admin');
 Route::resource('pages', 'PagesController');
 
 

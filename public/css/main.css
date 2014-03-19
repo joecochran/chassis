@@ -17485,3 +17485,7 @@ i.orange.icon {
 /* line 161, ../../app/assets/scss/main.scss */
 .articlebody {
   text-align: justify; }
+
+/* line 164, ../../app/assets/scss/main.scss */
+.ui.tiny.labels .label, .ui.tiny.label {
+  font-size: 0.65rem; }

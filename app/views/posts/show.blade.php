@@ -13,7 +13,7 @@
             <article itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
                 <div class="ui basic segment">
                     <header>
-                        <meta itemprop="inLanguage" content="{{ $settings->lang }}"/>
+                        <meta itemprop="inLanguage" content="{{ $settings->lang }}" />
                         <span><h1 class="ui header" itemprop="headline">{{ $post->title }}</h1></span>
                         <div class="ui small segment">
                             <span><i class="folder icon" title="Category"></i><a href="{{ url('blog/category/'.strtolower($post->category->name)) }}">{{ $post->category->name }}</a></span>

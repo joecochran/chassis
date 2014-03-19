@@ -47,7 +47,12 @@ class PostsController extends BaseController {
 		return View::make('posts.show', compact('post'));
         return $post;
 	}
-
+    public function admin()
+    {
+        $posts = $this->post->orderBy('created_at', 'desc')->with('category')->with('tags')->paginate(10);
+        return View::make('posts.admin', compact('posts'));
+        // return $posts;
+    }
 	/**
 	 * Show the form for editing the specified resource.
 	 *

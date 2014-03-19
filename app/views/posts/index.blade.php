@@ -44,8 +44,6 @@
                         <div class="articlebody" itemprop="articleBody">
                             {{ $post->content }}
                         </div>
-                        <footer class="ui">
-                        </footer>
                     </div>
                 </article>
                 @endforeach
