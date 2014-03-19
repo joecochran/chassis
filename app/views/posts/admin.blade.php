@@ -2,9 +2,7 @@
 
 @section('main')
 <div class="container">
-    <div class="ui basic segment">
-        <h1 class="ui header">Posts</h1>
-    </div>
+    <h1 class="ui header">Posts</h1>
     @if ($posts->count())
     <table class="ui table padded blue sortable segment" valign=top>
         <thead>

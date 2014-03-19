@@ -11,15 +11,15 @@ class PostsController extends BaseController {
 	}
 	public function index()
 	{
-        $posts = $this->post->with('category')->paginate(5);
+        $posts = $this->post->orderBy('created_at', 'desc')->with('category')->paginate(5);
 		return View::make('posts.index', compact('posts'));
 	}
 	public function archive($year, $month = null)
 	{
         if ($month) {
-            $posts = Post::whereRaw('MONTH(created_at) = ? ', array($month))->whereRaw('YEAR(created_at) = ?', array($year))->paginate(5);
+            $posts = Post::whereRaw('MONTH(created_at) = ? ', array($month))->whereRaw('YEAR(created_at) = ?', array($year))->orderBy('created_at', 'desc')->paginate(5);
         } else {
-            $posts = Post::whereRaw('YEAR(created_at) = ?', array($year))->paginate(5);
+            $posts = Post::whereRaw('YEAR(created_at) = ?', array($year))->orderBy('created_at', 'desc')->paginate(5);
         }
         return View::make('posts.index', compact('posts'));
 	}
@@ -61,14 +61,14 @@ class PostsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$page = $this->page->find($id);
+		$post = $this->post->find($id)->with('category')->with('tags')->first();
 
-		if (is_null($page))
+		if (is_null($post))
 		{
-			return Redirect::route('pages.index');
+			return Redirect::route('posts.index');
 		}
 
-		return View::make('pages.edit', compact('page'));
+		return View::make('posts.edit', compact('post'));
 	}
 
 	/**

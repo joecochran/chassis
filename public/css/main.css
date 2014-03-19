@@ -17362,7 +17362,7 @@ a:hover {
 
 /* line 66, ../../app/assets/scss/main.scss */
 .ui.buttons.control-group {
-  min-width: 114px; }
+  min-width: 120px; }
 
 /* line 69, ../../app/assets/scss/main.scss */
 .ui.attached.left.button.help {
@@ -17489,3 +17489,7 @@ i.orange.icon {
 /* line 164, ../../app/assets/scss/main.scss */
 .ui.tiny.labels .label, .ui.tiny.label {
   font-size: 0.65rem; }
+
+/* line 167, ../../app/assets/scss/main.scss */
+.hidden {
+  display: none !important; }

@@ -2,6 +2,7 @@
 <header class="ui fixed main menu">
     <div class="container">
         <div class="menu">
+            <span class="item hidden"></span>
             <a class="item {{ set_active('admin') }}" href="{{ url('admin') }}">
                 <i class="dashboard icon"></i>
                 Sitename

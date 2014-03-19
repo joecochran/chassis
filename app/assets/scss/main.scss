@@ -64,7 +64,7 @@ a:hover {
     max-width:100%;
 }
 .ui.buttons.control-group {
-    min-width: 114px;
+    min-width: 120px;
 }
 .ui.attached.left.button.help {
     position:fixed;
@@ -163,4 +163,7 @@ i.orange.icon {
 }
 .ui.tiny.labels .label, .ui.tiny.label {
     font-size: 0.65rem;
+}
+.hidden {
+    display:none !important;
 }
