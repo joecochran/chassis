@@ -29,8 +29,8 @@ class PostsTableSeeder extends Seeder {
 <p>Made in the interiors of collapsing stars, the ash of stellar alchemy. Birth Vangelis Cambrian explosion hundreds of thousands adipisci velit the carbon in our apple pies sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam cosmos, galaxies, circumnavigated! Muse about, culture sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam gathered by gravity, stirred by starlight kindling the energy hidden in matter corpus callosum.</p>',
             'slug'=>'saganipsum',
             'category_id'=>'2',
-            'banner'=>'billmurray.jpeg',
-            'banner_alt'=>'Bill Murray',
+            'banner'=>'carlsagan.jpg',
+            'banner_alt'=>'Carl Sagan',
             'created_at'=>'2013-11-02 22:02:16',
             'published_at'=>'2013-11-02 22:02:16'
         ],[
@@ -40,8 +40,8 @@ class PostsTableSeeder extends Seeder {
             'content'=>'<p>My money\'s in that office, right? If she start giving me some bullshit about it ain\'t there, and we got to go someplace else and get it, I\'m gonna shoot you in the head then and there. Then I\'m gonna shoot that bitch in the kneecaps, find out where my goddamn money is. She gonna tell me too. Hey, look at me when I\'m talking to you, motherfucker. You listen: we go in there, and that nigga Winston or anybody else is in there, you the first motherfucker to get shot. You understand?</p>',
             'slug'=>'philantrophy-helps-many',
             'category_id'=>'1',
-            'banner'=>'billmurray.jpeg',
-            'banner_alt'=>'Bill Murray',
+            'banner'=>'samuel-l-jackson.jpg',
+            'banner_alt'=>'Portrait of Samuel L Jackson',
             'created_at'=>'2013-12-22 22:02:16',
             'published_at'=>'2013-12-22 22:02:16'
         ],[
