@@ -10,6 +10,7 @@
 
     <title>{{{ $page->title }}} - {{{ $settings->sitename }}}</title>
     <link rel="canonical" href="{{ $page->canonical }}">
+    @yield('alternate')
     <meta type="description" content="@yield('meta_description', $settings->meta_description)"/>
 
 {{-- OG and Card Data here --}}

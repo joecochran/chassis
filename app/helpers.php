@@ -57,3 +57,11 @@ function replace_space($string) {
 function replace_dash($string) {
     return strtolower(str_replace('-', ' ', $string));
 }
+function post_tag_uri($post)
+{
+    $parsedUrl = parse_url(URL::to('blog/'.$post->slug));
+    $output[] = $parsedUrl['host'].',';
+    $output[] = $post->created_at->format('Y-m-d').':';
+    $output[] = $parsedUrl['path'];
+    return implode('', $output);
+}

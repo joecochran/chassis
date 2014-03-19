@@ -1,6 +1,8 @@
 @extends('layouts.frontend')
 
-
+@section('alternate')
+<link rel="alternate" type="application/atom+xml" title="{{ $settings->sitename }}" href="/blog/feed">
+@stop
 @section('main')
 <div class="container">
     <div class="ui stackable grid">
