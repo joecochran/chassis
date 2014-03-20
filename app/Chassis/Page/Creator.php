@@ -15,6 +15,13 @@ class Creator {
 
     public function create($input)
     {
+        if (Input::hasFile('banner'))
+        {
+            $file = Input::file('banner');
+            $name = time() . '-' . $file->getClientOriginalName();
+            $file = $file->move(public_path().'/uploads/', $name);
+            $input['banner'] = $name;
+        }
 		$validation = Validator::make($input, Page::$rules);
 
 		if ($validation->fails())

@@ -24183,4 +24183,6 @@ $('#post-banner .dimmer').on('click', function(event){
 $( "body" ).click(function( event ) {
   console.log( "clicked: " + event.target.nodeName );
 });
-$('.trumbo').trumbowyg();
+$('.trumbo').trumbowyg({
+    semantic: true
+});

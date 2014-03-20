@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chassis</title>
-    {{ HTML::style('//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700') }}
-    {{ HTML::style('http://fonts.googleapis.com/css?family=Ubuntu+Mono|Ubuntu:400,700,400italic,700italic') }}
     {{ HTML::style(asset('css/main'.set_min().'.css')) }}
 
     {{-- Only modernizr at the top --}}

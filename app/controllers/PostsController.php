@@ -11,27 +11,34 @@ class PostsController extends BaseController {
 	}
 	public function index()
 	{
-        $posts = $this->post->orderBy('created_at', 'desc')->with('category')->paginate(5);
+        $posts = $this->post
+            ->orderBy('created_at', 'desc')
+            ->with('category')
+            ->paginate(5);
 		return View::make('posts.index', compact('posts'));
 	}
 	public function archive($year, $month = null)
 	{
         if ($month) {
-            $posts = Post::whereRaw('MONTH(created_at) = ? ', array($month))->whereRaw('YEAR(created_at) = ?', array($year))->orderBy('created_at', 'desc')->paginate(5);
+            $posts = Post::whereRaw('MONTH(created_at) = ? ', array($month))
+                ->whereRaw('YEAR(created_at) = ?', array($year))
+                ->orderBy('created_at', 'desc')->paginate(5);
         } else {
-            $posts = Post::whereRaw('YEAR(created_at) = ?', array($year))->orderBy('created_at', 'desc')->paginate(5);
+            $posts = Post::whereRaw('YEAR(created_at) = ?', array($year))
+                ->orderBy('created_at', 'desc')
+                ->paginate(5);
         }
         return View::make('posts.index', compact('posts'));
 	}
     
     public function create()
 	{
-		return View::make('pages.create');
+		return View::make('posts.create');
 	}
 
 	public function store()
 	{
-        $creator = new Chassis\Page\Creator($this);
+        $creator = new Chassis\Post\Creator($this);
         return $creator->create(Input::all());
 	}
 
@@ -43,9 +50,9 @@ class PostsController extends BaseController {
 	 */
 	public function show($slug)
 	{
-		$post = $this->post->whereSlug($slug)->firstOrFail();
+		$post = $this->post->whereSlug($slug)->with('category')->with('tags')->firstOrFail();
 		return View::make('posts.show', compact('post'));
-        return $post;
+        // return $post;
 	}
     public function admin()
     {
@@ -61,8 +68,8 @@ class PostsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		$post = $this->post->find($id)->with('category')->with('tags')->first();
-
+		$post = $this->post->with('category')->with('tags')->find($id);
+        // return $post;
 		if (is_null($post))
 		{
 			return Redirect::route('posts.index');
@@ -79,7 +86,8 @@ class PostsController extends BaseController {
 	 */
 	public function update($id)
 	{
-        $updater = new Chassis\Page\Updater($this);
+        dd(Input::all());
+        $updater = new Chassis\Post\Updater($this);
         return $updater->update($id, Input::all());
 	}
 
@@ -91,8 +99,8 @@ class PostsController extends BaseController {
 	 */
 	public function destroy($id)
 	{
-		$this->page->find($id)->delete();
+		$this->post->find($id)->delete();
 
-		return Redirect::route('pages.index');
+		return Redirect::route('s.index');
 	}
 }

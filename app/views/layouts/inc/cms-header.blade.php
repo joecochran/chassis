@@ -1,26 +1,26 @@
 @if(Auth::check())
-<header class="ui fixed main menu">
+<header class="ui fixed inverted main menu">
     <div class="container">
         <div class="menu">
             <span class="item hidden"></span>
             <a class="item {{ set_active('admin') }}" href="{{ url('admin') }}">
-                <i class="dashboard icon"></i>
+                <i class="dashboard orange icon"></i>
                 Sitename
             </a>
             <a class="{{ set_active('pages') }} item" href="{{ url('pages') }}">
-                <i class="text file outline icon"></i>
+                <i class="text file outline orange icon"></i>
                 Pages
             </a>
             <a class="{{ set_active('posts') }} item" href="{{ url('posts') }}">
-                <i class="rss icon"></i>
+                <i class="rss orange icon"></i>
                 Posts
             </a>
             <a class="{{ set_active('settings') }} item" href="{{ url('settings') }}">
-                <i class="settings icon"></i>
+                <i class="settings orange icon"></i>
                 Settings
             </a>
             <a class="{{ set_active('users') }} item" href="{{ url('users') }}">
-                <i class="users icon"></i>
+                <i class="users orange icon"></i>
                 Users
             </a>
             <div class="right menu">

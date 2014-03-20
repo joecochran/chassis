@@ -1,7 +1,7 @@
-<?php namespace Chassis\Page;
+<?php namespace Chassis\Post;
 
 use Validator;
-use Page;
+use Post;
 use Input;
 use Redirect;
 
@@ -22,16 +22,14 @@ class Updater {
             $name = time() . '-' . $file->getClientOriginalName();
             $file = $file->move(public_path().'/uploads/', $name);
             $input['banner'] = $name;
-        } else {
-            $input['banner'] = Page::find($id)->banner;
         }
-		$validation = Validator::make($input, Page::$rules);
+		$validation = Validator::make($input, Post::$rules);
         if ($validation->fails())
         {
-            return Redirect::route('pages.edit', $id)->withInput()->withErrors($validation);
+            return Redirect::route('posts.edit', $id)->withInput()->withErrors($validation);
         }
-        $page = Page::find($id);
-        $page->update($input);
-        return Redirect::route('pages.index');
+        $post = Post::find($id);
+        $post->update($input);
+        return Redirect::route('posts.index');
     }
 }

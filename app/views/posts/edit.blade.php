@@ -3,8 +3,8 @@
 @section('main')
 
 <div class="container">
-    <h1 class="ui header">Edit Setting</h1>
-    {{ Form::model($post, array('method' => 'PATCH', 'route' => array('posts.update', $post->id),'class'=>'ui form')) }}
+    <h1 class="ui header">Edit Post</h1>
+    {{ Form::model($post, array('method' => 'PATCH', 'route' => array('posts.update', $post->id),'class'=>'ui form', 'files' => true)) }}
     <div class="two column stackable ui grid">
         <div class="column">
             <div class="ui blue segment">
@@ -18,7 +18,7 @@
                 </div>
                 <div class="field">
                     {{ Form::label('description', 'Description') }}
-                    {{ Form::textarea('description',$post->description,array('class'=>'form-control', 'rows'=>4)) }}
+                    {{ Form::textarea('description', $post->description, array('class'=>'form-control', 'rows'=>4)) }}
                 </div>
             </div>
         </div>
@@ -26,7 +26,7 @@
             <div class="ui red segment" style="margin-top:0">
                 <div class="field">{{ Form::label('banner', 'Banner') }}
                     <div class="ui image dimmable cms-banner" id="post-banner" >
-                        <img src="{{ url('img/'.$post->banner) }}" class="" alt="" />
+                        <img src="{{ isset($post->banner) ? url('uploads/'.$post->banner) : url('img/no-post-image.png') }}" class="" alt="" />
                         <div class="ui dimmer">
                             <div class="content">
                                 <div class="center">
@@ -36,7 +36,8 @@
                             </div>
                         </div>
                     </div>
-                    {{ Form::file('banner',array('class'=>'hidden')) }}
+                    <div class="ui divider"></div>
+                    {{ Form::file('banner') }}
                 </div>
                 <div class="field ui input mini">
                     {{ Form::label('banner_alt', 'Alt Text') }}
@@ -48,11 +49,11 @@
     <div class="ui green segment">
         <div class="field">
             {{ Form::label('excerpt', 'Post Excerpt') }}
-            {{ Form::textarea('excerpt',$post->excerpt,array('class'=>'form-control', 'rows'=>4)) }}
+            {{ Form::textarea('excerpt', $post->excerpt,array('class'=>'form-control', 'rows'=>4)) }}
         </div>
         <div class="field">
             {{ Form::label('content', 'Content') }}
-            {{ Form::textarea('content',$post->content,array('class'=>'form-control trumbo', 'rows'=>4)) }}
+            {{ Form::textarea('content', $post->content,array('class'=>'form-control trumbo', 'rows'=>4)) }}
         </div>
     </div>
         <div class="ui small buttons">

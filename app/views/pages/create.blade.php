@@ -30,7 +30,7 @@
 
         <div class="field">
             {{ Form::label('content', 'Content:') }}
-            {{ Form::textarea('content', '', array('class'=>'ckeditor')) }}
+            {{ Form::textarea('content', '', array('class'=>'trumbo')) }}
         </div>
         {{ Form::submit('Submit', array('class' => 'ui blue button')) }}
     {{ Form::close() }}

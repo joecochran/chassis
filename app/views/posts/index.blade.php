@@ -33,7 +33,7 @@
                                 </span>
                             </div>
                             @if(isset($post->banner))
-                            <img itemprop="image" height="320" width="680" class="ui image" src="{{ url('img/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
+                            <img itemprop="image" height="320" width="680" class="ui image" src="{{ url('uploads/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
                             @endif
                         </header>
                         <div class="articlebody" itemprop="articleBody">

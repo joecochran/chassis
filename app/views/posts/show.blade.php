@@ -21,7 +21,7 @@
                     <header>
                         <meta itemprop="inLanguage" content="{{ $settings->lang }}" />
                         <span><h1 class="ui header post-title" itemprop="headline">{{ $post->title }}</h1></span>
-                        <div class="ui small basic segment">
+                        <div class="ui small basic segment postmeta">
                             <span><i class="folder orange icon" title="Category"></i><a href="{{ url('blog/category/'.strtolower($post->category->name)) }}">{{ $post->category->name }}</a></span>
                             @if($post->tags->count())
                             <span style="margin-left:2em">
@@ -37,12 +37,13 @@
                             </span>
                         </div>
                         @if(isset($post->banner))
-                        <img itemprop="image" height="320" width="680" class="ui image rounded banner-image" src="{{ url('img/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
+                        <img itemprop="image" height="320" width="680" class="ui image banner-image" src="{{ url('uploads/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
                         @endif
                     </header>
                     <div class="articlebody" itemprop="articleBody">
                         @if(isset($post->excerpt))
                         <p class="lead">{{$post->excerpt}}</p>
+                        <div class="ui divider"></div>
                         @endif
                         {{ $post->content }}
                     </div>
