@@ -20,6 +20,7 @@ gulp.task('scripts', function() {
         'app/assets/js/vendor/tablesort.js',
         'app/assets/js/vendor/waypoints.js',
         'app/assets/js/vendor/waypoints-sticky.js',
+        'app/assets/js/vendor/trumbowyg.js',
         'app/assets/js/scripts.js'])
         .pipe(concat('main.js'))
         .pipe(gulp.dest('public/js'))

@@ -17289,31 +17289,641 @@ body {
 body.frontend {
   background: #f6f6f6; }
 
-/* line 4, ../../app/assets/scss/main.scss */
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-box, .editor {
+  display: block;
+  position: relative;
+  border: 1px solid #DDD;
+  width: 96%;
+  min-height: 300px;
+  margin: 17px auto; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-box .editor {
+  margin: 0 auto;
+  background: #FEFEFE; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-box.trumbowyg-fullscreen {
+  background: #FEFEFE; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor, .trumbowyg-textarea {
+  position: relative;
+  padding: 1% 2%;
+  min-height: 300px;
+  width: 96%;
+  border-style: none;
+  resize: none;
+  outline: none; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-box-blur .trumbowyg-editor * {
+  color: transparent !important;
+  text-shadow: 0 0 7px #333; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-textarea {
+  position: relative;
+  display: block;
+  overflow: auto;
+  border: none;
+  white-space: normal; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane {
+  position: relative;
+  width: 100%;
+  line-height: 35px;
+  height: 35px;
+  background: #ecf0f1;
+  border-bottom: 1px solid #d7e0e2;
+  margin: 0;
+  padding: 0;
+  list-style-type: none; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li {
+  float: left;
+  height: 100%;
+  text-align: center; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li.trumbowyg-separator {
+  width: 1px;
+  background: #d7e0e2;
+  margin: 0 5px;
+  height: 35px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-active {
+  border-bottom: 1px solid #FFF; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane.trumbowyg-disable li:not(.trumbowyg-not-disable) a {
+  opacity: .2;
+  cursor: default; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane.trumbowyg-disable li.trumbowyg-separator {
+  background: #e3e9eb; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane:not(.trumbowyg-disable) li a:hover, .trumbowyg-button-pane:not(.trumbowyg-disable) li a:focus, .trumbowyg-button-pane li a.trumbowyg-active, .trumbowyg-button-pane li.trumbowyg-not-disable a:hover, .trumbowyg-button-pane li.trumbowyg-not-disable a:focus {
+  background-color: #FFF;
+  outline: none; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-open-dropdown:after {
+  display: block;
+  content: " ";
+  position: absolute;
+  top: 25px;
+  right: 3px;
+  height: 0;
+  width: 0;
+  border: 3px solid transparent;
+  border-top-color: #555; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane .trumbowyg-buttons-right {
+  float: right;
+  width: auto; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane .trumbowyg-buttons-right a {
+  float: left; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-dropdown {
+  width: 200px;
+  border: 1px solid #ecf0f1;
+  padding: 5px 0;
+  border-top: none;
+  background-color: #FFF;
+  margin-left: -1px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 3px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-dropdown a {
+  display: block;
+  width: 172px;
+  height: 35px;
+  line-height: 35px;
+  text-decoration: none;
+  background: inherit;
+  padding: 0 14px;
+  color: #333;
+  -webkit-transition-property: background;
+  transition-property: background; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-dropdown a:hover, .trumbowyg-dropdown a:focus {
+  background: #ecf0f1; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -260px;
+  width: 520px;
+  height: 290px;
+  overflow: hidden; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -250px;
+  width: 500px;
+  height: 275px;
+  z-index: 1;
+  background-color: #FFF;
+  text-align: center;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 2px 3px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 2px 3px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0 0 20px;
+  padding: 15px 0 13px;
+  display: block;
+  border-bottom: 1px solid #EEE;
+  color: #333;
+  background: #fbfcfc; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-progress {
+  width: 100%;
+  background: #F00;
+  height: 3px;
+  position: absolute;
+  top: 58px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-progress .trumbowyg-progress-bar {
+  background: #2BC06A;
+  height: 100%;
+  -webkit-transition: width 0.15s linear;
+  transition: width 0.15s linear; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label {
+  display: block;
+  position: relative;
+  margin: 15px 12px;
+  height: 27px;
+  line-height: 27px;
+  overflow: hidden; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label .trumbowyg-input-infos {
+  display: block;
+  text-align: left;
+  height: 25px;
+  line-height: 25px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label .trumbowyg-input-infos span {
+  display: block;
+  color: #859fa5;
+  background-color: #fbfcfc;
+  border: 1px solid #DEDEDE;
+  padding: 0 2%;
+  width: 19.5%; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label .trumbowyg-input-infos span.trumbowyg-msg-error {
+  color: #e74c3c; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label.trumbowyg-input-error input, .trumbowyg-modal-box label.trumbowyg-input-error textarea {
+  border: 1px solid #e74c3c; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label.trumbowyg-input-error .trumbowyg-input-infos {
+  margin-top: -27px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 25px;
+  line-height: 25px;
+  border: 1px solid #DEDEDE;
+  background: transparent;
+  width: 72%;
+  padding: 0 2%;
+  margin: 0 0 0 23%;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label input:hover, .trumbowyg-modal-box label input:focus {
+  outline: none;
+  border: 1px solid #95a5a6; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box label input:focus {
+  background: rgba(230, 230, 255, 0.1); }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .error {
+  margin-top: 25px;
+  display: block;
+  color: red; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-modal-button {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+  text-decoration: none;
+  color: #FFF;
+  display: block;
+  width: 100px;
+  height: 35px;
+  line-height: 33px;
+  margin: 0 10px;
+  background-color: #333;
+  border: none;
+  border-top: none;
+  cursor: pointer;
+  font-family: "Trebuchet MS", Helvetica, Verdana, sans-serif;
+  font-size: 16px;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-modal-button.trumbowyg-modal-submit {
+  right: 110px;
+  background: #2bc06a; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-modal-button.trumbowyg-modal-submit:hover, .trumbowyg-modal-box .trumbowyg-modal-button.trumbowyg-modal-submit:focus {
+  background: #40d47e;
+  outline: none; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-modal-button.trumbowyg-modal-submit:active {
+  background: #25a25a; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-modal-button.trumbowyg-modal-reset {
+  background: #b33528; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-modal-button.trumbowyg-modal-reset:hover, .trumbowyg-modal-box .trumbowyg-modal-button.trumbowyg-modal-reset:focus {
+  background: #d14233;
+  outline: none; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-modal-box .trumbowyg-modal-button.trumbowyg-modal-reset:active {
+  background: #962d22; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-overlay {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  left: 0;
+  display: none; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-fullscreen.trumbowyg-box, .trumbowyg-fullscreen .editor {
+  border: none; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-fullscreen .trumbowyg-overlay {
+  height: 100% !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor object, .trumbowyg-editor embed, .trumbowyg-editor video, .trumbowyg-editor img {
+  width: auto;
+  max-width: 100%; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor video, .trumbowyg-editor img {
+  height: auto; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor img {
+  cursor: move; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css {
+  background: #FEFEFE !important;
+  font-family: "Trebuchet MS", Helvetica, Verdana, sans-serif !important;
+  font-size: 14px !important;
+  line-height: 1.45em !important;
+  white-space: normal !important;
+  color: #333; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css a {
+  color: #15c !important;
+  text-decoration: underline !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css div, .trumbowyg-editor.trumbowyg-reset-css p, .trumbowyg-editor.trumbowyg-reset-css ul, .trumbowyg-editor.trumbowyg-reset-css ol, .trumbowyg-editor.trumbowyg-reset-css blockquote {
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  background: none !important;
+  margin: 0 !important;
+  margin-bottom: 15px !important;
+  line-height: 1.4em !important;
+  font-family: "Trebuchet MS", Helvetica, Verdana, sans-serif !important;
+  font-size: 14px !important;
+  border: none; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css iframe, .trumbowyg-editor.trumbowyg-reset-css object, .trumbowyg-editor.trumbowyg-reset-css hr {
+  margin-bottom: 15px !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css blockquote {
+  margin-left: 32px !important;
+  font-style: italic !important;
+  color: #555; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css ul, .trumbowyg-editor.trumbowyg-reset-css ol {
+  padding-left: 20px !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css ul ul, .trumbowyg-editor.trumbowyg-reset-css ol ol, .trumbowyg-editor.trumbowyg-reset-css ul ol, .trumbowyg-editor.trumbowyg-reset-css ol ul {
+  border: none;
+  margin: 2px !important;
+  padding: 0 !important;
+  padding-left: 24px !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #CCC; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css h1, .trumbowyg-editor.trumbowyg-reset-css h2, .trumbowyg-editor.trumbowyg-reset-css h3, .trumbowyg-editor.trumbowyg-reset-css h4 {
+  color: #111;
+  background: none;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-weight: bold; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css h1 {
+  font-size: 32px !important;
+  line-height: 38px !important;
+  margin-bottom: 20px !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css h2 {
+  font-size: 26px !important;
+  line-height: 34px !important;
+  margin-bottom: 15px !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css h3 {
+  font-size: 22px !important;
+  line-height: 28px !important;
+  margin-bottom: 7px !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-editor.trumbowyg-reset-css h4 {
+  font-size: 16px !important;
+  line-height: 22px !important;
+  margin-bottom: 7px !important; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a {
+  display: block;
+  position: relative;
+  text-indent: -9999px;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  background-image: url("../images/icons-sa75ce98b2b.png");
+  background-repeat: none;
+  -webkit-transition: all 0.15s;
+  transition: all 0.15s;
+  transition: background-color .15s, background-image .15s, opacity .15s; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-viewHTML-button {
+  background-position: 5px -545px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-formatting-button {
+  background-position: 5px -120px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-bold-button, .trumbowyg-button-pane li a.trumbowyg-strong-button {
+  background-position: 5px -45px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-italic-button, .trumbowyg-button-pane li a.trumbowyg-em-button {
+  background-position: 5px -270px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-underline-button {
+  background-position: 5px -470px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-strikethrough-button, .trumbowyg-button-pane li a.trumbowyg-del-button {
+  background-position: 5px -445px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-link-button {
+  background-position: 5px -345px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-insertImage-button {
+  background-position: 5px -245px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-justifyLeft-button {
+  background-position: 5px -320px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-justifyCenter-button {
+  background-position: 5px -70px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-justifyRight-button {
+  background-position: 5px -395px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-justifyFull-button {
+  background-position: 5px -295px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-unorderedList-button {
+  background-position: 5px -495px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-orderedList-button {
+  background-position: 5px -370px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-horizontalRule-button {
+  background-position: 5px -220px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-fullscreen-button {
+  background-position: 5px -170px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li a.trumbowyg-close-button {
+  background-position: 5px -95px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-fullscreen .trumbowyg-button-pane li a.trumbowyg-fullscreen-button {
+  background-position: 5px -145px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li:first-child a {
+  margin-left: 6px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-button-pane li:last-child a {
+  margin-right: 6px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-bold-button, .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-strong-button {
+  background-position: 5px -195px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-underline-button {
+  background-position: 5px -420px; }
+
+/* line 2, ../../app/assets/scss/trumbowyg.scss */
+.trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-strikethrough-button, .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-del-button {
+  background-position: 5px -20px; }
+
+@media only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 4 / 3), only screen and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a {
+    background-size: 72%;
+    background-image: url("../images/icons-2x-s9034954e6d.png"); }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-viewHTML-button {
+    background-position: 5px -545px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-formatting-button {
+    background-position: 5px -120px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-bold-button, .trumbowyg-button-pane li a.trumbowyg-strong-button {
+    background-position: 5px -45px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-italic-button, .trumbowyg-button-pane li a.trumbowyg-em-button {
+    background-position: 5px -270px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-underline-button {
+    background-position: 5px -470px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-strikethrough-button, .trumbowyg-button-pane li a.trumbowyg-del-button {
+    background-position: 5px -445px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-link-button {
+    background-position: 5px -345px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-insertImage-button {
+    background-position: 5px -245px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-justifyLeft-button {
+    background-position: 5px -320px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-justifyCenter-button {
+    background-position: 5px -70px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-justifyRight-button {
+    background-position: 5px -395px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-justifyFull-button {
+    background-position: 5px -295px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-unorderedList-button {
+    background-position: 5px -495px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-orderedList-button {
+    background-position: 5px -370px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-horizontalRule-button {
+    background-position: 5px -220px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-fullscreen-button {
+    background-position: 5px -170px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-button-pane li a.trumbowyg-close-button {
+    background-position: 5px -95px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-fullscreen .trumbowyg-button-pane li a.trumbowyg-fullscreen-button {
+    background-position: 5px -145px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-bold-button, .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-strong-button {
+    background-position: 5px -195px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-underline-button {
+    background-position: 5px -420px; }
+
+  /* line 2, ../../app/assets/scss/trumbowyg.scss */
+  .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-strikethrough-button, .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-del-button {
+    background-position: 5px -20px; } }
+/* line 5, ../../app/assets/scss/main.scss */
 body {
   font-size: 16px;
   font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.5;
   color: #555555; }
 
-/* line 10, ../../app/assets/scss/main.scss */
+/* line 11, ../../app/assets/scss/main.scss */
 h1, h2, h3, h4, h5 {
   font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
-/* line 13, ../../app/assets/scss/main.scss */
+/* line 14, ../../app/assets/scss/main.scss */
 pre {
   font-family: 'Ubuntu Mono'; }
 
-/* line 16, ../../app/assets/scss/main.scss */
+/* line 17, ../../app/assets/scss/main.scss */
 .login-container {
   max-width: 400px;
   margin: auto; }
 
-/* line 20, ../../app/assets/scss/main.scss */
+/* line 21, ../../app/assets/scss/main.scss */
 .forgot-password-link {
   float: right; }
 
-/* line 23, ../../app/assets/scss/main.scss */
+/* line 24, ../../app/assets/scss/main.scss */
 a {
   color: #009FDA;
   text-decoration: none;
@@ -17321,22 +17931,22 @@ a {
   -webkit-transition: all 300ms ease;
   transition: all 300ms ease; }
 
-/* line 29, ../../app/assets/scss/main.scss */
+/* line 30, ../../app/assets/scss/main.scss */
 a:hover {
   color: #00BAFF;
   border-bottom: 1px solid #00BAFF; }
 
-/* line 33, ../../app/assets/scss/main.scss */
+/* line 34, ../../app/assets/scss/main.scss */
 .container {
   max-width: 960px;
   margin: auto;
   padding: 0px; }
 
-/* line 39, ../../app/assets/scss/main.scss */
+/* line 40, ../../app/assets/scss/main.scss */
 .pull-right {
   float: right; }
 
-/* line 43, ../../app/assets/scss/main.scss */
+/* line 44, ../../app/assets/scss/main.scss */
 .main.menu {
   top: 0;
   min-width: 320px;
@@ -17348,59 +17958,59 @@ a:hover {
   -webkit-transition: margin 0.3s ease;
   transition: margin 0.3s ease; }
 
-/* line 57, ../../app/assets/scss/main.scss */
+/* line 58, ../../app/assets/scss/main.scss */
 .main-content {
   padding-top: 50px; }
 
-/* line 60, ../../app/assets/scss/main.scss */
+/* line 61, ../../app/assets/scss/main.scss */
 .ui.dropdown.item.user-menu {
   padding: 0.37em .95em; }
 
-/* line 63, ../../app/assets/scss/main.scss */
+/* line 64, ../../app/assets/scss/main.scss */
 .banner-image {
   max-width: 100%; }
 
-/* line 66, ../../app/assets/scss/main.scss */
+/* line 67, ../../app/assets/scss/main.scss */
 .ui.buttons.control-group {
   min-width: 120px; }
 
-/* line 69, ../../app/assets/scss/main.scss */
+/* line 70, ../../app/assets/scss/main.scss */
 .ui.attached.left.button.help {
   position: fixed;
   right: 0;
   top: 50%; }
 
-/* line 75, ../../app/assets/scss/main.scss */
+/* line 76, ../../app/assets/scss/main.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 78, ../../app/assets/scss/main.scss */
+/* line 79, ../../app/assets/scss/main.scss */
 html, body {
   height: 100%; }
 
-/* line 81, ../../app/assets/scss/main.scss */
+/* line 82, ../../app/assets/scss/main.scss */
 .main-content {
   min-height: 100%;
   margin-bottom: -54px; }
 
-/* line 85, ../../app/assets/scss/main.scss */
+/* line 86, ../../app/assets/scss/main.scss */
 .main-content:after {
   display: block;
   content: ""; }
 
-/* line 90, ../../app/assets/scss/main.scss */
+/* line 91, ../../app/assets/scss/main.scss */
 .site-footer,
 .main-content:after {
   height: 54px; }
 
-/* line 93, ../../app/assets/scss/main.scss */
+/* line 94, ../../app/assets/scss/main.scss */
 .sticky.menu.stuck {
   top: 50px;
   position: fixed; }
 
-/* line 97, ../../app/assets/scss/main.scss */
+/* line 98, ../../app/assets/scss/main.scss */
 .ui.override.toggle.checkbox {
   font-size: .75em;
   float: right;
@@ -17409,87 +18019,101 @@ html, body {
   -ms-user-select: none;
   user-select: none; }
 
-/* line 102, ../../app/assets/scss/main.scss */
+/* line 103, ../../app/assets/scss/main.scss */
 .segment-collapse {
   cursor: pointer;
   position: absolute;
   top: 10px;
   right: 10px; }
-  /* line 107, ../../app/assets/scss/main.scss */
+  /* line 108, ../../app/assets/scss/main.scss */
   .segment-collapse .hidden {
     display: none; }
 
-/* line 111, ../../app/assets/scss/main.scss */
+/* line 112, ../../app/assets/scss/main.scss */
 .muted {
   color: #888888;
   font-size: .85em; }
 
-/* line 115, ../../app/assets/scss/main.scss */
+/* line 116, ../../app/assets/scss/main.scss */
 .m-pagelist .meta {
   position: absolute;
   top: 9px;
   right: 11px; }
 
-/* line 120, ../../app/assets/scss/main.scss */
+/* line 121, ../../app/assets/scss/main.scss */
 .m-pagelist .item {
   text-align: center; }
 
-/* line 123, ../../app/assets/scss/main.scss */
+/* line 124, ../../app/assets/scss/main.scss */
 .m-pagelist .extra {
   text-align: left; }
 
-/* line 126, ../../app/assets/scss/main.scss */
+/* line 127, ../../app/assets/scss/main.scss */
 .m-pagelist .item {
   text-align: center;
   min-height: 254px !important;
   margin-bottom: 4.25em !important; }
 
-/* line 131, ../../app/assets/scss/main.scss */
+/* line 132, ../../app/assets/scss/main.scss */
 .ui.dropdown.selection {
   font-size: 12px; }
-  /* line 133, ../../app/assets/scss/main.scss */
+  /* line 134, ../../app/assets/scss/main.scss */
   .ui.dropdown.selection .item {
     font-size: 12px; }
 
-/* line 137, ../../app/assets/scss/main.scss */
+/* line 138, ../../app/assets/scss/main.scss */
 .ui.basic.segment.pagehead {
   padding: 0 0 1em;
   margin: 0 1em;
   -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1); }
 
-/* line 142, ../../app/assets/scss/main.scss */
+/* line 143, ../../app/assets/scss/main.scss */
 .blog-pager {
   margin-top: 1em; }
-  /* line 144, ../../app/assets/scss/main.scss */
+  /* line 145, ../../app/assets/scss/main.scss */
   .blog-pager .ui.pagination.menu .item {
     min-width: 2em;
     font-size: .75rem; }
 
-/* line 149, ../../app/assets/scss/main.scss */
+/* line 150, ../../app/assets/scss/main.scss */
 .ui.small.segment {
   font-size: .75em; }
 
-/* line 152, ../../app/assets/scss/main.scss */
+/* line 153, ../../app/assets/scss/main.scss */
 i.orange.icon {
   color: #DD4814; }
 
-/* line 155, ../../app/assets/scss/main.scss */
+/* line 156, ../../app/assets/scss/main.scss */
 .ui.vertical.menu .item {
   font-size: .85rem; }
 
-/* line 158, ../../app/assets/scss/main.scss */
+/* line 159, ../../app/assets/scss/main.scss */
 .ui.image {
   height: auto; }
 
-/* line 161, ../../app/assets/scss/main.scss */
+/* line 162, ../../app/assets/scss/main.scss */
 .articlebody {
   text-align: justify; }
 
-/* line 164, ../../app/assets/scss/main.scss */
+/* line 165, ../../app/assets/scss/main.scss */
 .ui.tiny.labels .label, .ui.tiny.label {
   font-size: 0.65rem; }
 
-/* line 167, ../../app/assets/scss/main.scss */
+/* line 168, ../../app/assets/scss/main.scss */
 .hidden {
   display: none !important; }
+
+/* line 171, ../../app/assets/scss/main.scss */
+.cms-banner {
+  cursor: pointer; }
+
+/* line 174, ../../app/assets/scss/main.scss */
+.trumbowyg-box, .editor {
+  margin: 0;
+  border-radius: 0.3125em;
+  width: 100%; }
+
+/* line 179, ../../app/assets/scss/main.scss */
+.trumbowyg-editor, .trumbowyg-textarea {
+  width: 100%; }

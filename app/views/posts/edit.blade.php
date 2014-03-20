@@ -25,9 +25,18 @@
         <div class="column">
             <div class="ui red segment" style="margin-top:0">
                 <div class="field">{{ Form::label('banner', 'Banner') }}
-                    <img src="{{ url('img/'.$post->banner) }}" class="ui image" alt="" />
-                    <div class="ui divider"></div>
-                    {{ Form::file('banner') }}
+                    <div class="ui image dimmable cms-banner" id="post-banner" >
+                        <img src="{{ url('img/'.$post->banner) }}" class="" alt="" />
+                        <div class="ui dimmer">
+                            <div class="content">
+                                <div class="center">
+                                    <i class="upload huge icon"></i>
+                                    <div class="ui header">Upload new image</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ Form::file('banner',array('class'=>'hidden')) }}
                 </div>
                 <div class="field">
                     {{ Form::label('banner_alt', 'Alt Text') }}
@@ -43,7 +52,7 @@
         </div>
         <div class="field">
             {{ Form::label('content', 'Content') }}
-            {{ Form::textarea('content',$post->content,array('class'=>'form-control', 'rows'=>4)) }}
+            {{ Form::textarea('content',$post->content,array('class'=>'form-control trumbo', 'rows'=>4)) }}
         </div>
     </div>
         <div class="ui small buttons">

@@ -46,3 +46,14 @@ $('.confirm-delete').on('click', function(event){
         $deleteform.submit();
     });
 });
+$('.ui.image.dimmable').dimmer({
+    on: 'hover',
+    closable: false
+});
+$('#post-banner .dimmer').on('click', function(event){
+    $('#banner').trigger('click');
+});
+$( "body" ).click(function( event ) {
+  console.log( "clicked: " + event.target.nodeName );
+});
+$('.trumbo').trumbowyg();

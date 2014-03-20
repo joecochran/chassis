@@ -1,6 +1,7 @@
 @import 'semantic-ui';
 @import '_normalize';
 @import '_theme';
+@import 'trumbowyg';
 body {
     font-size:16px;
     font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
@@ -166,4 +167,15 @@ i.orange.icon {
 }
 .hidden {
     display:none !important;
+}
+.cms-banner {
+    cursor: pointer;
+}
+.trumbowyg-box, .editor {
+    margin:0;
+    border-radius:0.3125em;
+    width:100%;
+}
+.trumbowyg-editor, .trumbowyg-textarea {
+    width:100%;
 }
