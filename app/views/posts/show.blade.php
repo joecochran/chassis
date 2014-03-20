@@ -4,6 +4,12 @@
 <link rel="alternate" type="application/atom+xml" title="{{ $settings->sitename }}" href="/blog/feed">
 @stop
 @section('rightmenu')
+<div class="item">
+    <div class="ui icon input">
+        <input type="text" placeholder="Search...">
+        <i class="search link icon"></i>
+    </div>
+</div>
 <div class="item"><a href="{{ url('blog/feed') }}" target="_blank"><i class="icon orange link rss sign"></i></a></div>
 @stop
 @section('main')
@@ -14,27 +20,30 @@
                 <div class="ui basic segment">
                     <header>
                         <meta itemprop="inLanguage" content="{{ $settings->lang }}" />
-                        <span><h1 class="ui header" itemprop="headline">{{ $post->title }}</h1></span>
-                        <div class="ui small segment">
-                            <span><i class="folder icon" title="Category"></i><a href="{{ url('blog/category/'.strtolower($post->category->name)) }}">{{ $post->category->name }}</a></span>
+                        <span><h1 class="ui header post-title" itemprop="headline">{{ $post->title }}</h1></span>
+                        <div class="ui small basic segment">
+                            <span><i class="folder orange icon" title="Category"></i><a href="{{ url('blog/category/'.strtolower($post->category->name)) }}">{{ $post->category->name }}</a></span>
                             @if($post->tags->count())
                             <span style="margin-left:2em">
-                                <i class="icon tags" title="Tags"></i>
+                                <i class="icon orange tags" title="Tags"></i>
                                 @foreach($post->tags as $tag)
                                 <a href="{{ url('blog/tag/'.replace_space($tag->name)) }}" rel="tag"><span itemprop="keywords">{{ $tag->name }}</span></a>
                                 @endforeach
                             </span>
                             @endif
                             <span style="margin-left:2em">
-                                <i class="icon calendar" title="Date"></i>
+                                <i class="icon orange calendar" title="Date"></i>
                                 <time datetime="{{ date('Y-m-d',strtotime($post->created_at)) }}" pubdate>{{ date('l, F jS, Y',strtotime($post->created_at)) }}</time>
                             </span>
                         </div>
                         @if(isset($post->banner))
-                        <img itemprop="image" height="320" width="680" class="ui image" src="{{ url('img/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
+                        <img itemprop="image" height="320" width="680" class="ui image rounded banner-image" src="{{ url('img/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
                         @endif
                     </header>
                     <div class="articlebody" itemprop="articleBody">
+                        @if(isset($post->excerpt))
+                        <p class="lead">{{$post->excerpt}}</p>
+                        @endif
                         {{ $post->content }}
                     </div>
                     <footer class="ui">

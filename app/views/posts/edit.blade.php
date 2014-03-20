@@ -38,9 +38,9 @@
                     </div>
                     {{ Form::file('banner',array('class'=>'hidden')) }}
                 </div>
-                <div class="field">
+                <div class="field ui input mini">
                     {{ Form::label('banner_alt', 'Alt Text') }}
-                    {{ Form::text('banner_alt',$post->banner_alt,array('class'=>'form-control')) }}
+                        {{ Form::text('banner_alt',$post->banner_alt,array('class'=>'form-control')) }}
                 </div>
             </div>
         </div>

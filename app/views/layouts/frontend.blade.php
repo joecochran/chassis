@@ -23,31 +23,28 @@
     @endif
     <meta property="og:description" content="{{{ $page->og_description or $page->description }}}">
 
-    {{ HTML::style('//fonts.googleapis.com/css?family=Source+Sans+Pro:400,700|Open+Sans:300italic,400,300,700') }}
     {{ HTML::style(asset('css/main'.set_min().'.css')) }}
 
 {{-- Only modernizr at the top --}}
     {{ HTML::script('js/modernizr-2.6.2.min.js') }}
 </head>
 <body class="frontend">
-    <header>
+    <header class="website-header">
         <div class="container">
             <div class="ui basic segment">
-                <div class="ui large header">{{{ $settings->sitename }}}</div>
+                <div class="ui large header website-name">{{{ $settings->sitename }}}</div>
             </div>
         </div>
-        <nav class="ui menu">
+        <nav class="ui inverted tiered menu">
             <div class="container">
-            @foreach($pages as $pagex)
-            <div class="{{ set_active($pagex->slug) }} item">{{ link_to($pagex->slug, $pagex->title) }}</div>
-            @endforeach
-            <div class="right menu">
-                @yield('rightmenu')
-                @if(Auth::check())
-                <div class="item">{{ link_to('admin', 'Admin') }}</div>
-                @endif
+                @foreach($pages as $pagex)
+                <div class="{{ set_active($pagex->slug) }} item">{{ link_to($pagex->slug, $pagex->title) }}</div>
+                @endforeach
+                <div class="right menu">
+                    @yield('rightmenu')
+                </div>
             </div>
-            </div>
+            @yield('submenu')
         </nav>
     </header>
 

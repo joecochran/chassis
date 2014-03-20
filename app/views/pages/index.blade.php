@@ -14,7 +14,7 @@
             @foreach ($pages as $page)
             <div class="item">
                 <div class="name ui icon header">
-                    <i class="circular text file icon"></i>
+                    <i class="circular text orange file icon"></i>
                     {{{ $page->title }}}
                 </div>
                 <div class="meta">{{{ '/'.$page->slug }}}</div>

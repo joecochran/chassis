@@ -4,31 +4,15 @@
 @import 'trumbowyg';
 body {
     font-size:16px;
-    font-family: 'Open Sans', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
     line-height:1.5;
     color: #555555
 }
 h1, h2, h3, h4, h5 {
-    font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+    font-family: "Ubuntu", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 }
-code, kbd, pre, samp {
-    font-family: 'Inconsolata';
-}
-code {
-    border: solid 1px #e4e4e4;
-    padding: 4px 4px 4px;
-    background: #f5f7f8;
-    font-size: 0.875em;
-    line-height: 1.85714em;
-    border-radius: 3px;
-}
-.website-header {
-    padding-top: 16px;
-    background: #444;
-}
-.website-name {
-    color:#fff;
-    text-shadow:0px 0px 4px rgba(0,0,0,.6);
+pre {
+    font-family: 'Ubuntu Mono';
 }
 .login-container {
     max-width:400px;
@@ -42,9 +26,6 @@ a {
     text-decoration:none;
     border-bottom:1px solid transparent;
     transition:all 300ms ease;
-    h2.ui.header {
-        color:#555;
-    }
 }
 a:hover {
     color: #00BAFF;
@@ -170,51 +151,17 @@ html, body {
     font-size:.75em;
 }
 i.orange.icon {
-    color:#de3427;
+    color:#DD4814;
 }
 .ui.vertical.menu .item {
     font-size:.85rem;
 }
 .ui.image {
     height:auto;
-    &.banner-image {
-        margin:1em 0 2em;
-        display:block;
-    }
 }
 .articlebody {
-    // text-align: justify;
+    text-align: justify;
     line-height: 1.625em;
-    p {
-        text-indent: 0;
-        margin: 0 0 26px 0;
-    }
-    h2 {
-        margin: 52px 0 26px 0;
-        font-size: 28px;
-        line-height: 1em;
-    }
-    h3 {
-        margin: 26px 0 4px 0;
-        font-size: 1.3125em;
-        line-height: 1.2381em;
-    }
-    blockquote {
-        margin: 26px 40px;
-        font-style: italic;
-        font-weight: 100;
-        font-size: 1.3125em;
-        line-height: 1.2381em;
-        color: #7e7e7e;
-        padding-left:20px;
-        border-left: 5px solid rgba(0,0,0,.1);
-    }
-    .lead {
-        font-size:21px;
-        font-weight:200;
-        line-height: 1.4;
-        margin-bottom:20px;
-    }
 }
 .ui.tiny.labels .label, .ui.tiny.label {
     font-size: 0.65rem;
@@ -264,14 +211,4 @@ div.trumbowyg-editor:focus {
 h1.ui.header.post-title {
     font-size:49px;
     line-height:1em;
-}
-aside.vertical.menu.blog-sidebar a.item.active{
-    border-bottom-color:transparent !important;
-}
-
-.ui.inverted.tiered.menu .sub.menu {
-    background-color:rgba(255,255,255,0.8);
-    .item {
-        color:#444;
-    }
 }
