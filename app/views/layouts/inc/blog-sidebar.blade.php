@@ -1,4 +1,4 @@
-            <aside class="ui fluid vertical blue secondary menu blog-sidebar">
+            <aside class="ui fluid vertical secondary menu blog-sidebar">
                 <p>Welcome to Barton's Community Archive</p>
                 <h3 class="header item"><i class="folder orange icon"></i> Categories</h3>
                 <a href="{{ url('blog') }}" class="item">All <div class="ui small label">{{ $totalPosts }}</div></a>
@@ -18,7 +18,7 @@
                 <div class="item">
                     <a href="{{ url('blog/archive/'.$year) }}">{{ $year }}</a>
                     <div class="menu">
-                        @foreach($months as $month) 
+                        @foreach(array_unique($months) as $month) 
                         <a class="item" href="{{ url('blog/archive/'.$year.'/'.$month) }}">{{ date("F", mktime(0, 0, 0, $month, 10)) }}</a>
                         @endforeach
                     </div>

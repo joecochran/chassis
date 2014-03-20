@@ -17,6 +17,7 @@ gulp.task('scripts', function() {
     return gulp.src([
         'app/assets/js/vendor/jquery-1.11.0.js',
         'app/assets/js/vendor/semantic.js',
+        'app/assets/js/vendor/jquery.tagsinput.js',
         'app/assets/js/vendor/tablesort.js',
         'app/assets/js/vendor/waypoints.js',
         'app/assets/js/vendor/waypoints-sticky.js',

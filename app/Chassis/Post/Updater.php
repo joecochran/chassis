@@ -29,7 +29,7 @@ class Updater {
             return Redirect::route('posts.edit', $id)->withInput()->withErrors($validation);
         }
         $post = Post::find($id);
-        $post->update($input);
+        $post->fill($input)->save();
         return Redirect::route('posts.index');
     }
 }

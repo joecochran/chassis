@@ -17281,14 +17281,6 @@ ol.ui.horizontal.list li:before,
 .ui.statistic > .description {
   opacity: 0.8; }
 
-/* line 5, ../../app/assets/scss/_theme.scss */
-body {
-  background: #efefef; }
-
-/* line 8, ../../app/assets/scss/_theme.scss */
-body.frontend {
-  background: #fff; }
-
 /* line 2, ../../app/assets/scss/trumbowyg.scss */
 .trumbowyg-box, .editor {
   display: block;
@@ -17899,22 +17891,92 @@ body.frontend {
   /* line 2, ../../app/assets/scss/trumbowyg.scss */
   .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-strikethrough-button, .trumbowyg-fr .trumbowyg-button-pane li a.trumbowyg-del-button {
     background-position: 5px -20px; } }
-/* line 5, ../../app/assets/scss/main.scss */
+/* line 1, ../../app/assets/scss/jquery.tagsinput.scss */
+div.tagsinput {
+  border: 1px solid #CCC;
+  background: #FFF;
+  padding: 5px;
+  width: 300px;
+  height: 100px;
+  overflow-y: auto; }
+
+/* line 2, ../../app/assets/scss/jquery.tagsinput.scss */
+div.tagsinput span.tag {
+  border: 1px solid #a5d24a;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  display: block;
+  float: left;
+  padding: 5px;
+  text-decoration: none;
+  background: #cde69c;
+  color: #638421;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  font-family: helvetica;
+  font-size: 13px; }
+
+/* line 3, ../../app/assets/scss/jquery.tagsinput.scss */
+div.tagsinput span.tag a {
+  font-weight: bold;
+  color: #82ad2b;
+  text-decoration: none;
+  font-size: 11px; }
+
+/* line 4, ../../app/assets/scss/jquery.tagsinput.scss */
+div.tagsinput input {
+  width: 80px;
+  margin: 0px;
+  font-family: helvetica;
+  font-size: 13px;
+  border: 1px solid transparent;
+  padding: 5px;
+  background: transparent;
+  color: #000;
+  outline: 0px;
+  margin-right: 5px;
+  margin-bottom: 5px; }
+
+/* line 5, ../../app/assets/scss/jquery.tagsinput.scss */
+div.tagsinput div {
+  display: block;
+  float: left; }
+
+/* line 6, ../../app/assets/scss/jquery.tagsinput.scss */
+.tags_clear {
+  clear: both;
+  width: 100%;
+  height: 0px; }
+
+/* line 7, ../../app/assets/scss/jquery.tagsinput.scss */
+.not_valid {
+  background: #FBD8DB !important;
+  color: #90111A !important; }
+
+/* line 5, ../../app/assets/scss/_theme.scss */
+body {
+  background: #efefef; }
+
+/* line 8, ../../app/assets/scss/_theme.scss */
+body.frontend {
+  background: #fff; }
+
+/* line 6, ../../app/assets/scss/main.scss */
 body {
   font-size: 16px;
   font-family: 'Open Sans', "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   line-height: 1.5;
   color: #555555; }
 
-/* line 11, ../../app/assets/scss/main.scss */
+/* line 12, ../../app/assets/scss/main.scss */
 h1, h2, h3, h4, h5 {
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Arial", sans-serif; }
 
-/* line 14, ../../app/assets/scss/main.scss */
+/* line 15, ../../app/assets/scss/main.scss */
 code, kbd, pre, samp {
   font-family: 'Inconsolata'; }
 
-/* line 17, ../../app/assets/scss/main.scss */
+/* line 18, ../../app/assets/scss/main.scss */
 code {
   border: solid 1px #e4e4e4;
   padding: 4px 4px 4px;
@@ -17923,49 +17985,49 @@ code {
   line-height: 1.85714em;
   border-radius: 3px; }
 
-/* line 25, ../../app/assets/scss/main.scss */
+/* line 26, ../../app/assets/scss/main.scss */
 .website-header {
   padding-top: 16px;
   background: #444; }
 
-/* line 29, ../../app/assets/scss/main.scss */
+/* line 30, ../../app/assets/scss/main.scss */
 .website-name {
   color: #fff;
   text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6); }
 
-/* line 33, ../../app/assets/scss/main.scss */
+/* line 34, ../../app/assets/scss/main.scss */
 .login-container {
   max-width: 400px;
   margin: auto; }
 
-/* line 37, ../../app/assets/scss/main.scss */
+/* line 38, ../../app/assets/scss/main.scss */
 .forgot-password-link {
   float: right; }
 
-/* line 40, ../../app/assets/scss/main.scss */
+/* line 41, ../../app/assets/scss/main.scss */
 a {
   color: #008cba;
   text-decoration: none;
   line-height: inherit; }
-  /* line 44, ../../app/assets/scss/main.scss */
+  /* line 45, ../../app/assets/scss/main.scss */
   a h2.ui.header {
     color: #555; }
 
-/* line 48, ../../app/assets/scss/main.scss */
+/* line 49, ../../app/assets/scss/main.scss */
 a:hover, a:focus {
   color: #007ba0; }
 
-/* line 51, ../../app/assets/scss/main.scss */
+/* line 52, ../../app/assets/scss/main.scss */
 .container {
   max-width: 960px;
   margin: auto;
   padding: 0px; }
 
-/* line 57, ../../app/assets/scss/main.scss */
+/* line 58, ../../app/assets/scss/main.scss */
 .pull-right {
   float: right; }
 
-/* line 61, ../../app/assets/scss/main.scss */
+/* line 62, ../../app/assets/scss/main.scss */
 .main.menu {
   top: 0;
   min-width: 320px;
@@ -17977,59 +18039,64 @@ a:hover, a:focus {
   -webkit-transition: margin 0.3s ease;
   transition: margin 0.3s ease; }
 
-/* line 75, ../../app/assets/scss/main.scss */
+/* line 76, ../../app/assets/scss/main.scss */
 .main-content {
-  padding-top: 50px; }
+  padding-top: 43px; }
 
-/* line 78, ../../app/assets/scss/main.scss */
+/* line 79, ../../app/assets/scss/main.scss */
+.cms-created-at {
+  font-size: .85em;
+  white-space: nowrap; }
+
+/* line 83, ../../app/assets/scss/main.scss */
 .ui.dropdown.item.user-menu {
   padding: 0.37em .95em; }
 
-/* line 81, ../../app/assets/scss/main.scss */
+/* line 86, ../../app/assets/scss/main.scss */
 .banner-image {
   max-width: 100%; }
 
-/* line 84, ../../app/assets/scss/main.scss */
+/* line 89, ../../app/assets/scss/main.scss */
 .ui.buttons.control-group {
   min-width: 120px; }
 
-/* line 87, ../../app/assets/scss/main.scss */
+/* line 92, ../../app/assets/scss/main.scss */
 .ui.attached.left.button.help {
   position: fixed;
   right: 0;
   top: 50%; }
 
-/* line 93, ../../app/assets/scss/main.scss */
+/* line 98, ../../app/assets/scss/main.scss */
 *, *:before, *:after {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
-/* line 96, ../../app/assets/scss/main.scss */
+/* line 101, ../../app/assets/scss/main.scss */
 html, body {
   height: 100%; }
 
-/* line 99, ../../app/assets/scss/main.scss */
+/* line 104, ../../app/assets/scss/main.scss */
 .main-content {
   min-height: 100%;
   margin-bottom: -54px; }
 
-/* line 103, ../../app/assets/scss/main.scss */
+/* line 108, ../../app/assets/scss/main.scss */
 .main-content:after {
   display: block;
   content: ""; }
 
-/* line 108, ../../app/assets/scss/main.scss */
+/* line 113, ../../app/assets/scss/main.scss */
 .site-footer,
 .main-content:after {
   height: 54px; }
 
-/* line 111, ../../app/assets/scss/main.scss */
+/* line 116, ../../app/assets/scss/main.scss */
 .sticky.menu.stuck {
   top: 50px;
   position: fixed; }
 
-/* line 115, ../../app/assets/scss/main.scss */
+/* line 120, ../../app/assets/scss/main.scss */
 .ui.override.toggle.checkbox {
   font-size: .75em;
   float: right;
@@ -18038,101 +18105,101 @@ html, body {
   -ms-user-select: none;
   user-select: none; }
 
-/* line 120, ../../app/assets/scss/main.scss */
+/* line 125, ../../app/assets/scss/main.scss */
 .segment-collapse {
   cursor: pointer;
   position: absolute;
   top: 10px;
   right: 10px; }
-  /* line 125, ../../app/assets/scss/main.scss */
+  /* line 130, ../../app/assets/scss/main.scss */
   .segment-collapse .hidden {
     display: none; }
 
-/* line 129, ../../app/assets/scss/main.scss */
+/* line 134, ../../app/assets/scss/main.scss */
 .muted {
   color: #888888;
   font-size: .85em; }
 
-/* line 133, ../../app/assets/scss/main.scss */
+/* line 138, ../../app/assets/scss/main.scss */
 .m-pagelist .meta {
   position: absolute;
   top: 9px;
   right: 11px; }
 
-/* line 138, ../../app/assets/scss/main.scss */
+/* line 143, ../../app/assets/scss/main.scss */
 .m-pagelist .item {
   text-align: center; }
 
-/* line 141, ../../app/assets/scss/main.scss */
+/* line 146, ../../app/assets/scss/main.scss */
 .m-pagelist .extra {
   text-align: left; }
 
-/* line 144, ../../app/assets/scss/main.scss */
+/* line 149, ../../app/assets/scss/main.scss */
 .m-pagelist .item {
   text-align: center;
   min-height: 254px !important;
   margin-bottom: 4.25em !important; }
 
-/* line 149, ../../app/assets/scss/main.scss */
+/* line 154, ../../app/assets/scss/main.scss */
 .ui.dropdown.selection {
   font-size: 12px; }
-  /* line 151, ../../app/assets/scss/main.scss */
+  /* line 156, ../../app/assets/scss/main.scss */
   .ui.dropdown.selection .item {
     font-size: 12px; }
 
-/* line 155, ../../app/assets/scss/main.scss */
+/* line 160, ../../app/assets/scss/main.scss */
 .ui.basic.segment.pagehead {
   padding: 0 0 1em;
   margin: 0 1em;
   -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1);
   box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.1); }
 
-/* line 160, ../../app/assets/scss/main.scss */
+/* line 165, ../../app/assets/scss/main.scss */
 .blog-pager {
   margin-top: 1em; }
-  /* line 162, ../../app/assets/scss/main.scss */
+  /* line 167, ../../app/assets/scss/main.scss */
   .blog-pager .ui.pagination.menu .item {
     min-width: 2em;
     font-size: .75rem; }
 
-/* line 167, ../../app/assets/scss/main.scss */
+/* line 172, ../../app/assets/scss/main.scss */
 .ui.small.segment {
   font-size: .75em; }
 
-/* line 170, ../../app/assets/scss/main.scss */
+/* line 175, ../../app/assets/scss/main.scss */
 i.orange.icon {
   color: #de3427; }
 
-/* line 173, ../../app/assets/scss/main.scss */
+/* line 178, ../../app/assets/scss/main.scss */
 .ui.vertical.menu .item {
   font-size: .85rem; }
 
-/* line 176, ../../app/assets/scss/main.scss */
+/* line 181, ../../app/assets/scss/main.scss */
 .ui.image {
   height: auto; }
-  /* line 178, ../../app/assets/scss/main.scss */
+  /* line 183, ../../app/assets/scss/main.scss */
   .ui.image.banner-image {
     margin: 1em 0 2em;
     display: block; }
 
-/* line 183, ../../app/assets/scss/main.scss */
+/* line 188, ../../app/assets/scss/main.scss */
 .articlebody {
   line-height: 1.625em; }
-  /* line 186, ../../app/assets/scss/main.scss */
+  /* line 191, ../../app/assets/scss/main.scss */
   .articlebody p {
     text-indent: 0;
     margin: 0 0 26px 0; }
-  /* line 190, ../../app/assets/scss/main.scss */
+  /* line 195, ../../app/assets/scss/main.scss */
   .articlebody h2 {
     margin: 52px 0 26px 0;
     font-size: 28px;
     line-height: 1em; }
-  /* line 195, ../../app/assets/scss/main.scss */
+  /* line 200, ../../app/assets/scss/main.scss */
   .articlebody h3 {
     margin: 26px 0 4px 0;
     font-size: 1.3125em;
     line-height: 1.2381em; }
-  /* line 200, ../../app/assets/scss/main.scss */
+  /* line 205, ../../app/assets/scss/main.scss */
   .articlebody blockquote {
     margin: 26px 40px;
     font-style: italic;
@@ -18142,37 +18209,37 @@ i.orange.icon {
     color: #7e7e7e;
     padding-left: 20px;
     border-left: 5px solid rgba(0, 0, 0, 0.1); }
-  /* line 210, ../../app/assets/scss/main.scss */
+  /* line 215, ../../app/assets/scss/main.scss */
   .articlebody .lead {
     font-size: 21px;
     font-weight: 200;
     line-height: 1.4;
     margin-bottom: 20px; }
 
-/* line 217, ../../app/assets/scss/main.scss */
+/* line 222, ../../app/assets/scss/main.scss */
 .ui.tiny.labels .label, .ui.tiny.label {
   font-size: 0.65rem;
   white-space: nowrap; }
 
-/* line 221, ../../app/assets/scss/main.scss */
+/* line 226, ../../app/assets/scss/main.scss */
 .hidden {
   display: none !important; }
 
-/* line 224, ../../app/assets/scss/main.scss */
+/* line 229, ../../app/assets/scss/main.scss */
 .cms-banner {
   cursor: pointer; }
 
-/* line 227, ../../app/assets/scss/main.scss */
+/* line 232, ../../app/assets/scss/main.scss */
 .trumbowyg-box, .editor {
   margin: 0;
   border-radius: 0.3125em;
   width: 100%; }
 
-/* line 232, ../../app/assets/scss/main.scss */
+/* line 237, ../../app/assets/scss/main.scss */
 .trumbowyg-editor, .trumbowyg-textarea {
   width: 100%; }
 
-/* line 235, ../../app/assets/scss/main.scss */
+/* line 240, ../../app/assets/scss/main.scss */
 div.trumbowyg-editor {
   color: rgba(0, 0, 0, 0.70196);
   line-height: 1.33;
@@ -18185,7 +18252,7 @@ div.trumbowyg-editor {
   transition: background-color 0.3s ease-out, box-shadow 0.2s ease, border-color 0.2s ease;
   padding: 0.85em 1.2em; }
 
-/* line 246, ../../app/assets/scss/main.scss */
+/* line 251, ../../app/assets/scss/main.scss */
 div.trumbowyg-editor:focus {
   color: rgba(0, 0, 0, 0.85);
   -webkit-box-shadow: 0.3em 0em 0em 0em rgba(0, 0, 0, 0.3) inset;
@@ -18193,11 +18260,11 @@ div.trumbowyg-editor:focus {
   border-color: rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 0; }
 
-/* line 253, ../../app/assets/scss/main.scss */
+/* line 258, ../../app/assets/scss/main.scss */
 .trumbowyg-fullscreen {
   margin: 44px 0 0 !important; }
 
-/* line 257, ../../app/assets/scss/main.scss */
+/* line 262, ../../app/assets/scss/main.scss */
 .trumbowyg-button-pane {
   background: #fff;
   -webkit-box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0.1);
@@ -18205,31 +18272,35 @@ div.trumbowyg-editor:focus {
   border-top-left-radius: 0.3125em;
   border-top-right-radius: 0.3125em; }
 
-/* line 263, ../../app/assets/scss/main.scss */
+/* line 268, ../../app/assets/scss/main.scss */
 h1.ui.header.post-title {
   font-size: 49px;
   line-height: 1em; }
 
-/* line 267, ../../app/assets/scss/main.scss */
+/* line 272, ../../app/assets/scss/main.scss */
 aside.vertical.menu.blog-sidebar a.item.active {
   border-bottom-color: transparent !important; }
 
-/* line 271, ../../app/assets/scss/main.scss */
+/* line 276, ../../app/assets/scss/main.scss */
 .ui.inverted.tiered.menu .sub.menu {
   background-color: rgba(255, 255, 255, 0.8); }
-  /* line 273, ../../app/assets/scss/main.scss */
+  /* line 278, ../../app/assets/scss/main.scss */
   .ui.inverted.tiered.menu .sub.menu .item {
     color: #444; }
 
-/* line 277, ../../app/assets/scss/main.scss */
+/* line 282, ../../app/assets/scss/main.scss */
 .postmeta {
   padding-left: 0px !important; }
 
-/* line 280, ../../app/assets/scss/main.scss */
+/* line 285, ../../app/assets/scss/main.scss */
 .trumbowyg-fullscreen .trumbowyg-editor {
   max-width: 700px;
   margin: auto; }
-  /* line 284, ../../app/assets/scss/main.scss */
+  /* line 289, ../../app/assets/scss/main.scss */
   .trumbowyg-fullscreen .trumbowyg-editor:active, .trumbowyg-fullscreen .trumbowyg-editor:focus {
     -webkit-box-shadow: 0px 0px 0px #fff;
     box-shadow: 0px 0px 0px #fff; }
+
+/* line 293, ../../app/assets/scss/main.scss */
+.ui.segment.cms-pagehead {
+  border-radius: 0px; }

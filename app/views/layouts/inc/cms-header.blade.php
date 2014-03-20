@@ -26,9 +26,9 @@
             <div class="right menu">
                 <div class="ui dropdown item user-menu">
                     <img class="ui avatar image" src="{{ get_gravatar($currentUser->email) }}" alt="" />{{ $currentUser->username }}<i class="dropdown icon"></i>
-                    <div class="menu ui transition hidden">
-                        <a class="item" href="{{ url('users/'.$currentUser->id.'/edit') }}">Account</a>
-                        <a class="item" href="{{ url('logout') }}">Logout</a>
+                    <div class="menu ui transition">
+                        <a class="item" href="{{ url('users/'.$currentUser->id.'/edit') }}"> <i class="settings orange icon"></i>  Account</a>
+                        <a class="item" href="{{ url('logout') }}"><i class="sign out orange icon"></i>Logout</a>
                     </div>
                 </div> 
             </div>
