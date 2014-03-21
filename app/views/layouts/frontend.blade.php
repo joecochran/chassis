@@ -54,6 +54,7 @@
     <footer class="ui secondary segment small">
         <div class="container">
             <p><small>Copyright &copy; {{ date('Y') }} {{ $settings->sitename }} all rights reserved.</small></p>
+            <p>Proudly hosted by <a href="http://fortrabbit.com" class="fortrabbit">• fortrabbit</a></p>
         </div>
     </footer>
     {{-- Scripts at the bottom --}}

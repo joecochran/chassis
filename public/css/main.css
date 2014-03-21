@@ -18190,3 +18190,11 @@ aside.vertical.menu.blog-sidebar a.item.active {
 /* line 293, ../../app/assets/scss/main.scss */
 .ui.segment.cms-pagehead {
   border-radius: 0px; }
+
+/* line 296, ../../app/assets/scss/main.scss */
+.fortrabbit {
+  font-family: Georgia,serif;
+  font-weight: bold;
+  font-style: italic;
+  color: #333;
+  text-transform: lowercase; }
