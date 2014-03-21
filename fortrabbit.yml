@@ -1,0 +1,34 @@
+---
+
+# to assure backward compatibility on format changes, specify the version
+version: 1
+
+# default strategy is "nodelete", use "fullsync" for full synchronization
+strategy: fullsync
+
+# set a list of custom excludes folders/files.
+excludes:
+   - app/storage/
+   - vendor/
+   - public/uploads
+   - media/videos/
+
+# alternative exclude format (rsync format):
+#   you can use a .gitignore file, however the rsync format is not 100% compatible
+#   with the .gitignore pattern and there is a risk (use caution!)
+#excludes: my-excludes
+
+# composer settings
+composer:
+    # mode can be "trigger" (default) or "always"
+    mode: trigger
+
+    # method can be "update" (default) or "install"
+    method: update
+
+    # normally dev requirements are ignored (--no-dev), you can enable them:
+    #include-dev: 1
+
+    # per default, composer runs with --prefer-dist.
+    #prefer-source: 1
+
