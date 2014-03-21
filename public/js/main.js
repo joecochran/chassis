@@ -24180,9 +24180,6 @@ $('.ui.image.dimmable').dimmer({
 $('#post-banner .dimmer').on('click', function(event){
     $('#banner').trigger('click');
 });
-$( "body" ).click(function( event ) {
-  console.log( "clicked: " + event.target.nodeName );
-});
 $('.trumbo').trumbowyg({
     semantic: true
 });

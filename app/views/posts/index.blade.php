@@ -17,7 +17,7 @@
                         <header>
                             <meta itemprop="inLanguage" content="{{ $settings->lang }}"/>
                             <a href="{{ URL::to('blog/'.$post->slug) }}"><h2 class="ui header" itemprop="headline">{{ $post->title }}</h2></a>
-                            <div class="ui small segment">
+                            <div class="ui small basic segment postmeta">
                                 <span><i class="folder orange icon" title="Category"></i><a href="{{ url('blog/category/'.strtolower($post->category->name)) }}">{{ $post->category->name }}</a></span>
                                 @if($post->tags->count())
                                 <span style="margin-left:2em">
@@ -33,11 +33,11 @@
                                 </span>
                             </div>
                             @if(isset($post->banner))
-                            <img itemprop="image" height="320" width="680" class="ui image" src="{{ url('uploads/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
+                            <img itemprop="image" height="320" width="680" class="ui image banner-image" src="{{ url('uploads/'.$post->banner) }}" alt="{{ $post->banner_alt }}" />
                             @endif
                         </header>
                         <div class="articlebody" itemprop="articleBody">
-                            {{ $post->content }}
+                            <p>{{ $post->excerpt }}</p>
                         </div>
                     </div>
                 </article>
@@ -48,7 +48,7 @@
             @else
                 <div class="ui message">
                     <div class="header">We're sorry</div>    
-                    <p>No posts found that match your criteria.</p>
+                    <p>posts found that match your criteria.</p>
                 </div>
             @endif
         </div>

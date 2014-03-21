@@ -70,12 +70,14 @@ class PostsController extends BaseController {
 	{
 		$post = $this->post->with('category')->with('tags')->find($id);
         // return $post;
+        $tags = Tags::tagArray();
+        $categories = Category::categoryArray();
 		if (is_null($post))
 		{
 			return Redirect::route('posts.index');
 		}
 
-		return View::make('posts.edit', compact('post'));
+		return View::make('posts.edit', compact('post', 'categories'));
 	}
 
 	/**
@@ -86,9 +88,13 @@ class PostsController extends BaseController {
 	 */
 	public function update($id)
 	{
-        dd(Input::all());
+        if (Input::all()['banner'] == null) {
+            $input = Input::except('banner');
+        } else {
+            $input = Input::all();
+        }
         $updater = new Chassis\Post\Updater($this);
-        return $updater->update($id, Input::all());
+        return $updater->update($id, $input);
 	}
 
 	/**

@@ -1,9 +1,12 @@
 @extends('layouts.default')
 
 @section('main')
-
+<div class="ui segment cms-pagehead">
+    <div class="container">
+        <h1 class="ui header">Edit Post</h1>
+    </div>
+</div>
 <div class="container">
-    <h1 class="ui header">Edit Post</h1>
     {{ Form::model($post, array('method' => 'PATCH', 'route' => array('posts.update', $post->id),'class'=>'ui form', 'files' => true)) }}
     <div class="two column stackable ui grid">
         <div class="column">
@@ -46,6 +49,31 @@
             </div>
         </div>
     </div>
+    <div class="ui segment">
+        <div class="stackable ui grid">
+            <div class="four wide column">
+                <div class="field">
+                    {{ Form::label('category_id') }}
+                    <div class="ui dropdown selection">
+                        {{ Form::hidden('category', $post->category) }}
+                        <div class="default text">Category</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            @foreach($categories as $category_id => $category)
+                            <div class="item" data-value="{{ $category_id }}">{{ $category }}</div>
+                            @endforeach
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="twelve wide column">
+                <div class="field">
+                    {{ Form::label('tags') }}
+                    {{ Form::input('tags', $post->tags->name) }}
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="ui green segment">
         <div class="field">
             {{ Form::label('excerpt', 'Post Excerpt') }}
@@ -58,7 +86,6 @@
     </div>
         <div class="ui small buttons">
             {{ Form::submit('Update', array('class' => 'ui blue button')) }}
-            <div class="or"></div>
             <a href="{{ url('posts') }}" class='ui red button'>Cancel</a>
         </div>
     {{ Form::close() }}
