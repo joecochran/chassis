@@ -5,7 +5,7 @@
             <span class="item hidden"></span>
             <a class="item {{ set_active('admin') }}" href="{{ url('admin') }}">
                 <i class="dashboard orange icon"></i>
-                Sitename
+                {{$settings->sitename}}
             </a>
             <a class="{{ set_active('pages') }} item" href="{{ url('pages') }}">
                 <i class="text file outline orange icon"></i>
