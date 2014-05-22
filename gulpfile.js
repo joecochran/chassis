@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     minifycss = require('gulp-cssmin'),
     autoprefixer = require('gulp-autoprefixer'),
-    notify = require('gulp-notify'),
+    //notify = require('gulp-notify'),
     compass = require('gulp-compass'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
@@ -10,7 +10,7 @@ var gulp = require('gulp'),
     clean = require('gulp-clean'),
     cache = require('gulp-cache')
     cmq = require('gulp-combine-media-queries'),
-    svgmin = require('gulp-svgmin'),;
+    svgmin = require('gulp-svgmin');
 
 gulp.task('scripts', function() {
     return gulp.src([
