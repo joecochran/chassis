@@ -29,24 +29,6 @@ components.
    ```
    otherwise, continue to step 7 to get a vagrant vm going.
 
-7. OPTIONAL - A Vagrantfile has been provided with a provision script. After
-   [Vagrant](http://vagrantup.com) and [Virtualbox](http://virtualbox.org) have
-   been installed, run:
-   ```
-   vagrant up
-   ```
-   (if this throws errors, try updating [Virtualbox](http://virtualbox.org).)
-   This will serve the site up on http://192.168.5.5
-
-   For simplicity I am running this on a private network, that was, if I want
-   to visit http://sitename.dev instead, all I have to do is add an entry to
-   /etc/hosts, like `192.168.5.5 sitename.dev` Here's a one liner to accomplish
-   that:
-   ```
-   echo "192.168.5.5 sitename.dev" | sudo tee -a /etc/hosts
-   ```
-   Obviously change sitename.dev to whatever you want to use.
-
 ## Customizations
 
 ### app/helpers.php
