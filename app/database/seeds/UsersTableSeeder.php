@@ -12,14 +12,16 @@ class UsersTableSeeder extends Seeder {
             'username'=>'admin',
             'password'=>Hash::make('Password1'),
             'email'=>'admin@domain.com',
-            'role'=>0
+            'role'=>0,
+            'remember_token'=>null
         ],
         [
             'fullname'=>'Jane Doe',
             'username'=>'editor',
             'password'=>Hash::make('Password1'),
             'email'=>'editor@domain.com',
-            'role'=>1
+            'role'=>1,
+            'remember_token'=>null
         ]);
 
 		// Uncomment the below to run the seeder
