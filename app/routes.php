@@ -21,7 +21,7 @@ Route::get('tags', function(){
     return Tag::all();
 });
 
-Route::get('posts', 'PostsController@admin');
+Route::get('posts', ['as' => 'posts.admin', 'uses' => 'PostsController@admin']);
 Route::resource('posts', 'PostsController', array('except' => array('index')));
 
 Route::controller('password', 'RemindersController');
@@ -37,11 +37,11 @@ Route::resource('users', 'UsersController');
 
 // ALL THE BLOG STUFF
 Route::get('feed', 'RssController@index');
-Route::get('blog', 'PostsController@index');
+Route::get('/', 'PostsController@index');
 Route::get('category/', 'CategoriesController@index');
 Route::get('category/{name}', 'CategoriesController@index');
 Route::get('tag/', 'TagsController@index');
 Route::get('tag/{name}', 'TagsController@index');
 Route::get('archive/{year}/{month}', 'PostsController@archive');
 Route::get('archive/{year}', 'PostsController@archive');
-Route::get('{slug}', 'PostsController@show');
+Route::get('blog/{slug}', 'PostsController@show');

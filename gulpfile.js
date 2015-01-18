@@ -14,7 +14,7 @@ var gulp = require('gulp'),
 
 gulp.task('scripts', function() {
     return gulp.src([
-        'app/assets/js/vendor/jquery-1.11.0.js',
+        'app/assets/js/vendor/jquery-1.11.2.js',
         'app/assets/js/vendor/semantic.js',
         'app/assets/js/vendor/jquery.tagsinput.js',
         'app/assets/js/vendor/tablesort.js',

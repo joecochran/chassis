@@ -2,23 +2,33 @@
 
 @section('main')
 <div class="container">
-    <div class="ui basic segment pagehead">
+    <div class="ui header segment">
         <h1 class="ui header">Pages</h1>
         @if(Auth::user()->role == 0)
-        <a href="{{ URL::to('pages/create') }}" class="ui right labeled blue small icon button"><i class="ui icon add"></i>New page</a>
+        <p class="sub header">Add, remove and edit pages.</p>
+        <div class="ui divider"></div>
+        <div class="ui buttons">
+            <a href="{{ URL::to('pages/create') }}" class="ui button">
+                New page</a>
+        </div>
         @endif
     </div>
     <div class="ui basic segment">
         @if ($pages->count())
-        <div class="ui three items m-pagelist">
+        <div class="ui cards">
             @foreach ($pages as $page)
-            <div class="item">
-                <div class="name ui icon header">
-                    <i class="circular text orange file icon"></i>
-                    {{{ $page->title }}}
+            <div class="card">
+                <div class="content">
+                    <div class="header">
+                        {{{ $page->title }}}
+                    </div>
+                    <div class="meta">
+                        {{{ '/'.$page->slug }}}
+                    </div>
+                    <div class="description">
+                        {{{ substr($page->description, 0, 170) }}}
+                    </div>
                 </div>
-                <div class="meta">{{{ '/'.$page->slug }}}</div>
-                <div class="description">{{{ substr($page->description, 0, 170) }}}</div>
                 <div class="extra">
                     {{ Form::open(array('method' => 'DELETE', 'route' => array('pages.destroy', $page->id), 'class' => '')) }}
                     {{ link_to_route('pages.edit', 'Edit', array($page->id), array('class' => 'module leftbutton ui mini button')) }}

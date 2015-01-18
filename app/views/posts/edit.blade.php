@@ -67,10 +67,10 @@
                 </div>
             </div>
             <div class="twelve wide column">
-                <div class="field">
+                {{--<div class="field">
                     {{ Form::label('tags') }}
                     {{ Form::input('tags', $post->tags->name) }}
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

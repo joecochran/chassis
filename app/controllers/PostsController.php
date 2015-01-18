@@ -70,7 +70,7 @@ class PostsController extends BaseController {
 	{
 		$post = $this->post->with('category')->with('tags')->find($id);
         // return $post;
-        $tags = Tags::tagArray();
+        // $tags = Tags::tagArray();
         $categories = Category::categoryArray();
 		if (is_null($post))
 		{
@@ -107,6 +107,6 @@ class PostsController extends BaseController {
 	{
 		$this->post->find($id)->delete();
 
-		return Redirect::route('s.index');
+		return Redirect::route('posts.admin');
 	}
 }

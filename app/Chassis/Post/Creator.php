@@ -22,6 +22,6 @@ class Creator {
             return Redirect::route('posts.create')->withInput()->withErrors($validation);
 		}
         Post::create($input);
-        return Redirect::route('posts.index');
+        return Redirect::route('/posts');
     }
 }
