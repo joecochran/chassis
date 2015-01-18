@@ -31650,13 +31650,13 @@ code {
 /* line 26, ../../app/assets/scss/main.scss */
 .website-header {
   padding-top: 16px;
-  background: #444;
+  background: #f4726d;
 }
 
 /* line 30, ../../app/assets/scss/main.scss */
-.website-name {
+.ui.header.website-name {
   color: #fff;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.6);
+  text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 /* line 34, ../../app/assets/scss/main.scss */

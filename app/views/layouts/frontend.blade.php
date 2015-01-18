@@ -35,11 +35,9 @@
                 <div class="ui large header website-name">{{{ $settings->sitename }}}</div>
             </div>
         </div>
-        <nav class="ui inverted tiered menu">
+        <nav class="ui tiered menu">
             <div class="container">
-                @foreach($pages as $pagex)
-                <div class="{{ set_active($pagex->slug) }} item">{{ link_to($pagex->slug, $pagex->title) }}</div>
-                @endforeach
+                <div class="item"><a href="/">Home</a></div>
                 <div class="right menu">
                     @yield('rightmenu')
                 </div>
