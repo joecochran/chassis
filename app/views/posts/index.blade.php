@@ -4,7 +4,7 @@
 <link rel="alternate" type="application/atom+xml" title="{{ $settings->sitename }}" href="/blog/feed">
 @stop
 @section('rightmenu')
-<div class="item"><a href="{{ url('blog/feed') }}" target="_blank"><i class="icon orange link rss sign"></i></a></div>
+<div class="item"><a href="{{ url('blog/feed') }}" target="_blank"><i class="icon link rss sign"></i></a></div>
 @stop
 @section('main')
 <div class="container">
@@ -18,17 +18,17 @@
                             <meta itemprop="inLanguage" content="{{ $settings->lang }}"/>
                             <a href="{{ URL::to('blog/'.$post->slug) }}"><h2 class="ui header" itemprop="headline">{{ $post->title }}</h2></a>
                             <div class="ui small basic segment postmeta">
-                                <span><i class="folder orange icon" title="Category"></i><a href="{{ url('blog/category/'.strtolower($post->category->name)) }}">{{ $post->category->name }}</a></span>
+                                <span><i class="folder icon" title="Category"></i><a href="{{ url('blog/category/'.strtolower($post->category->name)) }}">{{ $post->category->name }}</a></span>
                                 @if($post->tags->count())
                                 <span style="margin-left:2em">
-                                    <i class="icon orange tags" title="Tags"></i>
+                                    <i class="icon tags" title="Tags"></i>
                                     @foreach($post->tags as $tag)
                                     <a href="{{ url('blog/tag/'.replace_space($tag->name)) }}" rel="tag"><span itemprop="keywords">{{ $tag->name }}</span></a>
                                     @endforeach
                                 </span>
                                 @endif
                                 <span style="margin-left:2em">
-                                    <i class="icon orange calendar" title="Date"></i>
+                                    <i class="icon calendar" title="Date"></i>
                                     <time datetime="{{ date('Y-m-d',strtotime($post->created_at)) }}" pubdate>{{ date('l, F jS, Y',strtotime($post->created_at)) }}</time>
                                 </span>
                             </div>

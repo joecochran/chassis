@@ -25,9 +25,12 @@
 }
 .control-td {
     width: 140px;
-} 
+}
+.ui.image.banner-image {
+    height: auto;
+}
 // experiment, not for production
-@media (max-width: 560px) {
+@media (max-width: 600px) {
     .menu-text {
         display:none;
     }

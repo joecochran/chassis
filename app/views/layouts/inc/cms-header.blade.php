@@ -4,7 +4,7 @@
         <div class="menu">
             <a class="item {{ set_active('admin') }}" href="{{ url('admin') }}">
                 <i class="dashboard icon"></i>
-                <span class="menu-text">Dash</span>
+                <span class="menu-text">Dashboard</span>
             </a>
             <a class="{{ set_active('pages') }} item" href="{{ url('pages') }}">
                 <i class="text file outline icon"></i>

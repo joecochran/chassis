@@ -31642,8 +31642,13 @@ div.tagsinput div {
   width: 140px;
 }
 
-@media (max-width: 560px) {
-  /* line 31, ../../app/assets/scss/main.scss */
+/* line 29, ../../app/assets/scss/main.scss */
+.ui.image.banner-image {
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  /* line 34, ../../app/assets/scss/main.scss */
   .menu-text {
     display: none;
   }

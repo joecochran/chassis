@@ -38,10 +38,10 @@ Route::resource('users', 'UsersController');
 // ALL THE BLOG STUFF
 Route::get('feed', 'RssController@index');
 Route::get('/', 'PostsController@index');
-Route::get('category/', 'CategoriesController@index');
-Route::get('category/{name}', 'CategoriesController@index');
-Route::get('tag/', 'TagsController@index');
-Route::get('tag/{name}', 'TagsController@index');
-Route::get('archive/{year}/{month}', 'PostsController@archive');
-Route::get('archive/{year}', 'PostsController@archive');
+Route::get('blog/category/', 'CategoriesController@index');
+Route::get('blog/category/{name}', 'CategoriesController@index');
+Route::get('blog/tag/', 'TagsController@index');
+Route::get('blog/tag/{name}', 'TagsController@index');
+Route::get('blog/archive/{year}/{month}', 'PostsController@archive');
+Route::get('blog/archive/{year}', 'PostsController@archive');
 Route::get('blog/{slug}', 'PostsController@show');
