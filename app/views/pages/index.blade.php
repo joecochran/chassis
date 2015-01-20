@@ -1,21 +1,26 @@
 @extends('layouts.default')
 
 @section('main')
-<div class="container">
-    <div class="ui header segment">
-        <h1 class="ui header">Pages</h1>
-        @if(Auth::user()->role == 0)
-        <p class="sub header">Add, remove and edit pages.</p>
-        <div class="ui divider"></div>
-        <div class="ui buttons">
-            <a href="{{ URL::to('pages/create') }}" class="ui button">
-                New page</a>
+    <div class="ui segment pagehead">
+        <div class="container">
+            <h1 class="ui header">
+                <i class="text file outline icon"></i> 
+                <div class="content">
+                    Pages
+                    <p class="sub header">Add, remove and edit pages.</p>
+                </div>
+            </h1>
+            @if(Auth::user()->role == 0)
+                <div class="ui divider"></div>
+                <a href="{{ URL::to('pages/create') }}" class="ui blue small labeled icon button"><i class="add icon"></i>  New page</a>
+            @endif
         </div>
-        @endif
     </div>
+
+<div class="container">
     <div class="ui basic segment">
         @if ($pages->count())
-        <div class="ui cards">
+        <div class="ui four doubling cards">
             @foreach ($pages as $page)
             <div class="card">
                 <div class="content">

@@ -18,8 +18,7 @@
             {{ Form::textarea('value',$setting->value,array('class'=>'form-control', 'rows'=>4)) }}
         </div>
         <div class="ui small buttons">
-            {{ Form::submit('Update', array('class' => 'ui blue button')) }}
-            <div class="or"></div>
+            {{ Form::submit('Update', array('class' => 'ui button')) }}
             <a href="{{ url('settings') }}" class='ui red button'>Cancel</a>
         </div>
     {{ Form::close() }}

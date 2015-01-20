@@ -17,15 +17,34 @@
         @yield('main')
     </main> 
     @if(Auth::check())
-    <footer class="site-footer container">
-        <div class="ui grid">
-            <div class="eight wide column">
-                <div><small><a href="#" class="license-link">License</a></small></div> 
-            </div>
-            <div class="eight wide column">
+    <footer class="ui tertiary footer segment">
+        <div class="container">
+            <div class="ui basic segment">
+                <div class="ui stackable three column grid">
+                    <div class="column">
+                        <div class="ui link list">
+                            <div class="active"><i class="dashboard icon"></i> Dashboard</div>
+                            <a class="item"><i class="file text icon"></i> Pages</a>
+                            <a class="item"><i class="rss icon"></i> Posts</a>
+                            <a class="item"><i class="settings icon"></i> Settings</a>
+                            <a class="item"><i class="users icon"></i> Users</a>
+                        </div>
+                    </div>
+                    <div class="column">
+
+                    </div>
+                    <div class="column">
+                        <div class="ui link list">
+                            <a class="item" href="#"><span class="header">Chassis</span></a>
+                            <a class="item" href="#"><i class="github icon"></i> Fork on Github</a>
+                            <a href="#" class="item license-link"><i class="file text outline icon"></i> License</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
+    @yield('modals')
     <div class="ui small modal" id="licensemodal">
         <i class="close icon"></i>
         <div class="header">License</div>
@@ -46,7 +65,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
     </div>
     @endif
     {{ HTML::script(asset('js/main'.set_min().'.js')) }}
-    
+    @yield('scripts')
     {{-- Checking if a .ckeditor element exists and then loading in the ckeditor.js file because its huge and expensive --}}
     <script type="text/javascript">
         $('.ui.dropdown').dropdown();

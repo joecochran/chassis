@@ -1,11 +1,19 @@
 @extends('layouts.default')
 
 @section('main')
-<div class="container">
-    <div class="ui basic segment">
-        <h1 class="ui header">Edit {{ $user->fullname }} <img class="ui avatar image pull-right" src="{{ get_gravatar($user->email) }}" alt="" /></h1>
+<div class="ui segment pagehead">
+    <div class="container">
+        <h1 class="ui header">
+            <img class="ui avatar image pull-right" src="{{ get_gravatar($user->email) }}" alt="" />
+            <div class="content">
+                {{ $user->fullname }}
+                <div class="sub header">{{{ $user->username }}}</div>
+            </div>
+        </h1>
     </div>
-    {{ Form::model($user, array('method' => 'PATCH', 'route' => array('users.update', $user->id),'class'=>'ui form blue segment')) }}
+</div>
+<div class="container">
+    {{ Form::model($user, array('method' => 'PATCH', 'route' => array('users.update', $user->id),'class'=>'ui form segment')) }}
         <div class="field">
             {{ Form::label('fullname', 'Name') }}
             {{ Form::text('fullname',$user->fullname,array('class'=>'form-control')) }}
@@ -42,8 +50,7 @@
             {{ Form::password('password_confirmation') }}
         </div>
         <div class="ui small buttons">
-            {{ Form::submit('Update', array('class' => 'ui blue button')) }}
-            <div class="or"></div>
+            {{ Form::submit('Update', array('class' => 'ui button')) }}
             <a href="{{ url('users') }}" class='ui red button'>Cancel</a>
         </div>
     {{ Form::close() }}

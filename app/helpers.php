@@ -27,10 +27,10 @@ function set_min()
     if(is_production()) return '.min';
 }
 
-function get_gravatar($email)
+function get_gravatar($email, $size=80)
 {
     $hash = md5(strtolower(trim($email)));
-    return "//www.gravatar.com/avatar/$hash";
+    return "//www.gravatar.com/avatar/$hash?s=$size";
 }
 function ui_popup($icon, $message, $variation = null, $position = null)
 {

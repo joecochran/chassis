@@ -31608,7 +31608,43 @@ div.tagsinput div {
   color: #90111A !important;
 }
 
-/* line 77, ../../app/assets/scss/main.scss */
+/* line 6, ../../app/assets/scss/main.scss */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  clear: both;
+}
+
+/* line 11, ../../app/assets/scss/main.scss */
 .main-content {
-  padding-top: 43px;
+  padding-top: 35px;
+}
+
+/* line 14, ../../app/assets/scss/main.scss */
+.segment.pagehead {
+  border-radius: 0 !important;
+}
+/* line 16, ../../app/assets/scss/main.scss */
+.segment.pagehead .container {
+  max-width: 775px;
+}
+
+/* line 20, ../../app/assets/scss/main.scss */
+.ui.footer.segment {
+  margin-bottom: 0;
+  border-radius: 0;
+  margin-top: 3rem;
+  padding: 2em 1em;
+}
+
+/* line 26, ../../app/assets/scss/main.scss */
+.control-td {
+  width: 140px;
+}
+
+@media (max-width: 560px) {
+  /* line 31, ../../app/assets/scss/main.scss */
+  .menu-text {
+    display: none;
+  }
 }
