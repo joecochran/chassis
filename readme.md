@@ -1,3 +1,4 @@
+ (project discontinued with the release of Laravel 5)
 # Chassis
 
 ## Requirements
